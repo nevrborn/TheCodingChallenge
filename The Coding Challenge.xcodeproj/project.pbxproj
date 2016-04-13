@@ -7,21 +7,35 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7143D7801CBE383800C7E11F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7143D77F1CBE383800C7E11F /* AppDelegate.swift */; };
-		7143D7821CBE383800C7E11F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7143D7811CBE383800C7E11F /* ViewController.swift */; };
-		7143D7851CBE383800C7E11F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7143D7831CBE383800C7E11F /* Main.storyboard */; };
-		7143D7871CBE383800C7E11F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7143D7861CBE383800C7E11F /* Assets.xcassets */; };
 		7143D78A1CBE383800C7E11F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7143D7881CBE383800C7E11F /* LaunchScreen.storyboard */; };
+		7143D7921CBE386800C7E11F /* tutorials.json in Resources */ = {isa = PBXBuildFile; fileRef = 7143D7911CBE386800C7E11F /* tutorials.json */; };
+		7143D79D1CBE389A00C7E11F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7143D7931CBE389A00C7E11F /* Main.storyboard */; };
+		7143D79E1CBE389A00C7E11F /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7143D7941CBE389A00C7E11F /* MainVC.swift */; };
+		7143D79F1CBE389A00C7E11F /* MainVCExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7143D7951CBE389A00C7E11F /* MainVCExtension.swift */; };
+		7143D7A01CBE389A00C7E11F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7143D7961CBE389A00C7E11F /* AppDelegate.swift */; };
+		7143D7A11CBE389A00C7E11F /* SyntaxTextStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7143D7971CBE389A00C7E11F /* SyntaxTextStorage.swift */; };
+		7143D7A21CBE389A00C7E11F /* Tutorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7143D7981CBE389A00C7E11F /* Tutorial.swift */; };
+		7143D7A31CBE389A00C7E11F /* TutorialStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7143D7991CBE389A00C7E11F /* TutorialStore.swift */; };
+		7143D7A41CBE389A00C7E11F /* TutorialVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7143D79A1CBE389A00C7E11F /* TutorialVC.swift */; };
+		7143D7A51CBE389A00C7E11F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7143D79B1CBE389A00C7E11F /* Assets.xcassets */; };
+		7143D7A61CBE389A00C7E11F /* FAQVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7143D79C1CBE389A00C7E11F /* FAQVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		7143D77C1CBE383800C7E11F /* The Coding Challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "The Coding Challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		7143D77F1CBE383800C7E11F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		7143D7811CBE383800C7E11F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		7143D7841CBE383800C7E11F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		7143D7861CBE383800C7E11F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7143D7891CBE383800C7E11F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7143D78B1CBE383800C7E11F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7143D7911CBE386800C7E11F /* tutorials.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tutorials.json; sourceTree = "<group>"; };
+		7143D7931CBE389A00C7E11F /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		7143D7941CBE389A00C7E11F /* MainVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
+		7143D7951CBE389A00C7E11F /* MainVCExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainVCExtension.swift; sourceTree = "<group>"; };
+		7143D7961CBE389A00C7E11F /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		7143D7971CBE389A00C7E11F /* SyntaxTextStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SyntaxTextStorage.swift; sourceTree = "<group>"; };
+		7143D7981CBE389A00C7E11F /* Tutorial.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tutorial.swift; sourceTree = "<group>"; };
+		7143D7991CBE389A00C7E11F /* TutorialStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialStore.swift; sourceTree = "<group>"; };
+		7143D79A1CBE389A00C7E11F /* TutorialVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialVC.swift; sourceTree = "<group>"; };
+		7143D79B1CBE389A00C7E11F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7143D79C1CBE389A00C7E11F /* FAQVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FAQVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,11 +68,18 @@
 		7143D77E1CBE383800C7E11F /* The Coding Challenge */ = {
 			isa = PBXGroup;
 			children = (
-				7143D77F1CBE383800C7E11F /* AppDelegate.swift */,
-				7143D7811CBE383800C7E11F /* ViewController.swift */,
-				7143D7831CBE383800C7E11F /* Main.storyboard */,
-				7143D7861CBE383800C7E11F /* Assets.xcassets */,
 				7143D7881CBE383800C7E11F /* LaunchScreen.storyboard */,
+				7143D7931CBE389A00C7E11F /* Main.storyboard */,
+				7143D7941CBE389A00C7E11F /* MainVC.swift */,
+				7143D7951CBE389A00C7E11F /* MainVCExtension.swift */,
+				7143D7961CBE389A00C7E11F /* AppDelegate.swift */,
+				7143D7971CBE389A00C7E11F /* SyntaxTextStorage.swift */,
+				7143D7981CBE389A00C7E11F /* Tutorial.swift */,
+				7143D7991CBE389A00C7E11F /* TutorialStore.swift */,
+				7143D79A1CBE389A00C7E11F /* TutorialVC.swift */,
+				7143D79B1CBE389A00C7E11F /* Assets.xcassets */,
+				7143D79C1CBE389A00C7E11F /* FAQVC.swift */,
+				7143D7911CBE386800C7E11F /* tutorials.json */,
 				7143D78B1CBE383800C7E11F /* Info.plist */,
 			);
 			path = "The Coding Challenge";
@@ -123,9 +144,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7143D79D1CBE389A00C7E11F /* Main.storyboard in Resources */,
 				7143D78A1CBE383800C7E11F /* LaunchScreen.storyboard in Resources */,
-				7143D7871CBE383800C7E11F /* Assets.xcassets in Resources */,
-				7143D7851CBE383800C7E11F /* Main.storyboard in Resources */,
+				7143D7A51CBE389A00C7E11F /* Assets.xcassets in Resources */,
+				7143D7921CBE386800C7E11F /* tutorials.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -136,22 +158,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7143D7821CBE383800C7E11F /* ViewController.swift in Sources */,
-				7143D7801CBE383800C7E11F /* AppDelegate.swift in Sources */,
+				7143D7A41CBE389A00C7E11F /* TutorialVC.swift in Sources */,
+				7143D7A01CBE389A00C7E11F /* AppDelegate.swift in Sources */,
+				7143D79E1CBE389A00C7E11F /* MainVC.swift in Sources */,
+				7143D79F1CBE389A00C7E11F /* MainVCExtension.swift in Sources */,
+				7143D7A11CBE389A00C7E11F /* SyntaxTextStorage.swift in Sources */,
+				7143D7A21CBE389A00C7E11F /* Tutorial.swift in Sources */,
+				7143D7A31CBE389A00C7E11F /* TutorialStore.swift in Sources */,
+				7143D7A61CBE389A00C7E11F /* FAQVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		7143D7831CBE383800C7E11F /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				7143D7841CBE383800C7E11F /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		7143D7881CBE383800C7E11F /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -250,10 +270,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = "The Coding Challenge/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.donkeymonkey.The-Coding-Challenge";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -261,6 +283,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = "The Coding Challenge/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.donkeymonkey.The-Coding-Challenge";

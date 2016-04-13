@@ -1,0 +1,37 @@
+{"tutorials":
+    [{"name": "Hello World",
+     "introText": "For this first tutorial we will make a small program that all programmers knows very well, and that is to say \"Hello World!\"",
+     "imageName": "tut1.png",
+     "challenges":
+     [{"text": "We must first make a class, which we have named HalloWorld. Then we create a string variable HelloWorld and give it a value.\r Then we print out the value to test if it works.",
+      "code": "class HelloWorld {\r   var userText: String = Enter Code \r   print(text)\r}",
+      "input1": "\"Hello World\"",
+      "input2": "Good Day!",
+      "input3": "@How are you@",
+      "correctInput": 1,
+      "correctAnswerText": "Hello World"},
+      {"text": "Once we have created a variable it is time to create a label in order to show the text on the screen.\r We do this by creating an @IBOutlet (outlet) whose type is UILabel. \r Afterwards we set the text of this label to be equal to the variable we made earlier (userText).",
+      "code": "@IBOutlet var textLabel: UILabel {\r   textLabel.Enter Code = userText \r}",
+      "input1": "helloWorld",
+      "input2": "written",
+      "input3": "text",
+      "correctInput": 1}]
+     },
+     {"name": "Blablabla",
+     "introText": "For this first tutorial we will make a small program that all programmers knows VERY well, and that is to say \"Hello World!",
+     "imageName": "tut2.png",
+     "challenges":
+     [{"text": "Challenge 1",
+      "code": "class HelloWorld {\r   var helloWorld = Enter Code \r   print(helloWorld)\r   'Hello World!'\r}",
+      "input1": "Hello World",
+      "input2": "Good Day!",
+      "input3": "How are you",
+      "correctInput": 1},
+      {"text": "Challenge 2",
+      "code": "@IBOutlet var textLabel: UILabel {\r   textLabel. Enter Code = helloWorld \r}",
+      "input1": "helloWorld",
+      "input2": "written",
+      "input3": "text",
+      "correctInput": 3}]
+     }]
+}
