@@ -10,12 +10,14 @@ import UIKit
 
 class MainVC: UIViewController, JSONSourceDelegate {
     
+    var tutorialStore: TutorialStore!
+    
     var indexOfTutorialsPage = 0
     var numberOfTutorialPagesNeeded: Double = 1.0
     var numberOfTutorialPagesTotal = 0
     var numberOfTutorialsOnLastPage = 0
-    var tutorialStore: TutorialStore!
     var indexOfSelectedTutorial = 0
+    var firstTimeLoad: Bool?
     
     var tutorialsImage = UIImage(named: "tutorialsIcon")
     var faqImage = UIImage(named: "faqIcon")
@@ -27,7 +29,7 @@ class MainVC: UIViewController, JSONSourceDelegate {
     
     override func viewDidLoad() {
         
-        tutorialStore?.loadTutorialsData()
+        setImages()
         
         buttonNo1.imageView?.image = tutorialsImage
         buttonNo2.imageView?.image = faqImage
@@ -47,8 +49,7 @@ class MainVC: UIViewController, JSONSourceDelegate {
         buttonNo5.enabled = false
         mainMenuButton.enabled = false
         
-        setImages()
-        
+        firstTimeLoad = true
         super.viewDidLoad()
     }
     
@@ -124,7 +125,7 @@ class MainVC: UIViewController, JSONSourceDelegate {
     
     @IBAction func button3Pressed(sender: UIButton) {
         if buttonNo3.imageView?.image == iosImage {
-            
+            performSegueWithIdentifier("showFAQ", sender: sender)
         } else {
             findIndexOfTutorialFromImage(sender)
             print(indexOfSelectedTutorial)
@@ -132,13 +133,10 @@ class MainVC: UIViewController, JSONSourceDelegate {
         }
     }
     
-    
-    
     @IBAction func button4Pressed(sender: UIButton) {
         findIndexOfTutorialFromImage(sender)
         print(indexOfSelectedTutorial)
     }
-    
     
     @IBAction func showMoreTutorials(sender: UIButton) {
         showTutorials()
@@ -148,6 +146,11 @@ class MainVC: UIViewController, JSONSourceDelegate {
         if mainMenuButton.imageView?.image == mainMenuImage {
             showMainMenu()
         }
+    }
+    
+    @IBAction func unwindToMenu(segue: UIStoryboardSegue) {
+    
+    
     }
     
     func randomNumber() -> Double {
@@ -162,9 +165,11 @@ class MainVC: UIViewController, JSONSourceDelegate {
         while tutorialStore.count == 0 {
         }
         
-        while i < tutorialStore!.count {
-            tutorialImages.append(UIImage(named: tutorialStore![i].imageName!)!)
-            i += 1
+        if tutorialStore.count != 0 {
+            while i < tutorialStore!.count {
+                tutorialImages.append(UIImage(named: tutorialStore![i].imageName!)!)
+                i += 1
+            }
         }
     }
     

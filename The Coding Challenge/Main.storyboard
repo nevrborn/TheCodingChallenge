@@ -9,7 +9,7 @@
         <!--MainVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="MainVC" customModule="CodingChallenge" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MainVC" customModule="The_Coding_Challenge" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -81,6 +81,7 @@
                         <outlet property="buttonNo5" destination="CwV-I5-jSX" id="pOU-6d-c95"/>
                         <outlet property="mainMenuButton" destination="Pal-vF-Nsd" id="X2b-PM-QYp"/>
                         <segue destination="tLL-7b-j4n" kind="presentation" identifier="showTutorial" id="nkO-6t-V5C"/>
+                        <segue destination="LQf-jf-a7e" kind="show" identifier="showFAQ" id="8EX-Yh-vLe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -90,7 +91,7 @@
         <!--Title-->
         <scene sceneID="gW8-Wl-5th">
             <objects>
-                <viewController storyboardIdentifier="TutorialVC" id="Bhz-8r-BOe" customClass="TutorialVC" customModule="CodingChallenge" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TutorialVC" id="Bhz-8r-BOe" customClass="TutorialVC" customModule="The_Coding_Challenge" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="dtc-er-rse"/>
                         <viewControllerLayoutGuide type="bottom" id="jED-ch-lDm"/>
@@ -111,7 +112,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tutorial Explanation" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="20" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MFl-Cr-G9R">
                                         <rect key="frame" x="8" y="18" width="398" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -208,10 +209,10 @@
             </objects>
             <point key="canvasLocation" x="1474" y="348"/>
         </scene>
-        <!--View Controller-->
+        <!--Tutorial OverlayVC-->
         <scene sceneID="s8K-nY-qFm">
             <objects>
-                <viewController id="Ii7-UK-MzV" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TutorialOverlayVC" id="Ii7-UK-MzV" customClass="TutorialOverlayVC" customModule="The_Coding_Challenge" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="aOO-fI-CTe"/>
                         <viewControllerLayoutGuide type="bottom" id="ILc-Jp-L0Z"/>
@@ -219,17 +220,62 @@
                     <view key="view" contentMode="scaleToFill" id="Tku-Ua-rte">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iPad Landscape" translatesAutoresizingMaskIntoConstraints="NO" id="g6Q-eg-E9K">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello World" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cB6-2y-CvK">
+                                <rect key="frame" x="256" y="290" width="89" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WGM-Yx-yKB">
+                                <rect key="frame" x="40" y="550" width="520" height="30"/>
+                                <state key="normal" title="Next challenge"/>
+                                <connections>
+                                    <action selector="nextChallenge:" destination="Ii7-UK-MzV" eventType="touchUpInside" id="rmX-A7-rcb"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="juz-KB-eHE">
+                                <rect key="frame" x="180" y="170" width="240" height="261"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="DO2-X1-RgS"/>
+                                    <constraint firstAttribute="height" constant="261" id="fBb-aE-469"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="g6Q-eg-E9K" secondAttribute="bottom" id="2YP-La-2WN"/>
+                            <constraint firstAttribute="trailing" secondItem="g6Q-eg-E9K" secondAttribute="trailing" id="5B7-oj-2ov"/>
+                            <constraint firstItem="g6Q-eg-E9K" firstAttribute="leading" secondItem="Tku-Ua-rte" secondAttribute="leading" id="7js-Mm-2n8"/>
+                            <constraint firstItem="cB6-2y-CvK" firstAttribute="centerX" secondItem="Tku-Ua-rte" secondAttribute="centerX" id="QaT-8B-1vm"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="WGM-Yx-yKB" secondAttribute="trailing" constant="20" id="TxW-FC-OsE"/>
+                            <constraint firstItem="cB6-2y-CvK" firstAttribute="centerY" secondItem="Tku-Ua-rte" secondAttribute="centerY" id="csT-ra-SqW"/>
+                            <constraint firstItem="ILc-Jp-L0Z" firstAttribute="top" secondItem="WGM-Yx-yKB" secondAttribute="bottom" constant="20" id="gfJ-nh-svH"/>
+                            <constraint firstItem="juz-KB-eHE" firstAttribute="centerX" secondItem="Tku-Ua-rte" secondAttribute="centerX" id="kkp-98-9G6"/>
+                            <constraint firstItem="g6Q-eg-E9K" firstAttribute="top" secondItem="Tku-Ua-rte" secondAttribute="top" id="mKe-Tt-eLn"/>
+                            <constraint firstItem="WGM-Yx-yKB" firstAttribute="leading" secondItem="Tku-Ua-rte" secondAttribute="leadingMargin" constant="20" id="u65-iJ-sgS"/>
+                            <constraint firstItem="juz-KB-eHE" firstAttribute="centerY" secondItem="Tku-Ua-rte" secondAttribute="centerY" id="wj7-7M-WPt"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="imageView" destination="juz-KB-eHE" id="od2-HX-YLq"/>
+                        <outlet property="nextButton" destination="WGM-Yx-yKB" id="XGf-w9-E5a"/>
+                        <outlet property="textLabel" destination="cB6-2y-CvK" id="96u-70-fhC"/>
+                        <segue destination="wYj-r7-21g" kind="unwind" identifier="unwindToMenu" unwindAction="unwindToMenu:" id="M86-OK-ou5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="slD-SJ-GSQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="wYj-r7-21g" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2096" y="280"/>
+            <point key="canvasLocation" x="2078" y="280"/>
         </scene>
         <!--FAQVC-->
         <scene sceneID="raT-Wr-G1n">
             <objects>
-                <viewController id="LQf-jf-a7e" customClass="FAQVC" customModule="CodingChallenge" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="LQf-jf-a7e" customClass="FAQVC" customModule="The_Coding_Challenge" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="cIN-Qp-C2o"/>
                         <viewControllerLayoutGuide type="bottom" id="wkt-vr-oi5"/>
@@ -325,7 +371,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PRQ-VJ-BWp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="942" y="348"/>
+            <point key="canvasLocation" x="900" y="348"/>
         </scene>
     </scenes>
     <resources>
@@ -333,6 +379,7 @@
         <image name="BackgroundFAQ" width="414" height="736"/>
         <image name="codingTitle" width="282" height="93"/>
         <image name="faqIcon" width="143" height="143"/>
+        <image name="iPad Landscape" width="1024" height="768"/>
         <image name="iosIcon" width="142" height="143"/>
         <image name="mailIcon" width="75" height="75"/>
         <image name="newsletterIcon" width="75" height="75"/>

@@ -11,14 +11,19 @@ import UIKit
 class TutorialVC: UIViewController, UITextViewDelegate {
     
     var indexOfTutorial: Int?
-    var tutorial: Tutorial!
+    
     var indexOfChallenges: Int = 0
     var processedChallenges = [String: AnyObject]()
     var selectedUserOption: Int = 0
     var tutorialIntroFinished = false
+    var lastchallenge = false
+    var numberOfChallenges: Int = 0
+    var lastChallenge = false
     
-    var tutorialStore = TutorialStore()
+    var tutorial: Tutorial!
+    var tutorialStore: TutorialStore!
     var syntaxTextStorage: SyntaxTextStorage?
+    var tutorialOverlayDelegate = TutorialOverlayVC()
     
 
     @IBOutlet var tutorialText: UILabel!
@@ -32,9 +37,12 @@ class TutorialVC: UIViewController, UITextViewDelegate {
     
     override func viewDidLoad() {
         
+        tutorialIntroFinished = false
+        
         tutorial = tutorialStore[indexOfTutorial!]
         syntaxTextStorage = SyntaxTextStorage()
-        
+        numberOfChallenges = tutorial.challenges.count - 1
+       
         tutorialCodeView.hidden = true
         option1Button.hidden = true
         option2Button.hidden = true
@@ -44,19 +52,31 @@ class TutorialVC: UIViewController, UITextViewDelegate {
         tutorialText.text = tutorial.introText
         
         super.viewDidLoad()
-        
     }
     
 
     @IBAction func runButtonPressed(sender: UIButton) {
         
-        
         if tutorialIntroFinished == true {
+            
             if selectedUserOption == tutorial.challenges[indexOfChallenges].correctInput! {
+                
                 print("You made the correct choice")
-                nextChallenge(indexOfChallenges)
-                indexOfChallenges += 1
-            } else {
+                
+                let overlayVC = storyboard!.instantiateViewControllerWithIdentifier("TutorialOverlayVC") as! TutorialOverlayVC
+
+                prepareOverlayVC(overlayVC)
+                
+                overlayVC.updateOverlay(tutorial.challenges[indexOfChallenges].correctAnswerText!, currentChallenge: indexOfChallenges, totalChallenges: numberOfChallenges, endText: tutorial.endText!)
+                
+                presentViewController(overlayVC, animated: true, completion: nil)
+
+                if indexOfChallenges != numberOfChallenges {
+                    indexOfChallenges += 1
+                    nextChallenge(indexOfChallenges)
+                }
+                
+            } else if selectedUserOption != tutorial.challenges[indexOfChallenges].correctInput! {
                 print("You made the WRONG choice")
                 if selectedUserOption == 1 {
                     option1Button.backgroundColor = UIColor.redColor()
@@ -78,7 +98,7 @@ class TutorialVC: UIViewController, UITextViewDelegate {
             tutorialIntroFinished = true
             runButton.setTitle("Try it out!", forState: .Normal)
             nextChallenge(indexOfChallenges)
-            indexOfChallenges += 1
+            
         }
         
     }
@@ -132,7 +152,10 @@ class TutorialVC: UIViewController, UITextViewDelegate {
         
     }
     
-
+    private func prepareOverlayVC(overlayVC: UIViewController) {
+        overlayVC.transitioningDelegate = tutorialOverlayDelegate
+        overlayVC.modalPresentationStyle = .FullScreen
+    }
 }
 
 

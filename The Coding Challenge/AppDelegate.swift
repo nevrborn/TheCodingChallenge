@@ -18,14 +18,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
         tutorialStore.loadTutorialsData()
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        
+ 
         let mainMenuViewController = window?.rootViewController as! MainVC
         mainMenuViewController.tutorialStore = tutorialStore
         
-        let tutorialViewController = storyboard.instantiateViewControllerWithIdentifier("TutorialVC") as! TutorialVC
-        tutorialViewController.tutorialStore = tutorialStore
-        
+     
         return true
     }
 

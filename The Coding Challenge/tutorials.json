@@ -2,6 +2,7 @@
     [{"name": "Hello World",
      "introText": "For this first tutorial we will make a small program that all programmers knows very well, and that is to say \"Hello World!\"",
      "imageName": "tut1.png",
+     "endTutorialText": "Congratulations!\r\rYou've just made your first app!\r\rLet's try some more :-)",
      "challenges":
      [{"text": "We must first make a class, which we have named HalloWorld. Then we create a string variable HelloWorld and give it a value.\r Then we print out the value to test if it works.",
       "code": "class HelloWorld {\r   var userText: String = Enter Code \r   print(text)\r}",
@@ -9,13 +10,14 @@
       "input2": "Good Day!",
       "input3": "@How are you@",
       "correctInput": 1,
-      "correctAnswerText": "Hello World"},
-      {"text": "Once we have created a variable it is time to create a label in order to show the text on the screen.\r We do this by creating an @IBOutlet (outlet) whose type is UILabel. \r Afterwards we set the text of this label to be equal to the variable we made earlier (userText).",
+      "correctAnswerText": "Hello World! :-)"},
+      {"text": "Nothing showed right? It's because we have not created an outlet for the text to be displyed yet\r\r We do this by creating an @IBOutlet (outlet) whose type is UILabel. \r Afterwards we set the text of this label to be equal to the variable we made earlier (userText).",
       "code": "@IBOutlet var textLabel: UILabel {\r   textLabel.Enter Code = userText \r}",
       "input1": "helloWorld",
       "input2": "written",
       "input3": "text",
-      "correctInput": 1}]
+      "correctInput": 3,
+      "correctAnswerText": "Hello World!"}]
      },
      {"name": "Blablabla",
      "introText": "For this first tutorial we will make a small program that all programmers knows VERY well, and that is to say \"Hello World!",

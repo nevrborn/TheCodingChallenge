@@ -19,6 +19,9 @@
 		7143D7A41CBE389A00C7E11F /* TutorialVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7143D79A1CBE389A00C7E11F /* TutorialVC.swift */; };
 		7143D7A51CBE389A00C7E11F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7143D79B1CBE389A00C7E11F /* Assets.xcassets */; };
 		7143D7A61CBE389A00C7E11F /* FAQVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7143D79C1CBE389A00C7E11F /* FAQVC.swift */; };
+		7143D7A81CBE39FD00C7E11F /* OverlayPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7143D7A71CBE39FD00C7E11F /* OverlayPresentationController.swift */; };
+		7143D7AA1CBE3B2100C7E11F /* TutorialOverlayVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7143D7A91CBE3B2100C7E11F /* TutorialOverlayVC.swift */; };
+		7143D7AC1CBE4BCA00C7E11F /* OverlayAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7143D7AB1CBE4BCA00C7E11F /* OverlayAnimationController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +39,9 @@
 		7143D79A1CBE389A00C7E11F /* TutorialVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialVC.swift; sourceTree = "<group>"; };
 		7143D79B1CBE389A00C7E11F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7143D79C1CBE389A00C7E11F /* FAQVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FAQVC.swift; sourceTree = "<group>"; };
+		7143D7A71CBE39FD00C7E11F /* OverlayPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverlayPresentationController.swift; sourceTree = "<group>"; };
+		7143D7A91CBE3B2100C7E11F /* TutorialOverlayVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialOverlayVC.swift; sourceTree = "<group>"; };
+		7143D7AB1CBE4BCA00C7E11F /* OverlayAnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverlayAnimationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +83,9 @@
 				7143D7981CBE389A00C7E11F /* Tutorial.swift */,
 				7143D7991CBE389A00C7E11F /* TutorialStore.swift */,
 				7143D79A1CBE389A00C7E11F /* TutorialVC.swift */,
+				7143D7A91CBE3B2100C7E11F /* TutorialOverlayVC.swift */,
+				7143D7AB1CBE4BCA00C7E11F /* OverlayAnimationController.swift */,
+				7143D7A71CBE39FD00C7E11F /* OverlayPresentationController.swift */,
 				7143D79B1CBE389A00C7E11F /* Assets.xcassets */,
 				7143D79C1CBE389A00C7E11F /* FAQVC.swift */,
 				7143D7911CBE386800C7E11F /* tutorials.json */,
@@ -161,8 +170,11 @@
 				7143D7A41CBE389A00C7E11F /* TutorialVC.swift in Sources */,
 				7143D7A01CBE389A00C7E11F /* AppDelegate.swift in Sources */,
 				7143D79E1CBE389A00C7E11F /* MainVC.swift in Sources */,
+				7143D7AC1CBE4BCA00C7E11F /* OverlayAnimationController.swift in Sources */,
 				7143D79F1CBE389A00C7E11F /* MainVCExtension.swift in Sources */,
 				7143D7A11CBE389A00C7E11F /* SyntaxTextStorage.swift in Sources */,
+				7143D7A81CBE39FD00C7E11F /* OverlayPresentationController.swift in Sources */,
+				7143D7AA1CBE3B2100C7E11F /* TutorialOverlayVC.swift in Sources */,
 				7143D7A21CBE389A00C7E11F /* Tutorial.swift in Sources */,
 				7143D7A31CBE389A00C7E11F /* TutorialStore.swift in Sources */,
 				7143D7A61CBE389A00C7E11F /* FAQVC.swift in Sources */,

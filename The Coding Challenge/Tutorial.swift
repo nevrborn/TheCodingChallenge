@@ -17,17 +17,20 @@ public struct Tutorial {
     public var imageName: String?
     public var introText: String?
     public var challengeDict: Array<NSDictionary>?
+    public var endText: String?
     
     public init?(dictionary: NSDictionary) {
         let name = dictionary["name"] as? String
         let imageName = dictionary["imageName"] as? String
         let introText = dictionary["introText"] as? String
         let challengeDict = dictionary["challenges"] as! Array<NSDictionary>
+        let endText = dictionary["endTutorialText"] as? String
         
         self.name = name
         self.imageName = imageName
         self.introText = introText
         self.challengeDict = challengeDict
+        self.endText = endText
         
         self.challenges = challengeDict.map(Challenge.init).flatMap({ $0 })
         
