@@ -109,7 +109,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tutorial Explanation" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="20" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MFl-Cr-G9R">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tutorial Explanation" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="20" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MFl-Cr-G9R">
                                         <rect key="frame" x="8" y="18" width="398" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -221,7 +221,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iPad Landscape" translatesAutoresizingMaskIntoConstraints="NO" id="g6Q-eg-E9K">
+                            <imageView userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BackgroungLargeLogo" translatesAutoresizingMaskIntoConstraints="NO" id="g6Q-eg-E9K">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello World" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cB6-2y-CvK">
@@ -349,6 +349,41 @@
             </objects>
             <point key="canvasLocation" x="305" y="1319"/>
         </scene>
+        <!--QuizVC-->
+        <scene sceneID="Cs6-3f-mcB">
+            <objects>
+                <viewController id="Xtc-GB-uaz" customClass="QuizVC" customModule="The_Coding_Challenge" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="UaM-lx-M52"/>
+                        <viewControllerLayoutGuide type="bottom" id="jMX-3c-epr"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="H4p-rQ-5IR">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BackgroungLargeLogo" translatesAutoresizingMaskIntoConstraints="NO" id="CTz-Ba-x4i">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k4R-Td-kQB">
+                                <rect key="frame" x="279" y="63" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="CTz-Ba-x4i" firstAttribute="leading" secondItem="H4p-rQ-5IR" secondAttribute="leading" id="9e2-1Z-v1K"/>
+                            <constraint firstAttribute="trailing" secondItem="CTz-Ba-x4i" secondAttribute="trailing" id="E4U-D2-HDW"/>
+                            <constraint firstItem="jMX-3c-epr" firstAttribute="top" secondItem="CTz-Ba-x4i" secondAttribute="bottom" id="FvF-me-tgY"/>
+                            <constraint firstItem="CTz-Ba-x4i" firstAttribute="top" secondItem="H4p-rQ-5IR" secondAttribute="top" id="MKH-ri-Shn"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="q9H-q6-rwt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1036" y="1154"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="yxY-Z0-7Gh">
             <objects>
@@ -377,9 +412,9 @@
     <resources>
         <image name="Background2" width="414" height="736"/>
         <image name="BackgroundFAQ" width="414" height="736"/>
+        <image name="BackgroungLargeLogo" width="1024" height="768"/>
         <image name="codingTitle" width="282" height="93"/>
         <image name="faqIcon" width="143" height="143"/>
-        <image name="iPad Landscape" width="1024" height="768"/>
         <image name="mailIcon" width="75" height="75"/>
         <image name="newsletterIcon" width="75" height="75"/>
         <image name="phoneIcon" width="75" height="75"/>
