@@ -43,7 +43,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jFi-Hx-V5I" userLabel="Button No3">
                                 <rect key="frame" x="143" y="335" width="142" height="143"/>
-                                <state key="normal" image="iosIcon"/>
+                                <state key="normal" image="quizIcon"/>
                                 <connections>
                                     <action selector="button3Pressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pvV-2x-6h6"/>
                                 </connections>
@@ -380,10 +380,10 @@
         <image name="codingTitle" width="282" height="93"/>
         <image name="faqIcon" width="143" height="143"/>
         <image name="iPad Landscape" width="1024" height="768"/>
-        <image name="iosIcon" width="142" height="143"/>
         <image name="mailIcon" width="75" height="75"/>
         <image name="newsletterIcon" width="75" height="75"/>
         <image name="phoneIcon" width="75" height="75"/>
+        <image name="quizIcon" width="142" height="143"/>
         <image name="taaLogo" width="120" height="120"/>
         <image name="taaLogoBig" width="291" height="87"/>
         <image name="taaLogoFull" width="107" height="32"/>

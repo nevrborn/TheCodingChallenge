@@ -9,8 +9,8 @@
 import UIKit
 
 public protocol JSONSourceDelegate {
-    func dataIsLoaded()
-    func loadingFailed(errorMessage: String)
+    func tutorialDataIsLoaded()
+    func tutorialLoadingFailed(errorMessage: String)
 }
 
 public class TutorialStore {
@@ -49,7 +49,7 @@ public class TutorialStore {
             self.tutorials = tutorialInfo.map(Tutorial.init).flatMap({ $0 })
             
             NSOperationQueue.mainQueue().addOperationWithBlock({
-                self.delegate?.dataIsLoaded()
+                self.delegate?.tutorialDataIsLoaded()
             })
         }
         task.resume()
@@ -57,7 +57,7 @@ public class TutorialStore {
     
     private func failed(message: String) {
         NSOperationQueue.mainQueue().addOperationWithBlock({
-            self.delegate?.loadingFailed(message)
+            self.delegate?.tutorialLoadingFailed(message)
         })
         return
     }

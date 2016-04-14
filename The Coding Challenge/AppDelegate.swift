@@ -14,13 +14,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     var tutorialStore = TutorialStore()
+    var quizStore = QuizStore()
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
         tutorialStore.loadTutorialsData()
+        quizStore.loadQuizData()
  
         let mainMenuViewController = window?.rootViewController as! MainVC
         mainMenuViewController.tutorialStore = tutorialStore
+        mainMenuViewController.quizStore = quizStore
         
      
         return true

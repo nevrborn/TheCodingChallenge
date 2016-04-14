@@ -15,7 +15,7 @@ extension MainVC {
         
         buttonNo1.setImage(tutorialsImage, forState: .Normal)
         buttonNo2.setImage(faqImage, forState: .Normal)
-        buttonNo3.setImage(iosImage, forState: .Normal)
+        buttonNo3.setImage(quizImage, forState: .Normal)
         buttonNo5.setImage(logoImage, forState: .Normal)
         
         buttonNo1.hidden = false
@@ -31,7 +31,7 @@ extension MainVC {
         
     }
     
-    // When pressing Tutorials button
+    // Show Tutorials
     func showTutorials() {
         
         buttonNo5.setImage(moreTutorialsImage, forState: .Normal)
@@ -42,33 +42,33 @@ extension MainVC {
         mainMenuButton.enabled = true
         mainMenuButton.hidden = false
         
-        indexOfTutorialsPage = 0
+        indexOfPage = 0
         
         if tutorialStore.count <= 4 {
-            numberOfTutorialPagesNeeded = 1
-            numberOfTutorialPagesTotal = 1
-            numberOfTutorialsOnLastPage = tutorialStore.count
+            numberOfPagesNeeded = 1
+            numberOfPagesTotal = 1
+            numberOfItemsOnLastPage = tutorialStore.count
             buttonNo5.setImage(logoImage, forState: .Normal)
             buttonNo5.enabled = false
         } else {
-            numberOfTutorialPagesNeeded = Double(tutorialStore.count) / 4.0
-            numberOfTutorialPagesTotal = Int(ceil(numberOfTutorialPagesNeeded))
-            numberOfTutorialsOnLastPage = 4 - Int((numberOfTutorialPagesTotal * 4) - tutorialStore.count)
+            numberOfPagesNeeded = Double(tutorialStore.count) / 4.0
+            numberOfPagesTotal = Int(ceil(numberOfPagesNeeded))
+            numberOfItemsOnLastPage = 4 - Int((numberOfPagesTotal * 4) - tutorialStore.count)
         }
         
         // If already on the last page of tutorials, then go to the first page
-        if indexOfTutorialsPage == numberOfTutorialPagesTotal - 1 {
-            indexOfTutorialsPage = 0
+        if indexOfPage == numberOfPagesTotal - 1 {
+            indexOfPage = 0
         } else {
-            indexOfTutorialsPage += 1
+            indexOfPage += 1
         }
         
-        if indexOfTutorialsPage <= numberOfTutorialPagesTotal - 1 {
+        if indexOfPage <= numberOfPagesTotal - 1 {
             
-            let startIndexOfPicForPage = indexOfTutorialsPage * 4
+            let startIndexOfPicForPage = indexOfPage * 4
             
-            if numberOfTutorialsOnLastPage == 1 {
-                buttonNo1.setImage(tutorialImages[startIndexOfPicForPage], forState: .Normal)
+            if numberOfItemsOnLastPage == 1 {
+                buttonNo1.setImage(tutorialIcons[startIndexOfPicForPage], forState: .Normal)
                 
                 self.buttonNo1.hidden = false
                 self.buttonNo2.hidden = true
@@ -76,9 +76,9 @@ extension MainVC {
                 self.buttonNo4.hidden = true
             }
             
-            if numberOfTutorialsOnLastPage == 2 {
-                buttonNo1.setImage(tutorialImages[startIndexOfPicForPage], forState: .Normal)
-                buttonNo2.setImage(tutorialImages[startIndexOfPicForPage+1], forState: .Normal)
+            if numberOfItemsOnLastPage == 2 {
+                buttonNo1.setImage(tutorialIcons[startIndexOfPicForPage], forState: .Normal)
+                buttonNo2.setImage(tutorialIcons[startIndexOfPicForPage+1], forState: .Normal)
                 
                 self.buttonNo1.hidden = false
                 self.buttonNo2.hidden = false
@@ -86,10 +86,10 @@ extension MainVC {
                 self.buttonNo4.hidden = true
             }
             
-            if numberOfTutorialsOnLastPage == 3 {
-                buttonNo1.setImage(tutorialImages[startIndexOfPicForPage], forState: .Normal)
-                buttonNo2.setImage(tutorialImages[startIndexOfPicForPage+1], forState: .Normal)
-                buttonNo3.setImage(tutorialImages[startIndexOfPicForPage+2], forState: .Normal)
+            if numberOfItemsOnLastPage == 3 {
+                buttonNo1.setImage(tutorialIcons[startIndexOfPicForPage], forState: .Normal)
+                buttonNo2.setImage(tutorialIcons[startIndexOfPicForPage+1], forState: .Normal)
+                buttonNo3.setImage(tutorialIcons[startIndexOfPicForPage+2], forState: .Normal)
                 
                 self.buttonNo1.hidden = false
                 self.buttonNo2.hidden = false
@@ -97,11 +97,91 @@ extension MainVC {
                 self.buttonNo4.hidden = true
             }
             
-            if numberOfTutorialsOnLastPage == 4 {
-                buttonNo1.setImage(tutorialImages[startIndexOfPicForPage], forState: .Normal)
-                buttonNo2.setImage(tutorialImages[startIndexOfPicForPage+1], forState: .Normal)
-                buttonNo3.setImage(tutorialImages[startIndexOfPicForPage+2], forState: .Normal)
-                buttonNo4.setImage(tutorialImages[startIndexOfPicForPage+3], forState: .Normal)
+            if numberOfItemsOnLastPage == 4 {
+                buttonNo1.setImage(tutorialIcons[startIndexOfPicForPage], forState: .Normal)
+                buttonNo2.setImage(tutorialIcons[startIndexOfPicForPage+1], forState: .Normal)
+                buttonNo3.setImage(tutorialIcons[startIndexOfPicForPage+2], forState: .Normal)
+                buttonNo4.setImage(tutorialIcons[startIndexOfPicForPage+3], forState: .Normal)
+                
+                self.buttonNo1.hidden = false
+                self.buttonNo2.hidden = false
+                self.buttonNo3.hidden = false
+                self.buttonNo4.hidden = false
+            }
+        }
+    }
+    
+    // Show Quizzes
+    func showQuizzes() {
+        
+        buttonNo5.setImage(moreTutorialsImage, forState: .Normal)
+        mainMenuButton.setImage(mainMenuImage, forState: .Normal)
+        
+        buttonNo4.enabled = true
+        buttonNo5.enabled = true
+        mainMenuButton.enabled = true
+        mainMenuButton.hidden = false
+        
+        indexOfPage = 0
+        
+        if quizStore.count <= 4 {
+            numberOfPagesNeeded = 1
+            numberOfPagesTotal = 1
+            numberOfItemsOnLastPage = quizStore.count
+            buttonNo5.setImage(logoImage, forState: .Normal)
+            buttonNo5.enabled = false
+        } else {
+            numberOfPagesNeeded = Double(quizStore.count) / 4.0
+            numberOfPagesTotal = Int(ceil(numberOfPagesNeeded))
+            numberOfItemsOnLastPage = 4 - Int((numberOfPagesTotal * 4) - quizStore.count)
+        }
+        
+        // If already on the last page of tutorials, then go to the first page
+        if indexOfPage == numberOfPagesTotal - 1 {
+            indexOfPage = 0
+        } else {
+            indexOfPage += 1
+        }
+        
+        if indexOfPage <= numberOfPagesTotal - 1 {
+            
+            let startIndexOfPicForPage = indexOfPage * 4
+            
+            if numberOfItemsOnLastPage == 1 {
+                buttonNo1.setImage(quizIcons[startIndexOfPicForPage], forState: .Normal)
+                
+                self.buttonNo1.hidden = false
+                self.buttonNo2.hidden = true
+                self.buttonNo3.hidden = true
+                self.buttonNo4.hidden = true
+            }
+            
+            if numberOfItemsOnLastPage == 2 {
+                buttonNo1.setImage(quizIcons[startIndexOfPicForPage], forState: .Normal)
+                buttonNo2.setImage(quizIcons[startIndexOfPicForPage+1], forState: .Normal)
+                
+                self.buttonNo1.hidden = false
+                self.buttonNo2.hidden = false
+                self.buttonNo3.hidden = true
+                self.buttonNo4.hidden = true
+            }
+            
+            if numberOfItemsOnLastPage == 3 {
+                buttonNo1.setImage(quizIcons[startIndexOfPicForPage], forState: .Normal)
+                buttonNo2.setImage(quizIcons[startIndexOfPicForPage+1], forState: .Normal)
+                buttonNo3.setImage(quizIcons[startIndexOfPicForPage+2], forState: .Normal)
+                
+                self.buttonNo1.hidden = false
+                self.buttonNo2.hidden = false
+                self.buttonNo3.hidden = false
+                self.buttonNo4.hidden = true
+            }
+            
+            if numberOfItemsOnLastPage == 4 {
+                buttonNo1.setImage(quizIcons[startIndexOfPicForPage], forState: .Normal)
+                buttonNo2.setImage(quizIcons[startIndexOfPicForPage+1], forState: .Normal)
+                buttonNo3.setImage(quizIcons[startIndexOfPicForPage+2], forState: .Normal)
+                buttonNo4.setImage(quizIcons[startIndexOfPicForPage+3], forState: .Normal)
                 
                 self.buttonNo1.hidden = false
                 self.buttonNo2.hidden = false

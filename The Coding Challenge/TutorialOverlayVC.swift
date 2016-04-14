@@ -96,8 +96,6 @@ class TutorialOverlayVC: UIViewController, UIViewControllerTransitioningDelegate
         self.currentChallenge = currentChallenge
         self.totalChallenges = totalChallenges
         self.endText = endText
-        print(currentChallenge)
-        print(totalChallenges)
     }
     
 }

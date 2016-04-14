@@ -1,7 +1,7 @@
 {"tutorials":
     [{"name": "Hello World",
      "introText": "For this first tutorial we will make a small program that all programmers knows very well, and that is to say \"Hello World!\"",
-     "imageName": "tut1.png",
+     "iconName": "tut1.png",
      "endTutorialText": "Congratulations!\r\rYou've just made your first app!\r\rLet's try some more :-)",
      "challenges":
      [{"text": "We must first make a class, which we have named HalloWorld. Then we create a string variable HelloWorld and give it a value.\r Then we print out the value to test if it works.",
@@ -21,7 +21,7 @@
      },
      {"name": "Blablabla",
      "introText": "For this first tutorial we will make a small program that all programmers knows VERY well, and that is to say \"Hello World!",
-     "imageName": "tut2.png",
+     "iconName": "tut2.png",
      "challenges":
      [{"text": "Challenge 1",
       "code": "class HelloWorld {\r   var helloWorld = Enter Code \r   print(helloWorld)\r   'Hello World!'\r}",

@@ -8,24 +8,26 @@
 
 import UIKit
 
-class MainVC: UIViewController, JSONSourceDelegate {
+class MainVC: UIViewController, JSONSourceDelegate, JSONQuizSourceDelegate {
     
     var tutorialStore: TutorialStore!
+    var quizStore: QuizStore!
     
-    var indexOfTutorialsPage = 0
-    var numberOfTutorialPagesNeeded: Double = 1.0
-    var numberOfTutorialPagesTotal = 0
-    var numberOfTutorialsOnLastPage = 0
-    var indexOfSelectedTutorial = 0
+    var indexOfPage = 0
+    var numberOfPagesNeeded: Double = 1.0
+    var numberOfPagesTotal = 0
+    var numberOfItemsOnLastPage = 0
+    var indexOfSelectedItem = 0
     var firstTimeLoad: Bool?
     
     var tutorialsImage = UIImage(named: "tutorialsIcon")
     var faqImage = UIImage(named: "faqIcon")
-    var iosImage = UIImage(named: "iosIcon")
+    var quizImage = UIImage(named: "quizIcon")
     var moreTutorialsImage = UIImage(named: "tutMore")
     var mainMenuImage = UIImage(named: "tutMainMenu")
     var logoImage = UIImage(named: "taaLogo")
-    var tutorialImages: [UIImage] = []
+    var tutorialIcons: [UIImage] = []
+    var quizIcons: [UIImage] = []
     
     override func viewDidLoad() {
         
@@ -33,7 +35,7 @@ class MainVC: UIViewController, JSONSourceDelegate {
         
         buttonNo1.imageView?.image = tutorialsImage
         buttonNo2.imageView?.image = faqImage
-        buttonNo3.imageView?.image = iosImage
+        buttonNo3.imageView?.image = quizImage
         
         buttonNo1.hidden = false
         buttonNo2.hidden = false
@@ -101,41 +103,46 @@ class MainVC: UIViewController, JSONSourceDelegate {
             )}
     }
     
+    // TUTORIALS BUTTON
     @IBAction func buttonNo1Pressed(sender: UIButton) {
         if tutorialStore!.count != 0 {
             if buttonNo1.imageView?.image == tutorialsImage {
                 showTutorials()
             } else {
                 findIndexOfTutorialFromImage(sender)
-                print(indexOfSelectedTutorial)
+                print(indexOfSelectedItem)
                 performSegueWithIdentifier("showTutorial", sender: sender)
             }
         }
     }
     
+    // APP ACADEMY FAQ BUTTON
     @IBAction func button2Pressed(sender: UIButton) {
         if buttonNo2.imageView?.image == faqImage {
-            
+            performSegueWithIdentifier("showFAQ", sender: sender)
         } else {
             findIndexOfTutorialFromImage(sender)
-            print(indexOfSelectedTutorial)
+            print(indexOfSelectedItem)
             performSegueWithIdentifier("showTutorial", sender: sender)
         }
     }
     
+    // QUIZ BUTTON
     @IBAction func button3Pressed(sender: UIButton) {
-        if buttonNo3.imageView?.image == iosImage {
-            performSegueWithIdentifier("showFAQ", sender: sender)
-        } else {
-            findIndexOfTutorialFromImage(sender)
-            print(indexOfSelectedTutorial)
-            performSegueWithIdentifier("showTutorial", sender: sender)
+        if quizStore!.count != 0 {
+            if buttonNo3.imageView?.image == quizImage {
+                showQuizzes()
+            } else {
+                findIndexOfTutorialFromImage(sender)
+                print(indexOfSelectedItem)
+                performSegueWithIdentifier("showTutorial", sender: sender)
+            }
         }
     }
     
     @IBAction func button4Pressed(sender: UIButton) {
         findIndexOfTutorialFromImage(sender)
-        print(indexOfSelectedTutorial)
+        print(indexOfSelectedItem)
     }
     
     @IBAction func showMoreTutorials(sender: UIButton) {
@@ -149,8 +156,8 @@ class MainVC: UIViewController, JSONSourceDelegate {
     }
     
     @IBAction func unwindToMenu(segue: UIStoryboardSegue) {
-    
-    
+        
+        
     }
     
     func randomNumber() -> Double {
@@ -162,24 +169,32 @@ class MainVC: UIViewController, JSONSourceDelegate {
     func setImages() {
         var i = 0
         
-        while tutorialStore.count == 0 {
+        while tutorialStore.count == 0 || quizStore.count == 0 {
         }
         
         if tutorialStore.count != 0 {
             while i < tutorialStore!.count {
-                tutorialImages.append(UIImage(named: tutorialStore![i].imageName!)!)
+                tutorialIcons.append(UIImage(named: tutorialStore![i].iconName!)!)
+                i += 1
+            }
+        }
+        
+        if quizStore.count != 0 {
+            i = 0
+            while i < quizStore!.count {
+                quizIcons.append(UIImage(named: quizStore![i].iconName!)!)
                 i += 1
             }
         }
     }
     
     func findIndexOfTutorialFromImage(button: UIButton) -> Int {
-        for image in 0..<tutorialImages.count {
-            if UIImage(named: tutorialStore[image].imageName!) == button.imageView?.image {
-                indexOfSelectedTutorial = image
+        for image in 0..<tutorialIcons.count {
+            if UIImage(named: tutorialStore[image].iconName!) == button.imageView?.image {
+                indexOfSelectedItem = image
             }
         }
-        return indexOfSelectedTutorial
+        return indexOfSelectedItem
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -187,17 +202,29 @@ class MainVC: UIViewController, JSONSourceDelegate {
             
             let navigationViewController = segue.destinationViewController as! UINavigationController
             let tutorialViewController = navigationViewController.childViewControllers[0] as! TutorialVC
-            tutorialViewController.indexOfTutorial = indexOfSelectedTutorial
+            tutorialViewController.indexOfTutorial = indexOfSelectedItem
             tutorialViewController.tutorialStore = self.tutorialStore
         }
     }
     
-    func loadingFailed(errorMessage: String) {
+    // JSONDelegate methods
+    
+    func tutorialLoadingFailed(errorMessage: String) {
         let error = errorMessage
         print(error)
     }
     
-    func dataIsLoaded() {
+    func tutorialDataIsLoaded() {
+        
+    }
+    
+    func quizLoadingFailed(errorMessage: String) {
+        let error = errorMessage
+        print(error)
+    }
+    
+    func quizDataIsLoaded() {
+        
     }
     
     

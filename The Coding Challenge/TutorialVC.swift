@@ -60,9 +60,6 @@ class TutorialVC: UIViewController, UITextViewDelegate {
         if tutorialIntroFinished == true {
             
             if selectedUserOption == tutorial.challenges[indexOfChallenges].correctInput! {
-                
-                print("You made the correct choice")
-                
                 let overlayVC = storyboard!.instantiateViewControllerWithIdentifier("TutorialOverlayVC") as! TutorialOverlayVC
 
                 prepareOverlayVC(overlayVC)
@@ -77,7 +74,6 @@ class TutorialVC: UIViewController, UITextViewDelegate {
                 }
                 
             } else if selectedUserOption != tutorial.challenges[indexOfChallenges].correctInput! {
-                print("You made the WRONG choice")
                 if selectedUserOption == 1 {
                     option1Button.backgroundColor = UIColor.redColor()
                     option2Button.backgroundColor = UIColor.lightGrayColor()
