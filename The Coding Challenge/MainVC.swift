@@ -19,12 +19,13 @@ class MainVC: UIViewController, JSONSourceDelegate, JSONQuizSourceDelegate {
     var numberOfItemsOnLastPage = 0
     var indexOfSelectedItem = 0
     var firstTimeLoad: Bool?
+    var quizOrTutorial: String?
     
     var tutorialsImage = UIImage(named: "tutorialsIcon")
     var faqImage = UIImage(named: "faqIcon")
     var quizImage = UIImage(named: "quizIcon")
     var moreTutorialsImage = UIImage(named: "tutMore")
-    var mainMenuImage = UIImage(named: "tutMainMenu")
+    var mainMenuImage = UIImage(named: "mainMenu")
     var logoImage = UIImage(named: "taaLogo")
     var tutorialIcons: [UIImage] = []
     var quizIcons: [UIImage] = []
@@ -58,7 +59,7 @@ class MainVC: UIViewController, JSONSourceDelegate, JSONQuizSourceDelegate {
     @IBOutlet weak var buttonNo1: UIButton! {
         didSet {
             buttonNo1.transform = CGAffineTransformMakeScale(0, 0)
-            UIView.animateWithDuration(2.0, delay: 1, usingSpringWithDamping: 0.6,initialSpringVelocity: 3, options: .CurveLinear, animations: {
+            UIView.animateWithDuration(1.0, delay: 0.5, usingSpringWithDamping: 0.6,initialSpringVelocity: 3, options: .CurveLinear, animations: {
                 self.buttonNo1.transform = CGAffineTransformIdentity }, completion: nil
             )}
     }
@@ -66,7 +67,7 @@ class MainVC: UIViewController, JSONSourceDelegate, JSONQuizSourceDelegate {
     @IBOutlet weak var buttonNo2: UIButton! {
         didSet {
             buttonNo2.transform = CGAffineTransformMakeScale(0, 0)
-            UIView.animateWithDuration(2.0, delay: 1, usingSpringWithDamping: 0.6,initialSpringVelocity: 3, options: .CurveLinear, animations: {
+            UIView.animateWithDuration(1.0, delay: 0.5, usingSpringWithDamping: 0.6,initialSpringVelocity: 3, options: .CurveLinear, animations: {
                 self.buttonNo2.transform = CGAffineTransformIdentity }, completion: nil
             )}
     }
@@ -74,7 +75,7 @@ class MainVC: UIViewController, JSONSourceDelegate, JSONQuizSourceDelegate {
     @IBOutlet weak var buttonNo3: UIButton! {
         didSet {
             buttonNo3.transform = CGAffineTransformMakeScale(0, 0)
-            UIView.animateWithDuration(2.0, delay: 1, usingSpringWithDamping: 0.6,initialSpringVelocity: 3, options: .CurveLinear, animations: {
+            UIView.animateWithDuration(1.0, delay: 0.5, usingSpringWithDamping: 0.6,initialSpringVelocity: 3, options: .CurveLinear, animations: {
                 self.buttonNo3.transform = CGAffineTransformIdentity }, completion: nil
             )}
     }
@@ -90,7 +91,7 @@ class MainVC: UIViewController, JSONSourceDelegate, JSONQuizSourceDelegate {
     @IBOutlet weak var buttonNo5: UIButton! {
         didSet {
             buttonNo5.transform = CGAffineTransformMakeScale(0, 0)
-            UIView.animateWithDuration(2.0, delay: 1, usingSpringWithDamping: 0.6,initialSpringVelocity: 5, options: .CurveLinear, animations: {
+            UIView.animateWithDuration(1.5, delay: 1.5, usingSpringWithDamping: 1,initialSpringVelocity: 2, options: .CurveLinear, animations: {
                 self.buttonNo5.transform = CGAffineTransformIdentity }, completion: nil
             )}
     }
@@ -98,7 +99,7 @@ class MainVC: UIViewController, JSONSourceDelegate, JSONQuizSourceDelegate {
     @IBOutlet weak var mainMenuButton: UIButton! {
         didSet {
             mainMenuButton.transform = CGAffineTransformMakeScale(0, 0)
-            UIView.animateWithDuration(2.0, delay: 0.2, usingSpringWithDamping: 0.5,initialSpringVelocity: 5, options: .CurveLinear, animations: {
+            UIView.animateWithDuration(2.0, delay: 1, usingSpringWithDamping: 0.5,initialSpringVelocity: 5, options: .CurveLinear, animations: {
                 self.mainMenuButton.transform = CGAffineTransformIdentity }, completion: nil
             )}
     }
@@ -108,10 +109,14 @@ class MainVC: UIViewController, JSONSourceDelegate, JSONQuizSourceDelegate {
         if tutorialStore!.count != 0 {
             if buttonNo1.imageView?.image == tutorialsImage {
                 showTutorials()
-            } else {
+                quizOrTutorial = "tutorial"
+            } else if quizOrTutorial == "tutorial" {
                 findIndexOfTutorialFromImage(sender)
                 print(indexOfSelectedItem)
                 performSegueWithIdentifier("showTutorial", sender: sender)
+            } else if quizOrTutorial == "quiz" {
+                findIndexOfQuizFromImage(sender)
+                performSegueWithIdentifier("showQuiz", sender: sender)
             }
         }
     }
@@ -120,10 +125,13 @@ class MainVC: UIViewController, JSONSourceDelegate, JSONQuizSourceDelegate {
     @IBAction func button2Pressed(sender: UIButton) {
         if buttonNo2.imageView?.image == faqImage {
             performSegueWithIdentifier("showFAQ", sender: sender)
-        } else {
+        } else if quizOrTutorial == "tutorial" {
             findIndexOfTutorialFromImage(sender)
             print(indexOfSelectedItem)
             performSegueWithIdentifier("showTutorial", sender: sender)
+        } else if quizOrTutorial == "quiz" {
+            findIndexOfQuizFromImage(sender)
+            performSegueWithIdentifier("showQuiz", sender: sender)
         }
     }
     
@@ -132,17 +140,27 @@ class MainVC: UIViewController, JSONSourceDelegate, JSONQuizSourceDelegate {
         if quizStore!.count != 0 {
             if buttonNo3.imageView?.image == quizImage {
                 showQuizzes()
-            } else {
+                quizOrTutorial = "quiz"
+            } else if quizOrTutorial == "tutorial" {
                 findIndexOfTutorialFromImage(sender)
                 print(indexOfSelectedItem)
                 performSegueWithIdentifier("showTutorial", sender: sender)
+            } else if quizOrTutorial == "quiz" {
+                findIndexOfQuizFromImage(sender)
+                performSegueWithIdentifier("showQuiz", sender: sender)
             }
         }
     }
     
     @IBAction func button4Pressed(sender: UIButton) {
-        findIndexOfTutorialFromImage(sender)
-        print(indexOfSelectedItem)
+        if quizOrTutorial == "tutorial" {
+            findIndexOfTutorialFromImage(sender)
+            print(indexOfSelectedItem)
+            performSegueWithIdentifier("showTutorial", sender: sender)
+        } else if quizOrTutorial == "quiz" {
+            findIndexOfQuizFromImage(sender)
+            performSegueWithIdentifier("showQuiz", sender: sender)
+        }
     }
     
     @IBAction func showMoreTutorials(sender: UIButton) {
@@ -197,6 +215,15 @@ class MainVC: UIViewController, JSONSourceDelegate, JSONQuizSourceDelegate {
         return indexOfSelectedItem
     }
     
+    func findIndexOfQuizFromImage(button: UIButton) -> Int {
+        for image in 0..<quizIcons.count {
+            if UIImage(named: quizStore[image].iconName!) == button.imageView?.image {
+                indexOfSelectedItem = image
+            }
+        }
+        return indexOfSelectedItem
+    }
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "showTutorial" {
             
@@ -204,6 +231,13 @@ class MainVC: UIViewController, JSONSourceDelegate, JSONQuizSourceDelegate {
             let tutorialViewController = navigationViewController.childViewControllers[0] as! TutorialVC
             tutorialViewController.indexOfTutorial = indexOfSelectedItem
             tutorialViewController.tutorialStore = self.tutorialStore
+        }
+        
+        if segue.identifier == "showQuiz" {
+            
+            let quizViewController = segue.destinationViewController as! QuizVC
+            quizViewController.indexOfQuiz = indexOfSelectedItem
+            quizViewController.quizStore = self.quizStore
         }
     }
     

@@ -25,7 +25,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         mainMenuViewController.tutorialStore = tutorialStore
         mainMenuViewController.quizStore = quizStore
         
-     
         return true
     }
 

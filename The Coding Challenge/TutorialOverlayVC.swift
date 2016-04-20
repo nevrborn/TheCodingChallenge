@@ -21,6 +21,9 @@ class TutorialOverlayVC: UIViewController, UIViewControllerTransitioningDelegate
     var finishedChallenge: Bool = false
     var tutorialStore: TutorialStore!
     
+    var displayImage = false
+    var imageToDisplay: String = ""
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         self.commonInit()
@@ -38,7 +41,14 @@ class TutorialOverlayVC: UIViewController, UIViewControllerTransitioningDelegate
     }
     
     override func viewDidLoad() {
-        textLabel.text = answerText
+        if displayImage == false {
+            textLabel.text = answerText
+            imageView.hidden = false
+        } else if displayImage == true {
+            textLabel.text = answerText
+            imageView.image = UIImage(named: imageToDisplay)
+            imageView.hidden = false
+        }
     }
     
     // ---- UIViewControllerTransitioningDelegate methods
@@ -91,11 +101,25 @@ class TutorialOverlayVC: UIViewController, UIViewControllerTransitioningDelegate
     }
     
     
-    func updateOverlay(correctAnswer: String, currentChallenge: Int, totalChallenges: Int, endText: String) {
-        self.answerText = correctAnswer
-        self.currentChallenge = currentChallenge
-        self.totalChallenges = totalChallenges
-        self.endText = endText
+    func updateOverlay(correctAnswer: String, currentChallenge: Int, totalChallenges: Int, endText: String, displayImage: Bool, imageName: String) {
+        
+        if displayImage == false {
+            self.answerText = correctAnswer
+            self.currentChallenge = currentChallenge
+            self.totalChallenges = totalChallenges
+            self.endText = endText
+            self.displayImage = false
+
+        } else if displayImage == true {
+            self.answerText = correctAnswer
+            self.currentChallenge = currentChallenge
+            self.totalChallenges = totalChallenges
+            self.endText = endText
+            self.imageToDisplay = imageName
+            self.displayImage = true
+        }
+        
+        
     }
     
 }

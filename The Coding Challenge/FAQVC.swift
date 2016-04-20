@@ -13,7 +13,7 @@ class FAQVC: UIViewController, MFMailComposeViewControllerDelegate {
     
     @IBAction func webButton(sender: AnyObject) {
         
-        let url = NSURL(string: "http://www.theappacademy.nl")!
+        let url = NSURL(string: "http://en.theappacademy.nl")!
         UIApplication.sharedApplication().openURL(url)
         //webView.loadRequest(NSURLRequest(URL: url))
     }

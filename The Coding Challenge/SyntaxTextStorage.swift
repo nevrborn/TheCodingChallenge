@@ -98,8 +98,6 @@ class SyntaxTextStorage: NSTextStorage {
         performFormattingOnCode(CodeOption1Code, nameOfKey: CodeOption1AttributedCode)
         performFormattingOnCode(CodeOption2Code, nameOfKey: CodeOption2AttributedCode)
         performFormattingOnCode(CodeOption3Code, nameOfKey: CodeOption3AttributedCode)
-        
-
     }
     
     

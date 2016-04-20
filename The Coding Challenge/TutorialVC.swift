@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AudioToolbox
 
 class TutorialVC: UIViewController, UITextViewDelegate {
     
@@ -19,11 +20,16 @@ class TutorialVC: UIViewController, UITextViewDelegate {
     var lastchallenge = false
     var numberOfChallenges: Int = 0
     var lastChallenge = false
+    var imageToBeDisplayed: String = ""
     
     var tutorial: Tutorial!
     var tutorialStore: TutorialStore!
     var syntaxTextStorage: SyntaxTextStorage?
     var tutorialOverlayDelegate = TutorialOverlayVC()
+    
+    var optionImage = UIImage(named: "questionBar.png")
+    var selectedOptionImage = UIImage(named: "questionBarGreen.png")
+    var wrongOptionImage = UIImage(named: "questionBarRed.png")
     
 
     @IBOutlet var tutorialText: UILabel!
@@ -57,14 +63,16 @@ class TutorialVC: UIViewController, UITextViewDelegate {
 
     @IBAction func runButtonPressed(sender: UIButton) {
         
+        let currentChallenge = tutorial.challenges[indexOfChallenges]
+        
         if tutorialIntroFinished == true {
             
-            if selectedUserOption == tutorial.challenges[indexOfChallenges].correctInput! {
+            if selectedUserOption == currentChallenge.correctInput! || currentChallenge.correctInput == 0 {
                 let overlayVC = storyboard!.instantiateViewControllerWithIdentifier("TutorialOverlayVC") as! TutorialOverlayVC
 
                 prepareOverlayVC(overlayVC)
                 
-                overlayVC.updateOverlay(tutorial.challenges[indexOfChallenges].correctAnswerText!, currentChallenge: indexOfChallenges, totalChallenges: numberOfChallenges, endText: tutorial.endText!)
+                overlayVC.updateOverlay(currentChallenge.correctAnswerText!, currentChallenge: indexOfChallenges, totalChallenges: numberOfChallenges, endText: tutorial.endText!, displayImage: currentChallenge.imageToDisplay!, imageName: imageToBeDisplayed)
                 
                 presentViewController(overlayVC, animated: true, completion: nil)
 
@@ -73,21 +81,34 @@ class TutorialVC: UIViewController, UITextViewDelegate {
                     nextChallenge(indexOfChallenges)
                 }
                 
-            } else if selectedUserOption != tutorial.challenges[indexOfChallenges].correctInput! {
+            } else if selectedUserOption != currentChallenge.correctInput! {
+                AudioServicesPlayAlertSound(kSystemSoundID_Vibrate)
                 if selectedUserOption == 1 {
-                    option1Button.backgroundColor = UIColor.redColor()
-                    option2Button.backgroundColor = UIColor.lightGrayColor()
-                    option3Button.backgroundColor = UIColor.lightGrayColor()
+                    option1Button.setBackgroundImage(wrongOptionImage, forState: .Normal)
+                    option2Button.setBackgroundImage(optionImage, forState: .Normal)
+                    option3Button.setBackgroundImage(optionImage, forState: .Normal)
+                    
+                    option1Button.setTitle("Wrong answer. Try again!", forState: .Normal)
+                    option2Button.setTitle(currentChallenge.input2! as String, forState: .Normal)
+                    option3Button.setTitle(currentChallenge.input3! as String, forState: .Normal)
                 }
                 if selectedUserOption == 2 {
-                    option1Button.backgroundColor = UIColor.lightGrayColor()
-                    option2Button.backgroundColor = UIColor.redColor()
-                    option3Button.backgroundColor = UIColor.lightGrayColor()
+                    option1Button.setBackgroundImage(optionImage, forState: .Normal)
+                    option2Button.setBackgroundImage(wrongOptionImage, forState: .Normal)
+                    option3Button.setBackgroundImage(optionImage, forState: .Normal)
+                    
+                    option1Button.setTitle(currentChallenge.input1! as String, forState: .Normal)
+                    option2Button.setTitle("Wrong answer. Try again!", forState: .Normal)
+                    option3Button.setTitle(currentChallenge.input3! as String, forState: .Normal)
                 }
                 if selectedUserOption == 3 {
-                    option1Button.backgroundColor = UIColor.lightGrayColor()
-                    option2Button.backgroundColor = UIColor.lightGrayColor()
-                    option3Button.backgroundColor = UIColor.redColor()
+                    option1Button.setBackgroundImage(optionImage, forState: .Normal)
+                    option2Button.setBackgroundImage(optionImage, forState: .Normal)
+                    option3Button.setBackgroundImage(wrongOptionImage, forState: .Normal)
+                    
+                    option1Button.setTitle(currentChallenge.input1! as String, forState: .Normal)
+                    option2Button.setTitle(currentChallenge.input2! as String, forState: .Normal)
+                    option3Button.setTitle("Wrong answer. Try again!", forState: .Normal)
                 }
             }
         } else {
@@ -100,27 +121,45 @@ class TutorialVC: UIViewController, UITextViewDelegate {
     }
     
     @IBAction func pressedOption1(sender: UIButton) {
+        let currentChallenge = tutorial.challenges[indexOfChallenges]
         tutorialCodeView.attributedText = processedChallenges[CodeOption1AttributedCode] as! NSMutableAttributedString
         selectedUserOption = 1
-        option1Button.backgroundColor = UIColor.cyanColor()
-        option2Button.backgroundColor = UIColor.lightGrayColor()
-        option3Button.backgroundColor = UIColor.lightGrayColor()
+        imageToBeDisplayed = tutorial.challenges[indexOfChallenges].input1!
+        option1Button.setBackgroundImage(selectedOptionImage, forState: .Normal)
+        option2Button.setBackgroundImage(optionImage, forState: .Normal)
+        option3Button.setBackgroundImage(optionImage, forState: .Normal)
+        
+        option1Button.setTitle(currentChallenge.input1! as String, forState: .Normal)
+        option2Button.setTitle(currentChallenge.input2! as String, forState: .Normal)
+        option3Button.setTitle(currentChallenge.input3! as String, forState: .Normal)
     }
     
     @IBAction func pressedOption2(sender: UIButton) {
+        let currentChallenge = tutorial.challenges[indexOfChallenges]
         tutorialCodeView.attributedText = processedChallenges[CodeOption2AttributedCode] as! NSMutableAttributedString
         selectedUserOption = 2
-        option1Button.backgroundColor = UIColor.lightGrayColor()
-        option2Button.backgroundColor = UIColor.cyanColor()
-        option3Button.backgroundColor = UIColor.lightGrayColor()
+        imageToBeDisplayed = tutorial.challenges[indexOfChallenges].input2!
+        option1Button.setBackgroundImage(optionImage, forState: .Normal)
+        option2Button.setBackgroundImage(selectedOptionImage, forState: .Normal)
+        option3Button.setBackgroundImage(optionImage, forState: .Normal)
+        
+        option1Button.setTitle(currentChallenge.input1! as String, forState: .Normal)
+        option2Button.setTitle(currentChallenge.input2! as String, forState: .Normal)
+        option3Button.setTitle(currentChallenge.input3! as String, forState: .Normal)
     }
     
     @IBAction func pressedOption3(sender: UIButton) {
+        let currentChallenge = tutorial.challenges[indexOfChallenges]
         tutorialCodeView.attributedText  = processedChallenges[CodeOption3AttributedCode] as! NSMutableAttributedString
         selectedUserOption = 3
-        option1Button.backgroundColor = UIColor.lightGrayColor()
-        option2Button.backgroundColor = UIColor.lightGrayColor()
-        option3Button.backgroundColor = UIColor.cyanColor()
+        imageToBeDisplayed = tutorial.challenges[indexOfChallenges].input3!
+        option1Button.setBackgroundImage(optionImage, forState: .Normal)
+        option2Button.setBackgroundImage(optionImage, forState: .Normal)
+        option3Button.setBackgroundImage(selectedOptionImage, forState: .Normal)
+        
+        option1Button.setTitle(currentChallenge.input1! as String, forState: .Normal)
+        option2Button.setTitle(currentChallenge.input2! as String, forState: .Normal)
+        option3Button.setTitle(currentChallenge.input3! as String, forState: .Normal)
     }
     
     
@@ -137,9 +176,9 @@ class TutorialVC: UIViewController, UITextViewDelegate {
         option2Button.setTitle(challenge.input2! as String, forState: .Normal)
         option3Button.setTitle(challenge.input3! as String, forState: .Normal)
         
-        option1Button.backgroundColor = UIColor.lightGrayColor()
-        option2Button.backgroundColor = UIColor.lightGrayColor()
-        option3Button.backgroundColor = UIColor.lightGrayColor()
+        option1Button.setBackgroundImage(optionImage, forState: .Normal)
+        option2Button.setBackgroundImage(optionImage, forState: .Normal)
+        option3Button.setBackgroundImage(optionImage, forState: .Normal)
         
         tutorialCodeView.hidden = false
         option1Button.hidden = false
