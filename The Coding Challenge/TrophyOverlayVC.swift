@@ -8,18 +8,54 @@
 
 import UIKit
 
-class TrophyVC: UIViewController {
+class TrophyOverlayVC: UIViewController, UIViewControllerTransitioningDelegate {
     
     @IBOutlet var logo: UIImageView!
     @IBOutlet var throphy: UIImageView!
     @IBOutlet var congratulationsLabel: UILabel!
+    @IBOutlet var textLabel: UILabel!
+    
+    var tutorialName: String = ""
+    var score: Int = 0
+    var quizName: String = ""
+    var toBeDisplayed: String = ""
+    
+    @IBAction func share(sender: UIButton) {
+        let vc = UIActivityViewController(activityItems:["\(Int(score)) / 100 points on the \(quizName) quiz with CodeChallenge app.\r\r Interested in coding? Check out @AppAcademyNL"], applicationActivities: nil)
+        self.presentViewController(vc, animated: true, completion: nil)
+    }
+    
+    @IBAction func learnMore(sender: UIButton) {
+    }
+    
+    @IBAction func goToMainMenu(sender: UIButton) {
+        self.performSegueWithIdentifier("unwindToMenu", sender: self)
+    }
+    
     
     override func viewDidLoad() {
+        
+        if toBeDisplayed == "quiz" {
+            textLabel.text = "You've completed the \(quizName) quiz and scored \(Int(score)) / 100 points!"
+        } else if toBeDisplayed == "tutorial" {
+            textLabel.text = "You've completed the \(tutorialName) tutorial! \r\r"
+        }
         
         for _ in 0..<100 {
             drawCircle(20)
         }
         
+    }
+    
+    func updateQuizTrophyOverlay(toBeDisplayed: String, quizName: String) {
+        self.toBeDisplayed = toBeDisplayed
+        self.quizName = quizName
+    }
+    
+    func updateTutorialTrophyOverlay(toBeDiplayed: String, tutorialName: String, score: Int) {
+        self.toBeDisplayed = toBeDiplayed
+        self.tutorialName = tutorialName
+        self.score = score
     }
     
     func drawCircle(radiusDivider: CGFloat) {

@@ -104,6 +104,11 @@ class MainVC: UIViewController, JSONSourceDelegate, JSONQuizSourceDelegate {
             )}
     }
     
+    @IBAction func taaLogoButton(sender: UIButton) {
+        let url = NSURL(string: "http://en.theappacademy.nl")!
+        UIApplication.sharedApplication().openURL(url)
+    }
+    
     // TUTORIALS BUTTON
     @IBAction func buttonNo1Pressed(sender: UIButton) {
         if tutorialStore!.count != 0 {

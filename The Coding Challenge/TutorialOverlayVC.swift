@@ -20,6 +20,7 @@ class TutorialOverlayVC: UIViewController, UIViewControllerTransitioningDelegate
     var endText: String?
     var finishedChallenge: Bool = false
     var tutorialStore: TutorialStore!
+    var trophyOverlayDelegate = TrophyOverlayVC()
     
     var displayImage = false
     var imageToDisplay: String = ""
@@ -95,7 +96,14 @@ class TutorialOverlayVC: UIViewController, UIViewControllerTransitioningDelegate
             finishedChallenge = true
             
         } else if finishedChallenge == true {
-            self.performSegueWithIdentifier("unwindToMenu", sender: self)
+            let overlayVC = storyboard!.instantiateViewControllerWithIdentifier("TrophyOverlayVC") as! TrophyOverlayVC
+            
+            prepareOverlayVC(overlayVC)
+            
+            overlayVC.updateTutorialTrophyOverlay("tutorial", tutorialName: "Functions", score: 20)
+            
+            presentViewController(overlayVC, animated: true, completion: nil)
+
             finishedChallenge = false
         }
     }
@@ -120,6 +128,11 @@ class TutorialOverlayVC: UIViewController, UIViewControllerTransitioningDelegate
         }
         
         
+    }
+    
+    private func prepareOverlayVC(overlayVC: UIViewController) {
+        overlayVC.transitioningDelegate = trophyOverlayDelegate
+        overlayVC.modalPresentationStyle = .FullScreen
     }
     
 }
