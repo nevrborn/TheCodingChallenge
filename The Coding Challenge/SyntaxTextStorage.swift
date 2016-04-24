@@ -74,7 +74,9 @@ class SyntaxTextStorage: NSTextStorage {
             "(Enter Code)" : redAttribute,
             "(@IBOutlet)" : blueAttribute,
             "(String)" : blueAttribute,
-            "(UILabel)" : blueAttribute
+            "(UILabel)" : blueAttribute,
+            "(presentViewController)" : blueAttribute,
+            "(imagePicker)" : blueAttribute
         ]
     }
     

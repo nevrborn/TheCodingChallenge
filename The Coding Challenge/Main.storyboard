@@ -327,6 +327,9 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b4D-m1-gC4" userLabel="Main Menu Button">
                                 <rect key="frame" x="226" y="-78" width="141" height="142"/>
                                 <state key="normal" image="tutMainMenu"/>
+                                <connections>
+                                    <segue destination="3FT-o2-kuN" kind="unwind" unwindAction="unwindToMenu:" id="To5-eX-fb5"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l1R-mT-abW" userLabel="Newsletter Button">
                                 <rect key="frame" x="134" y="459" width="75" height="75"/>
@@ -362,6 +365,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UYb-7g-nzH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="3FT-o2-kuN" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="305" y="1319"/>
         </scene>
