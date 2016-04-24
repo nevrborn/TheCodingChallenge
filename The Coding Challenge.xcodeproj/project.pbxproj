@@ -26,9 +26,9 @@
 		71E99AC31CBF8C230055BAEF /* Quiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E99AC21CBF8C230055BAEF /* Quiz.swift */; };
 		71E99AC51CBF8C3E0055BAEF /* QuizStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E99AC41CBF8C3E0055BAEF /* QuizStore.swift */; };
 		71E99AC71CBFA2090055BAEF /* QuizVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E99AC61CBFA2090055BAEF /* QuizVC.swift */; };
-		71E99AC91CC0D92A0055BAEF /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E99AC81CC0D92A0055BAEF /* ProgressView.swift */; };
 		71E99AF61CC66A800055BAEF /* QuizMainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E99AF51CC66A800055BAEF /* QuizMainVC.swift */; };
 		71E99AFC1CC77BB70055BAEF /* TrophyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E99AFB1CC77BB70055BAEF /* TrophyVC.swift */; };
+		84C6BAEC1CCA607000D00BF6 /* VideoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C6BAEB1CCA607000D00BF6 /* VideoVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,9 +53,9 @@
 		71E99AC21CBF8C230055BAEF /* Quiz.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Quiz.swift; sourceTree = "<group>"; };
 		71E99AC41CBF8C3E0055BAEF /* QuizStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizStore.swift; sourceTree = "<group>"; };
 		71E99AC61CBFA2090055BAEF /* QuizVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizVC.swift; sourceTree = "<group>"; };
-		71E99AC81CC0D92A0055BAEF /* ProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
 		71E99AF51CC66A800055BAEF /* QuizMainVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizMainVC.swift; sourceTree = "<group>"; };
 		71E99AFB1CC77BB70055BAEF /* TrophyVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrophyVC.swift; sourceTree = "<group>"; };
+		84C6BAEB1CCA607000D00BF6 /* VideoVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +72,7 @@
 		7143D7731CBE383800C7E11F = {
 			isa = PBXGroup;
 			children = (
+				84C6BAEB1CCA607000D00BF6 /* VideoVC.swift */,
 				7143D77E1CBE383800C7E11F /* The Coding Challenge */,
 				7143D77D1CBE383800C7E11F /* Products */,
 			);
@@ -96,7 +97,6 @@
 				7143D7971CBE389A00C7E11F /* SyntaxTextStorage.swift */,
 				7143D7981CBE389A00C7E11F /* Tutorial.swift */,
 				7143D7991CBE389A00C7E11F /* TutorialStore.swift */,
-				71E99AC81CC0D92A0055BAEF /* ProgressView.swift */,
 				71E99AFB1CC77BB70055BAEF /* TrophyVC.swift */,
 				7143D79A1CBE389A00C7E11F /* TutorialVC.swift */,
 				7143D7A91CBE3B2100C7E11F /* TutorialOverlayVC.swift */,
@@ -191,8 +191,8 @@
 			files = (
 				7143D7A41CBE389A00C7E11F /* TutorialVC.swift in Sources */,
 				71E99AC71CBFA2090055BAEF /* QuizVC.swift in Sources */,
-				71E99AC91CC0D92A0055BAEF /* ProgressView.swift in Sources */,
 				71E99AF61CC66A800055BAEF /* QuizMainVC.swift in Sources */,
+				84C6BAEC1CCA607000D00BF6 /* VideoVC.swift in Sources */,
 				71E99AC51CBF8C3E0055BAEF /* QuizStore.swift in Sources */,
 				7143D7A01CBE389A00C7E11F /* AppDelegate.swift in Sources */,
 				71E99AC31CBF8C230055BAEF /* Quiz.swift in Sources */,

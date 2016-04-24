@@ -15,7 +15,6 @@ class FAQVC: UIViewController, MFMailComposeViewControllerDelegate {
         
         let url = NSURL(string: "http://en.theappacademy.nl")!
         UIApplication.sharedApplication().openURL(url)
-        //webView.loadRequest(NSURLRequest(URL: url))
     }
     
     @IBAction func makeCall(sender: AnyObject) {

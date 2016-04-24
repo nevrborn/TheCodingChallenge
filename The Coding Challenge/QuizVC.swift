@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AudioToolbox
 
 class QuizVC: UIViewController {
     
@@ -25,6 +26,10 @@ class QuizVC: UIViewController {
     var pointsToScore: Double = 0
     var firstTimeLoad = true
     
+    var optionImage = UIImage(named: "questionBar.png")
+    var selectedOptionImage = UIImage(named: "questionBarGreen.png")
+    var wrongOptionImage = UIImage(named: "questionBarRed.png")
+    
     @IBOutlet var questionLabel: UILabel!
     @IBOutlet var option1Button: UIButton!
     @IBOutlet var option2Button: UIButton!
@@ -32,37 +37,39 @@ class QuizVC: UIViewController {
     @IBOutlet var option4Button: UIButton!
     @IBOutlet var runButton: UIButton!
     @IBOutlet var progressView: UIProgressView!
+    @IBOutlet var progressLabel: UILabel!
+    @IBOutlet var scoreLabel: UILabel!
     
     @IBAction func option1ButtonPressed(sender: UIButton) {
         userAnswer = 1
-        sender.setTitleColor(UIColor.greenColor(), forState: .Normal)
-        option2Button.setTitleColor(UIColor.blueColor(), forState: .Normal)
-        option3Button.setTitleColor(UIColor.blueColor(), forState: .Normal)
-        option4Button.setTitleColor(UIColor.blueColor(), forState: .Normal)
+        option1Button.setBackgroundImage(selectedOptionImage, forState: .Normal)
+        option2Button.setBackgroundImage(optionImage, forState: .Normal)
+        option3Button.setBackgroundImage(optionImage, forState: .Normal)
+        option4Button.setBackgroundImage(optionImage, forState: .Normal)
     }
     
     @IBAction func option2ButtonPressed(sender: UIButton) {
         userAnswer = 2
-        sender.setTitleColor(UIColor.greenColor(), forState: .Normal)
-        option1Button.setTitleColor(UIColor.blueColor(), forState: .Normal)
-        option3Button.setTitleColor(UIColor.blueColor(), forState: .Normal)
-        option4Button.setTitleColor(UIColor.blueColor(), forState: .Normal)
+        option1Button.setBackgroundImage(optionImage, forState: .Normal)
+        option2Button.setBackgroundImage(selectedOptionImage, forState: .Normal)
+        option3Button.setBackgroundImage(optionImage, forState: .Normal)
+        option4Button.setBackgroundImage(optionImage, forState: .Normal)
     }
     
     @IBAction func option3ButtonPressed(sender: UIButton) {
         userAnswer = 3
-        sender.setTitleColor(UIColor.greenColor(), forState: .Normal)
-        option1Button.setTitleColor(UIColor.blueColor(), forState: .Normal)
-        option2Button.setTitleColor(UIColor.blueColor(), forState: .Normal)
-        option4Button.setTitleColor(UIColor.blueColor(), forState: .Normal)
+        option1Button.setBackgroundImage(optionImage, forState: .Normal)
+        option2Button.setBackgroundImage(optionImage, forState: .Normal)
+        option3Button.setBackgroundImage(selectedOptionImage, forState: .Normal)
+        option4Button.setBackgroundImage(optionImage, forState: .Normal)
     }
     
     @IBAction func option4ButtonPressed(sender: UIButton) {
         userAnswer = 4
-        sender.setTitleColor(UIColor.greenColor(), forState: .Normal)
-        option1Button.setTitleColor(UIColor.blueColor(), forState: .Normal)
-        option2Button.setTitleColor(UIColor.blueColor(), forState: .Normal)
-        option3Button.setTitleColor(UIColor.blueColor(), forState: .Normal)
+        option1Button.setBackgroundImage(optionImage, forState: .Normal)
+        option2Button.setBackgroundImage(optionImage, forState: .Normal)
+        option3Button.setBackgroundImage(optionImage, forState: .Normal)
+        option4Button.setBackgroundImage(selectedOptionImage, forState: .Normal)
     }
     
     @IBAction func share(sender: UIButton) {
@@ -73,21 +80,22 @@ class QuizVC: UIViewController {
     
     @IBAction func runButton(sender: AnyObject) {
         
-        if userAnswer == quiz.questions[indexOfQuestion].correctOption {
+        let currentQuestion = quiz.questions[indexOfQuestion]
+        
+        if userAnswer == currentQuestion.correctOption {
             let percentage = Float(calculatePercentage(indexOfQuestion))
+            let percentageToDisplay = Int(percentage * 100)
             progressView.setProgress(percentage, animated: true)
-            score = score + pointsToScore
-            self.navigationController?.popViewControllerAnimated(true)
+            progressLabel.text = "\(percentageToDisplay) %"
+            score = ceil(score + pointsToScore)
+            let scoreToDisplay = Int(score)
+            scoreLabel.text = "\(scoreToDisplay) / 100 pts."
+            //self.navigationController?.popViewControllerAnimated(true)
             
             if indexOfQuestion != numberOfQuestions {
                 indexOfQuestion += 1
                 pointsToScore = pointsPerQuestion
                 nextQuestion(indexOfQuestion)
-                
-                option1Button.setTitleColor(UIColor.blueColor(), forState: .Normal)
-                option2Button.setTitleColor(UIColor.blueColor(), forState: .Normal)
-                option3Button.setTitleColor(UIColor.blueColor(), forState: .Normal)
-                option4Button.setTitleColor(UIColor.blueColor(), forState: .Normal)
                 
             } else if indexOfQuestion == numberOfQuestions && lastQuestion == false {
                 questionLabel.text = quiz.endQuizText
@@ -104,56 +112,77 @@ class QuizVC: UIViewController {
             }
 
         } else if userAnswer != quizStore[indexOfQuiz!].questions[indexOfQuestion].correctOption {
+            AudioServicesPlayAlertSound(kSystemSoundID_Vibrate)
             if userAnswer == 1 {
                 pointsToScore = pointsToScore * 0.8
-                option1Button.setTitleColor(UIColor.redColor(), forState: .Normal)
-                option2Button.setTitleColor(UIColor.blueColor(), forState: .Normal)
-                option3Button.setTitleColor(UIColor.blueColor(), forState: .Normal)
-                option4Button.setTitleColor(UIColor.blueColor(), forState: .Normal)
+                option1Button.setBackgroundImage(wrongOptionImage, forState: .Normal)
+                option2Button.setBackgroundImage(optionImage, forState: .Normal)
+                option3Button.setBackgroundImage(optionImage, forState: .Normal)
+                option4Button.setBackgroundImage(optionImage, forState: .Normal)
+                
+                option1Button.setTitle("Wrong answer. Try again!", forState: .Normal)
+                option2Button.setTitle(currentQuestion.option2! as String, forState: .Normal)
+                option3Button.setTitle(currentQuestion.option3! as String, forState: .Normal)
+                option4Button.setTitle(currentQuestion.option4! as String, forState: .Normal)
             }
             if userAnswer == 2 {
                 pointsToScore = pointsToScore * 0.8
-                option1Button.setTitleColor(UIColor.blueColor(), forState: .Normal)
-                option2Button.setTitleColor(UIColor.redColor(), forState: .Normal)
-                option3Button.setTitleColor(UIColor.blueColor(), forState: .Normal)
-                option4Button.setTitleColor(UIColor.blueColor(), forState: .Normal)
+                option1Button.setBackgroundImage(optionImage, forState: .Normal)
+                option2Button.setBackgroundImage(wrongOptionImage, forState: .Normal)
+                option3Button.setBackgroundImage(optionImage, forState: .Normal)
+                option4Button.setBackgroundImage(optionImage, forState: .Normal)
+                
+                option1Button.setTitle(currentQuestion.option1! as String, forState: .Normal)
+                option2Button.setTitle("Wrong answer. Try again!", forState: .Normal)
+                option3Button.setTitle(currentQuestion.option3! as String, forState: .Normal)
+                option4Button.setTitle(currentQuestion.option4! as String, forState: .Normal)
             }
             if userAnswer == 3 {
                 pointsToScore = pointsToScore * 0.8
-                option1Button.setTitleColor(UIColor.blueColor(), forState: .Normal)
-                option2Button.setTitleColor(UIColor.blueColor(), forState: .Normal)
-                option3Button.setTitleColor(UIColor.redColor(), forState: .Normal)
-                option4Button.setTitleColor(UIColor.blueColor(), forState: .Normal)
+                option1Button.setBackgroundImage(optionImage, forState: .Normal)
+                option2Button.setBackgroundImage(optionImage, forState: .Normal)
+                option3Button.setBackgroundImage(wrongOptionImage, forState: .Normal)
+                option4Button.setBackgroundImage(optionImage, forState: .Normal)
+                
+                option1Button.setTitle(currentQuestion.option1! as String, forState: .Normal)
+                option2Button.setTitle(currentQuestion.option2! as String, forState: .Normal)
+                option3Button.setTitle("Wrong answer. Try again!", forState: .Normal)
+                option4Button.setTitle(currentQuestion.option4! as String, forState: .Normal)
             }
             if userAnswer == 4 {
                 pointsToScore = pointsToScore * 0.8
-                option1Button.setTitleColor(UIColor.blueColor(), forState: .Normal)
-                option2Button.setTitleColor(UIColor.blueColor(), forState: .Normal)
-                option3Button.setTitleColor(UIColor.blueColor(), forState: .Normal)
-                option4Button.setTitleColor(UIColor.redColor(), forState: .Normal)
+                option1Button.setBackgroundImage(optionImage, forState: .Normal)
+                option2Button.setBackgroundImage(optionImage, forState: .Normal)
+                option3Button.setBackgroundImage(optionImage, forState: .Normal)
+                option4Button.setBackgroundImage(wrongOptionImage, forState: .Normal)
+                
+                option1Button.setTitle(currentQuestion.option1! as String, forState: .Normal)
+                option2Button.setTitle(currentQuestion.option2! as String, forState: .Normal)
+                option3Button.setTitle(currentQuestion.option3! as String, forState: .Normal)
+                option4Button.setTitle("Wrong answer. Try again!", forState: .Normal)
             }
         }
     }
     
     override func viewDidLoad() {
-//        quiz = quizStore[indexOfQuiz!]
-//        numberOfQuestions = quiz.questions.count - 1
-//        let question = quiz.questions[indexOfQuestion]
-//        pointsPerQuestion = Double(100 / quiz.questions.count)
-//        
-//        if firstTimeLoad == true {
-//            pointsToScore = pointsPerQuestion
-//            firstTimeLoad = false
-//        }
-//        
-//        
-//        questionLabel.text = question.question
-//        option1Button.setTitle(question.option1! as String, forState: .Normal)
-//        option2Button.setTitle(question.option2! as String, forState: .Normal)
-//        option3Button.setTitle(question.option3! as String, forState: .Normal)
-//        option4Button.setTitle(question.option4! as String, forState: .Normal)
-//        
-//        //shareButton.hidden = true
+        quiz = quizStore[indexOfQuiz!]
+        numberOfQuestions = quiz.questions.count - 1
+        let question = quiz.questions[indexOfQuestion]
+        pointsPerQuestion = Double(100 / quiz.questions.count)
+        
+        if firstTimeLoad == true {
+            pointsToScore = pointsPerQuestion
+            firstTimeLoad = false
+        }
+        
+        
+        questionLabel.text = question.question
+        option1Button.setTitle(question.option1! as String, forState: .Normal)
+        option2Button.setTitle(question.option2! as String, forState: .Normal)
+        option3Button.setTitle(question.option3! as String, forState: .Normal)
+        option4Button.setTitle(question.option4! as String, forState: .Normal)
+        
+        //shareButton.hidden = true
     }
     
     func nextQuestion(questionIndex: Int) {
@@ -165,6 +194,11 @@ class QuizVC: UIViewController {
         option2Button.setTitle(question.option2! as String, forState: .Normal)
         option3Button.setTitle(question.option3! as String, forState: .Normal)
         option4Button.setTitle(question.option4! as String, forState: .Normal)
+        
+        option1Button.setBackgroundImage(optionImage, forState: .Normal)
+        option2Button.setBackgroundImage(optionImage, forState: .Normal)
+        option3Button.setBackgroundImage(optionImage, forState: .Normal)
+        option4Button.setBackgroundImage(optionImage, forState: .Normal)
         
     }
     
