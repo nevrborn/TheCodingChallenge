@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ud9-Xh-t2X">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -627,26 +627,74 @@
                         <viewControllerLayoutGuide type="bottom" id="1z0-B5-HkW"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="nbq-zl-y5q">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="BackgroundFAQ" translatesAutoresizingMaskIntoConstraints="NO" id="HY3-X1-UTa">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="quizBackground" translatesAutoresizingMaskIntoConstraints="NO" id="HY3-X1-UTa">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wX9-RG-Orq">
-                                <rect key="frame" x="127" y="181" width="176" height="122"/>
-                                <state key="normal" image="quizIcon"/>
-                                <connections>
-                                    <action selector="quizTapped:" destination="1F2-HU-z22" eventType="touchUpInside" id="PG4-GK-IgO"/>
-                                </connections>
+                                <rect key="frame" x="81" y="108" width="176" height="123"/>
+                                <state key="normal" image="quizMainMenu"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PT5-m7-hpU">
+                                <rect key="frame" x="198" y="512" width="101" height="105"/>
+                                <state key="normal" image="quiz5"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VGr-ln-8Fu">
+                                <rect key="frame" x="40" y="197" width="105" height="105"/>
+                                <state key="normal" image="quiz4"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ji0-Dl-tHk">
+                                <rect key="frame" x="40" y="30" width="119" height="123"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <state key="normal" title="Button" image="quiz2"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mcq-ve-hNx">
+                                <rect key="frame" x="197" y="354" width="105" height="105"/>
+                                <state key="normal" image="quiz9"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nre-N8-cTH">
+                                <rect key="frame" x="40" y="512" width="105" height="105"/>
+                                <state key="normal" image="quiz9"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cXz-7q-vFn">
+                                <rect key="frame" x="40" y="356" width="105" height="105"/>
+                                <state key="normal" image="quiz7"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="juS-FH-Brf">
+                                <rect key="frame" x="198" y="197" width="103" height="104"/>
+                                <state key="normal" image="quiz3"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D65-9P-tYC">
+                                <rect key="frame" x="118" y="276" width="105" height="105"/>
+                                <state key="normal" image="quiz8"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zEL-yg-uds">
+                                <rect key="frame" x="118" y="433" width="105" height="105"/>
+                                <state key="normal" image="quiz10"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Ju-KJ-gKB">
+                                <rect key="frame" x="179" y="33" width="151" height="114"/>
+                                <state key="normal" title="Button" image="mainMenu"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="yQY-TC-v1l"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <outlet property="quiz1Button" destination="wX9-RG-Orq" id="XTX-RG-xZG"/>
+                        <outlet property="quiz10Button" destination="zEL-yg-uds" id="6zP-TD-ROR"/>
+                        <outlet property="quiz1Button1" destination="PT5-m7-hpU" id="OWt-qw-Htn"/>
+                        <outlet property="quiz2Button" destination="2Ju-KJ-gKB" id="561-1L-8ky"/>
+                        <outlet property="quiz3Button" destination="VGr-ln-8Fu" id="Zp1-Xl-ilw"/>
+                        <outlet property="quiz4Button" destination="Ji0-Dl-tHk" id="h4r-0h-flg"/>
+                        <outlet property="quiz5Button" destination="Mcq-ve-hNx" id="PuY-zK-sde"/>
+                        <outlet property="quiz6Button" destination="Nre-N8-cTH" id="ttz-xg-2DI"/>
+                        <outlet property="quiz7Button" destination="cXz-7q-vFn" id="213-b2-hj4"/>
+                        <outlet property="quiz8Button" destination="juS-FH-Brf" id="x13-S8-jkP"/>
+                        <outlet property="quiz9Button" destination="D65-9P-tYC" id="yby-b0-Yiv"/>
+                        <outlet property="quizButton" destination="wX9-RG-Orq" id="gHe-j8-LAq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LcO-Ws-xnq" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -738,6 +786,16 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="1fT-iv-s45" firstAttribute="trailing" secondItem="aRV-bU-TTJ" secondAttribute="trailingMargin" id="9ev-zl-nvA"/>
+                            <constraint firstItem="LlX-ZA-A7a" firstAttribute="centerX" secondItem="aRV-bU-TTJ" secondAttribute="centerX" id="BVE-Jn-bmU"/>
+                            <constraint firstItem="oj0-Hn-gVQ" firstAttribute="top" secondItem="LlX-ZA-A7a" secondAttribute="bottom" constant="17" id="MEO-cB-vIB"/>
+                            <constraint firstItem="6Ux-7o-moc" firstAttribute="centerX" secondItem="aRV-bU-TTJ" secondAttribute="centerX" id="MUb-5K-skC"/>
+                            <constraint firstItem="oj0-Hn-gVQ" firstAttribute="centerX" secondItem="aRV-bU-TTJ" secondAttribute="centerX" id="ZnZ-hs-aYv"/>
+                            <constraint firstItem="1fT-iv-s45" firstAttribute="leading" secondItem="aRV-bU-TTJ" secondAttribute="leadingMargin" id="cCn-vo-9nU"/>
+                            <constraint firstItem="6Ux-7o-moc" firstAttribute="trailing" secondItem="aRV-bU-TTJ" secondAttribute="trailingMargin" id="cag-L2-Tg4"/>
+                            <constraint firstItem="0bf-gK-yga" firstAttribute="top" secondItem="1fT-iv-s45" secondAttribute="bottom" constant="43" id="cxD-yC-13j"/>
+                            <constraint firstItem="rWE-rD-RvL" firstAttribute="leading" secondItem="aRV-bU-TTJ" secondAttribute="leadingMargin" id="dFQ-fi-2cr"/>
+                            <constraint firstItem="6Ux-7o-moc" firstAttribute="top" secondItem="oj0-Hn-gVQ" secondAttribute="bottom" constant="21" id="iSW-pt-R3q"/>
                             <constraint firstItem="u8q-ck-q2e" firstAttribute="leading" secondItem="aRV-bU-TTJ" secondAttribute="leadingMargin" id="9Pi-ZM-lzs"/>
                             <constraint firstItem="1fT-iv-s45" firstAttribute="trailing" secondItem="aRV-bU-TTJ" secondAttribute="trailingMargin" id="9ev-zl-nvA"/>
                             <constraint firstItem="LlX-ZA-A7a" firstAttribute="centerX" secondItem="aRV-bU-TTJ" secondAttribute="centerX" id="BVE-Jn-bmU"/>
@@ -857,6 +915,40 @@
             </objects>
             <point key="canvasLocation" x="2072.5" y="1311.5"/>
         </scene>
+        <!--VideoVC-->
+        <scene sceneID="4c8-kB-ZLS">
+            <objects>
+                <viewController id="ud9-Xh-t2X" customClass="VideoVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="SxT-y8-N5x"/>
+                        <viewControllerLayoutGuide type="bottom" id="T8n-oo-KPk"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="xRo-J9-vM3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5kc-hW-8Qe">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="5kc-hW-8Qe" secondAttribute="trailing" id="1RP-Ng-WSk"/>
+                            <constraint firstItem="5kc-hW-8Qe" firstAttribute="leading" secondItem="xRo-J9-vM3" secondAttribute="leading" id="C0G-3T-kK0"/>
+                            <constraint firstItem="5kc-hW-8Qe" firstAttribute="top" secondItem="xRo-J9-vM3" secondAttribute="top" id="CdX-NM-pib"/>
+                            <constraint firstItem="T8n-oo-KPk" firstAttribute="top" secondItem="5kc-hW-8Qe" secondAttribute="bottom" id="a6e-iX-IdO"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="videoView" destination="5kc-hW-8Qe" id="QsY-Qd-vCk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KPV-h3-wKd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2714.5" y="1705.5"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Background2" width="414" height="736"/>
@@ -874,6 +966,7 @@
         <image name="questionBar" width="289" height="39"/>
         <image name="questionBarRed" width="289" height="39"/>
         <image name="quiz10" width="105" height="105"/>
+        <image name="quiz2" width="105" height="104"/>
         <image name="quiz2" width="122" height="122"/>
         <image name="quiz3" width="105" height="105"/>
         <image name="quiz4" width="105" height="105"/>
@@ -881,6 +974,9 @@
         <image name="quiz7" width="105" height="105"/>
         <image name="quiz8" width="105" height="105"/>
         <image name="quiz9" width="105" height="105"/>
+        <image name="quizBackground" width="320" height="568"/>
+        <image name="quizIcon" width="122" height="122"/>
+        <image name="quizMainMenu" width="89" height="90"/>
         <image name="quizIcon" width="122" height="122"/>
         <image name="quizMainMenu" width="122" height="122"/>
         <image name="quizTile1" width="137" height="137"/>

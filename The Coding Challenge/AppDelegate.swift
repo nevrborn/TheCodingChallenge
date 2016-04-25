@@ -21,9 +21,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         tutorialStore.loadTutorialsData()
         quizStore.loadQuizData()
  
-        let mainMenuViewController = window?.rootViewController as! MainVC
-        mainMenuViewController.tutorialStore = tutorialStore
-        mainMenuViewController.quizStore = quizStore
+       //let mainMenuViewController = window?.rootViewController as! MainVC
+        //mainMenuViewController.tutorialStore = tutorialStore
+        //mainMenuViewController.quizStore = quizStore
         
         return true
     }

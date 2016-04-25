@@ -11,9 +11,9 @@ import UIKit
 class QuizMainVC: UIViewController {
     
     
-    @IBOutlet weak var quiz1Button: UIButton!
+   @IBOutlet weak var quiz1Button: UIButton!
     
-    @IBAction func quizTapped(sender: UIButton) {
+@IBAction func quizTapped(sender: UIButton) {
         
         UIView.animateWithDuration(3.0, animations:{
             self.quiz1Button.frame = CGRectMake(self.quiz1Button.frame.origin.x+25, self.quiz1Button.frame.origin.y, self.quiz1Button.frame.size.width + 300, self.quiz1Button.frame.size.height + 300)
@@ -21,17 +21,16 @@ class QuizMainVC: UIViewController {
     }
     
     @IBOutlet var quizButton: UIButton!{
-        
-        
-        didSet {
-            quizButton.transform = CGAffineTransformMakeScale(0, 0)
-            UIView.animateWithDuration(1.0, delay: 1.0, usingSpringWithDamping: 0.3,initialSpringVelocity:4, options: .CurveLinear, animations: {
-                self.quizButton.transform = CGAffineTransformIdentity }, completion: nil
-            )}
-    }
-    
+
+didSet {
+    quizButton.transform = CGAffineTransformMakeScale(0, 0)
+    UIView.animateWithDuration(1.0, delay: 1.0, usingSpringWithDamping: 0.3,initialSpringVelocity:4, options: .CurveLinear, animations: {
+        self.quizButton.transform = CGAffineTransformIdentity }, completion: nil
+    )}
+}
+
     @IBOutlet var quiz1Button1: UIButton!{
-        
+
         
         didSet {
             quiz1Button1.transform = CGAffineTransformMakeScale(0, 0)
@@ -49,8 +48,8 @@ class QuizMainVC: UIViewController {
             )}
     }
     
-    
-    
+
+
     @IBOutlet var quiz3Button: UIButton!{
         didSet {
             quiz3Button.transform = CGAffineTransformMakeScale(0, 0)
@@ -59,7 +58,7 @@ class QuizMainVC: UIViewController {
             )}
     }
     
-    
+  
     @IBOutlet var quiz4Button: UIButton!{
         didSet {
             quiz4Button.transform = CGAffineTransformMakeScale(0, 0)
@@ -81,7 +80,7 @@ class QuizMainVC: UIViewController {
                 self.quiz6Button.transform = CGAffineTransformIdentity }, completion: nil
             )}
     }
-    
+
     @IBOutlet var quiz7Button: UIButton!{
         didSet {
             quiz7Button.transform = CGAffineTransformMakeScale(0, 0)
@@ -113,6 +112,6 @@ class QuizMainVC: UIViewController {
             )}
     }
     
-    
-}
+
+    }
 
