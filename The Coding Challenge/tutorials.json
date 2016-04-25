@@ -90,31 +90,6 @@
       "correctInput": 2,
       "imageToDisplay": "fromTakenPhoto",
       "codeToExecute": "takeAPhoto",
-      "correctAnswerText": "TEXT"},
-      {"text": "TEXT",
-      "code": "CODE",
-      "input1": "INPUT",
-      "input2": "INPUT",
-      "input3": "INPUT",
-      "correctInput": 0,
-      "imageToDisplay": "false",
-      "correctAnswerText": "TEXT"},
-      {"text": "TEXT",
-      "code": "CODE",
-      "input1": "INPUT",
-      "input2": "INPUT",
-      "input3": "INPUT",
-      "correctInput": 0,
-      "imageToDisplay": "false",
-      "correctAnswerText": "TEXT"},
-      {"text": "TEXT",
-      "code": "CODE",
-      "input1": "INPUT",
-      "input2": "INPUT",
-      "input3": "INPUT",
-      "correctInput": 0,
-      "imageToDisplay": "false",
-      "correctAnswerText": "TEXT"}
-      ]
+      "correctAnswerText": "TEXT"}]
      }]
 }

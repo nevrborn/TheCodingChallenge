@@ -18,12 +18,93 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Background2" translatesAutoresizingMaskIntoConstraints="NO" id="ARC-dZ-dhg">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Background3" translatesAutoresizingMaskIntoConstraints="NO" id="ARC-dZ-dhg">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="codingTitle" translatesAutoresizingMaskIntoConstraints="NO" id="AbI-By-huz">
                                 <rect key="frame" x="20" y="82" width="288" height="77"/>
                             </imageView>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OAi-Ix-DUY">
+                                <rect key="frame" x="-8" y="13" width="137" height="138"/>
+                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="59"/>
+                                <state key="normal" title="?" backgroundImage="quizTile1"/>
+                                <connections>
+                                    <action selector="quizTile1:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0GW-sh-bgH"/>
+                                </connections>
+                            </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wwz-dz-avW">
+                                <rect key="frame" x="150" y="13" width="137" height="138"/>
+                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="47"/>
+                                <state key="normal" title="?" backgroundImage="quizTile2"/>
+                                <connections>
+                                    <action selector="quizTile2:" destination="BYZ-38-t0r" eventType="touchUpInside" id="U2s-SD-iWw"/>
+                                </connections>
+                            </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yAl-39-Jee">
+                                <rect key="frame" x="68" y="94" width="137" height="138"/>
+                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="80"/>
+                                <state key="normal" title="?" backgroundImage="quizTile3"/>
+                                <connections>
+                                    <action selector="quizTile3:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nmg-HG-DP1"/>
+                                </connections>
+                            </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UPJ-tH-FoV">
+                                <rect key="frame" x="224" y="94" width="137" height="138"/>
+                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="56"/>
+                                <state key="normal" title="?" backgroundImage="quizTile4"/>
+                                <connections>
+                                    <action selector="quizTile4:" destination="BYZ-38-t0r" eventType="touchUpInside" id="04h-jH-fDJ"/>
+                                </connections>
+                            </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a4z-6v-3Ho">
+                                <rect key="frame" x="-10" y="174" width="137" height="138"/>
+                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="51"/>
+                                <state key="normal" title="?" backgroundImage="quizTile5"/>
+                                <connections>
+                                    <action selector="quizTile5:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xaq-JX-cN0"/>
+                                </connections>
+                            </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CYv-bC-dnn">
+                                <rect key="frame" x="145" y="175" width="137" height="138"/>
+                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="49"/>
+                                <state key="normal" title="?" backgroundImage="quizTile6"/>
+                                <connections>
+                                    <action selector="quizTile6:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lsA-Wx-yXP"/>
+                                </connections>
+                            </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5yf-Tb-HkI">
+                                <rect key="frame" x="67" y="256" width="137" height="138"/>
+                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="45"/>
+                                <state key="normal" title="?" backgroundImage="quizTile7"/>
+                                <connections>
+                                    <action selector="quizTile7:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RIM-3F-DYU"/>
+                                </connections>
+                            </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gfH-bG-2YO">
+                                <rect key="frame" x="221" y="257" width="137" height="138"/>
+                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="66"/>
+                                <state key="normal" title="?" backgroundImage="quizTile8"/>
+                                <connections>
+                                    <action selector="quizTile8:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kwL-N2-mEo"/>
+                                </connections>
+                            </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D38-HB-NNy">
+                                <rect key="frame" x="-12" y="337" width="137" height="138"/>
+                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="78"/>
+                                <state key="normal" title="?" backgroundImage="quizTile9"/>
+                                <connections>
+                                    <action selector="quizTile9:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SHZ-aA-Sfx"/>
+                                </connections>
+                            </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aeO-1T-21o">
+                                <rect key="frame" x="142" y="337" width="137" height="138"/>
+                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="47"/>
+                                <state key="normal" title="?" backgroundImage="quizTile10"/>
+                                <connections>
+                                    <action selector="quizTile10:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Tm9-1w-WpC"/>
+                                    <action selector="quizTile1:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YtX-34-IgZ"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fmi-Sr-f2C" userLabel="Button No1">
                                 <rect key="frame" x="144" y="172" width="143" height="142"/>
                                 <state key="normal" image="tutorialsIcon"/>
@@ -36,13 +117,6 @@
                                 <state key="normal" image="faqIcon"/>
                                 <connections>
                                     <action selector="button2Pressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1Al-NM-O2K"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jFi-Hx-V5I" userLabel="Button No3">
-                                <rect key="frame" x="142" y="333" width="142" height="143"/>
-                                <state key="normal" image="quizIcon"/>
-                                <connections>
-                                    <action selector="button3Pressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pvV-2x-6h6"/>
                                 </connections>
                             </button>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wyl-6e-2MG">
@@ -59,6 +133,13 @@
                                     <action selector="showMoreTutorials:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sph-6f-4Vy"/>
                                 </connections>
                             </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QOb-gT-LVX" userLabel="Quiz Main Menu">
+                                <rect key="frame" x="218" y="413" width="141" height="142"/>
+                                <state key="normal" image="quizMainMenu"/>
+                                <connections>
+                                    <action selector="goToMainMenu:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qFG-P0-wOJ"/>
+                                </connections>
+                            </button>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pal-vF-Nsd">
                                 <rect key="frame" x="-11" y="171" width="141" height="142"/>
                                 <state key="normal" image="mainMenu"/>
@@ -68,9 +149,25 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HFI-bR-Uq4">
                                 <rect key="frame" x="20" y="33" width="107" height="32"/>
-                                <state key="normal" image="taaLogoFull"/>
+                                <state key="normal" title="appAcademy" image="taaLogoFull"/>
                                 <connections>
                                     <action selector="taaLogoButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ClJ-Pc-4Ri"/>
+                                </connections>
+                            </button>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="emptyTile" translatesAutoresizingMaskIntoConstraints="NO" id="SLi-YQ-Pde">
+                                <rect key="frame" x="73" y="423" width="121" height="122"/>
+                            </imageView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0 / 100 points" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E6d-Tx-4sW">
+                                <rect key="frame" x="92" y="462" width="84" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jFi-Hx-V5I" userLabel="Button No3">
+                                <rect key="frame" x="142" y="333" width="142" height="143"/>
+                                <state key="normal" image="quizIcon"/>
+                                <connections>
+                                    <action selector="button3Pressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pvV-2x-6h6"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -83,7 +180,22 @@
                         <outlet property="buttonNo3" destination="jFi-Hx-V5I" id="Sn6-rK-xgV"/>
                         <outlet property="buttonNo4" destination="wyl-6e-2MG" id="kE1-i3-aAV"/>
                         <outlet property="buttonNo5" destination="CwV-I5-jSX" id="pOU-6d-c95"/>
+                        <outlet property="codeChallengeLogo" destination="AbI-By-huz" id="6sR-hg-GeB"/>
+                        <outlet property="logoButton" destination="HFI-bR-Uq4" id="g6b-as-STk"/>
                         <outlet property="mainMenuButton" destination="Pal-vF-Nsd" id="X2b-PM-QYp"/>
+                        <outlet property="quizMainMenu" destination="QOb-gT-LVX" id="0bn-aX-1kj"/>
+                        <outlet property="quizTile1" destination="OAi-Ix-DUY" id="QVn-XY-i1t"/>
+                        <outlet property="quizTile10" destination="aeO-1T-21o" id="53S-Ly-WaT"/>
+                        <outlet property="quizTile2" destination="Wwz-dz-avW" id="0WX-0x-cdJ"/>
+                        <outlet property="quizTile3" destination="yAl-39-Jee" id="8tg-93-U5z"/>
+                        <outlet property="quizTile4" destination="UPJ-tH-FoV" id="DYb-hT-E3V"/>
+                        <outlet property="quizTile5" destination="a4z-6v-3Ho" id="DSA-UH-iHN"/>
+                        <outlet property="quizTile6" destination="CYv-bC-dnn" id="Bta-gH-7vB"/>
+                        <outlet property="quizTile7" destination="5yf-Tb-HkI" id="dbw-sR-U6F"/>
+                        <outlet property="quizTile8" destination="gfH-bG-2YO" id="5hl-KZ-CRd"/>
+                        <outlet property="quizTile9" destination="D38-HB-NNy" id="0Yb-Oy-B5y"/>
+                        <outlet property="scoreLabel" destination="E6d-Tx-4sW" id="MIu-Hg-VFK"/>
+                        <outlet property="scoreTile" destination="SLi-YQ-Pde" id="d5e-Qe-aLI"/>
                         <segue destination="tLL-7b-j4n" kind="presentation" identifier="showTutorial" id="nkO-6t-V5C"/>
                         <segue destination="LQf-jf-a7e" kind="presentation" identifier="showFAQ" id="8EX-Yh-vLe"/>
                         <segue destination="Xtc-GB-uaz" kind="presentation" identifier="showQuiz" id="NSa-T1-gSG"/>
@@ -683,12 +795,97 @@
             </objects>
             <point key="canvasLocation" x="2779" y="280"/>
         </scene>
+        <!--Quiz MainVC-->
+        <scene sceneID="Dg2-rF-daa">
+            <objects>
+                <viewController id="3dr-6A-M8f" customClass="QuizMainVC" customModule="The_Coding_Challenge" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="N6d-Iu-Ai5"/>
+                        <viewControllerLayoutGuide type="bottom" id="bu9-66-ecW"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="G56-Jc-x1P">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Background2" translatesAutoresizingMaskIntoConstraints="NO" id="UGf-Sa-s2q">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nnQ-L8-HIr">
+                                <rect key="frame" x="81" y="108" width="176" height="123"/>
+                                <state key="normal" image="quizMainMenu"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oFk-It-hNa">
+                                <rect key="frame" x="198" y="512" width="101" height="105"/>
+                                <state key="normal" image="quiz5"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MSi-Bp-e6u">
+                                <rect key="frame" x="40" y="197" width="105" height="105"/>
+                                <state key="normal" image="quiz4"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ecQ-vk-UH5">
+                                <rect key="frame" x="40" y="30" width="119" height="123"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <state key="normal" title="Button" image="quiz2"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q1O-Jl-Qb8">
+                                <rect key="frame" x="197" y="354" width="105" height="105"/>
+                                <state key="normal" image="quiz9"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e1Z-vl-Lmg">
+                                <rect key="frame" x="40" y="512" width="105" height="105"/>
+                                <state key="normal" image="quiz9"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nr6-uk-Mri">
+                                <rect key="frame" x="40" y="356" width="105" height="105"/>
+                                <state key="normal" image="quiz7"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4kZ-1U-YJG">
+                                <rect key="frame" x="198" y="197" width="103" height="104"/>
+                                <state key="normal" image="quiz3"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nDw-x6-agc">
+                                <rect key="frame" x="118" y="276" width="105" height="105"/>
+                                <state key="normal" image="quiz8"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gcH-70-AJd">
+                                <rect key="frame" x="118" y="433" width="105" height="105"/>
+                                <state key="normal" image="quiz10"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DC0-M0-Ckg">
+                                <rect key="frame" x="179" y="33" width="151" height="114"/>
+                                <state key="normal" title="Button" image="mainMenu"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="kgE-7y-vB6"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                    <connections>
+                        <outlet property="quiz10Button" destination="gcH-70-AJd" id="XnP-fR-eFw"/>
+                        <outlet property="quiz1Button1" destination="oFk-It-hNa" id="LGG-vd-0DC"/>
+                        <outlet property="quiz2Button" destination="DC0-M0-Ckg" id="5DE-ys-4pr"/>
+                        <outlet property="quiz3Button" destination="MSi-Bp-e6u" id="2Xh-IX-x2q"/>
+                        <outlet property="quiz4Button" destination="ecQ-vk-UH5" id="Hgt-jj-V0o"/>
+                        <outlet property="quiz5Button" destination="Q1O-Jl-Qb8" id="hbf-zX-taq"/>
+                        <outlet property="quiz6Button" destination="e1Z-vl-Lmg" id="ZFw-g1-i1S"/>
+                        <outlet property="quiz7Button" destination="Nr6-uk-Mri" id="bmx-L3-Z1X"/>
+                        <outlet property="quiz8Button" destination="4kZ-1U-YJG" id="dO1-gJ-ihF"/>
+                        <outlet property="quiz9Button" destination="nDw-x6-agc" id="EbG-Yb-bDm"/>
+                        <outlet property="quizButton" destination="nnQ-L8-HIr" id="Kdd-hB-qSE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tfK-oA-z5c" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2072.5" y="1311.5"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Background2" width="414" height="736"/>
+        <image name="Background3" width="414" height="736"/>
         <image name="BackgroundFAQ" width="414" height="736"/>
         <image name="BackgroungLargeLogo" width="1024" height="768"/>
         <image name="codingTitle" width="282" height="93"/>
+        <image name="emptyTile" width="122" height="122"/>
         <image name="faqIcon" width="122" height="121"/>
         <image name="mailIcon" width="75" height="75"/>
         <image name="mainMenu" width="122" height="122"/>
@@ -696,7 +893,26 @@
         <image name="phoneIcon" width="75" height="75"/>
         <image name="questionBar" width="289" height="39"/>
         <image name="questionBarRed" width="289" height="39"/>
+        <image name="quiz10" width="105" height="105"/>
+        <image name="quiz2" width="122" height="122"/>
+        <image name="quiz3" width="105" height="105"/>
+        <image name="quiz4" width="105" height="105"/>
+        <image name="quiz5" width="105" height="105"/>
+        <image name="quiz7" width="105" height="105"/>
+        <image name="quiz8" width="105" height="105"/>
+        <image name="quiz9" width="105" height="105"/>
         <image name="quizIcon" width="122" height="122"/>
+        <image name="quizMainMenu" width="122" height="122"/>
+        <image name="quizTile1" width="137" height="137"/>
+        <image name="quizTile10" width="137" height="137"/>
+        <image name="quizTile2" width="137" height="137"/>
+        <image name="quizTile3" width="137" height="137"/>
+        <image name="quizTile4" width="137" height="137"/>
+        <image name="quizTile5" width="137" height="137"/>
+        <image name="quizTile6" width="137" height="137"/>
+        <image name="quizTile7" width="137" height="137"/>
+        <image name="quizTile8" width="137" height="137"/>
+        <image name="quizTile9" width="137" height="137"/>
         <image name="taaLogo" width="120" height="120"/>
         <image name="taaLogoBig" width="291" height="87"/>
         <image name="taaLogoFull" width="107" height="32"/>
