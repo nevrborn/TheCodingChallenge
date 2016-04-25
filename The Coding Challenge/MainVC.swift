@@ -30,6 +30,26 @@ class MainVC: UIViewController, JSONSourceDelegate, JSONQuizSourceDelegate {
     var tutorialIcons: [UIImage] = []
     var quizIcons: [UIImage] = []
     
+    @IBOutlet var logoButton: UIButton!
+    @IBOutlet var codeChallengeLogo: UIImageView!
+    
+    // QUIZ buttons
+    @IBOutlet var quizTile1: UIButton!
+    @IBOutlet var quizTile2: UIButton!
+    @IBOutlet var quizTile3: UIButton!
+    @IBOutlet var quizTile4: UIButton!
+    @IBOutlet var quizTile5: UIButton!
+    @IBOutlet var quizTile6: UIButton!
+    @IBOutlet var quizTile7: UIButton!
+    @IBOutlet var quizTile8: UIButton!
+    @IBOutlet var quizTile9: UIButton!
+    @IBOutlet var quizTile10: UIButton!
+    @IBOutlet var quizMainMenu: UIButton!
+    @IBOutlet var scoreLabel: UILabel!
+    @IBOutlet var scoreTile: UIImageView!
+    @IBOutlet var quizQuestionView: UIView!
+
+    
     override func viewDidLoad() {
         
         setImages()
@@ -120,8 +140,8 @@ class MainVC: UIViewController, JSONSourceDelegate, JSONQuizSourceDelegate {
                 print(indexOfSelectedItem)
                 performSegueWithIdentifier("showTutorial", sender: sender)
             } else if quizOrTutorial == "quiz" {
-                findIndexOfQuizFromImage(sender)
-                performSegueWithIdentifier("showQuiz", sender: sender)
+                let index = findIndexOfQuizFromImage(sender)
+                showQuiz(index)
             }
         }
     }
@@ -135,8 +155,8 @@ class MainVC: UIViewController, JSONSourceDelegate, JSONQuizSourceDelegate {
             print(indexOfSelectedItem)
             performSegueWithIdentifier("showTutorial", sender: sender)
         } else if quizOrTutorial == "quiz" {
-            findIndexOfQuizFromImage(sender)
-            performSegueWithIdentifier("showQuiz", sender: sender)
+            let index = findIndexOfQuizFromImage(sender)
+            showQuiz(index)
         }
     }
     
@@ -151,8 +171,8 @@ class MainVC: UIViewController, JSONSourceDelegate, JSONQuizSourceDelegate {
                 print(indexOfSelectedItem)
                 performSegueWithIdentifier("showTutorial", sender: sender)
             } else if quizOrTutorial == "quiz" {
-                findIndexOfQuizFromImage(sender)
-                performSegueWithIdentifier("showQuiz", sender: sender)
+                let index = findIndexOfQuizFromImage(sender)
+                showQuiz(index)
             }
         }
     }
@@ -163,8 +183,8 @@ class MainVC: UIViewController, JSONSourceDelegate, JSONQuizSourceDelegate {
             print(indexOfSelectedItem)
             performSegueWithIdentifier("showTutorial", sender: sender)
         } else if quizOrTutorial == "quiz" {
-            findIndexOfQuizFromImage(sender)
-            performSegueWithIdentifier("showQuiz", sender: sender)
+            let index = findIndexOfQuizFromImage(sender)
+            showQuiz(index)
         }
     }
     
@@ -173,8 +193,11 @@ class MainVC: UIViewController, JSONSourceDelegate, JSONQuizSourceDelegate {
     }
     
     @IBAction func goToMainMenu(sender: UIButton) {
-        if mainMenuButton.imageView?.image == mainMenuImage {
+        if mainMenuButton.imageView?.image == mainMenuImage && quizOrTutorial == "tutorial" {
+            quizOrTutorial = ""
             showMainMenu()
+        } else if mainMenuButton.imageView?.image == mainMenuImage && quizOrTutorial == "quiz" {
+            animateMainMenu()
         }
     }
     
@@ -246,6 +269,50 @@ class MainVC: UIViewController, JSONSourceDelegate, JSONQuizSourceDelegate {
         }
     }
     
+    // Actions for Quiz Buttons
+    
+    @IBAction func quizTile1(sender: UIButton) {
+        showQuizQuestion(sender)
+    }
+    
+    @IBAction func quizTile2(sender: UIButton) {
+        showQuizQuestion(sender)
+    }
+    
+    @IBAction func quizTile3(sender: UIButton) {
+        showQuizQuestion(sender)
+    }
+    
+    @IBAction func quizTile4(sender: UIButton) {
+        showQuizQuestion(sender)
+    }
+    
+    @IBAction func quizTile5(sender: UIButton) {
+        showQuizQuestion(sender)
+    }
+    
+    @IBAction func quizTile6(sender: UIButton) {
+        showQuizQuestion(sender)
+    }
+    
+    @IBAction func quizTile7(sender: UIButton) {
+        showQuizQuestion(sender)
+    }
+    
+    @IBAction func quizTile8(sender: UIButton) {
+        showQuizQuestion(sender)
+    }
+    
+    @IBAction func quizTile9(sender: UIButton) {
+        showQuizQuestion(sender)
+    }
+    
+    @IBAction func quizTile10(sender: UIButton) {
+        showQuizQuestion(sender)
+    }
+    
+
+
     // JSONDelegate methods
     
     func tutorialLoadingFailed(errorMessage: String) {
@@ -265,7 +332,6 @@ class MainVC: UIViewController, JSONSourceDelegate, JSONQuizSourceDelegate {
     func quizDataIsLoaded() {
         
     }
-    
     
 }
 

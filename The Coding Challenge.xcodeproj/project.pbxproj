@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		713AF6CB1CCBD5BA00DF0856 /* TutorialVCExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 713AF6CA1CCBD5BA00DF0856 /* TutorialVCExt.swift */; };
 		7143D78A1CBE383800C7E11F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7143D7881CBE383800C7E11F /* LaunchScreen.storyboard */; };
 		7143D7921CBE386800C7E11F /* tutorials.json in Resources */ = {isa = PBXBuildFile; fileRef = 7143D7911CBE386800C7E11F /* tutorials.json */; };
 		7143D79D1CBE389A00C7E11F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7143D7931CBE389A00C7E11F /* Main.storyboard */; };
@@ -27,11 +28,12 @@
 		71E99AC51CBF8C3E0055BAEF /* QuizStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E99AC41CBF8C3E0055BAEF /* QuizStore.swift */; };
 		71E99AC71CBFA2090055BAEF /* QuizVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E99AC61CBFA2090055BAEF /* QuizVC.swift */; };
 		71E99AF61CC66A800055BAEF /* QuizMainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E99AF51CC66A800055BAEF /* QuizMainVC.swift */; };
-		71E99AFC1CC77BB70055BAEF /* TrophyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E99AFB1CC77BB70055BAEF /* TrophyVC.swift */; };
 		84C6BAEC1CCA607000D00BF6 /* VideoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C6BAEB1CCA607000D00BF6 /* VideoVC.swift */; };
+		71E99AFC1CC77BB70055BAEF /* TrophyOverlayVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E99AFB1CC77BB70055BAEF /* TrophyOverlayVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		713AF6CA1CCBD5BA00DF0856 /* TutorialVCExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialVCExt.swift; sourceTree = "<group>"; };
 		7143D77C1CBE383800C7E11F /* The Coding Challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "The Coding Challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7143D7891CBE383800C7E11F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7143D78B1CBE383800C7E11F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -54,8 +56,8 @@
 		71E99AC41CBF8C3E0055BAEF /* QuizStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizStore.swift; sourceTree = "<group>"; };
 		71E99AC61CBFA2090055BAEF /* QuizVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizVC.swift; sourceTree = "<group>"; };
 		71E99AF51CC66A800055BAEF /* QuizMainVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizMainVC.swift; sourceTree = "<group>"; };
-		71E99AFB1CC77BB70055BAEF /* TrophyVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrophyVC.swift; sourceTree = "<group>"; };
 		84C6BAEB1CCA607000D00BF6 /* VideoVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoVC.swift; sourceTree = "<group>"; };
+		71E99AFB1CC77BB70055BAEF /* TrophyOverlayVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrophyOverlayVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,8 +99,9 @@
 				7143D7971CBE389A00C7E11F /* SyntaxTextStorage.swift */,
 				7143D7981CBE389A00C7E11F /* Tutorial.swift */,
 				7143D7991CBE389A00C7E11F /* TutorialStore.swift */,
-				71E99AFB1CC77BB70055BAEF /* TrophyVC.swift */,
+				71E99AFB1CC77BB70055BAEF /* TrophyOverlayVC.swift */,
 				7143D79A1CBE389A00C7E11F /* TutorialVC.swift */,
+				713AF6CA1CCBD5BA00DF0856 /* TutorialVCExt.swift */,
 				7143D7A91CBE3B2100C7E11F /* TutorialOverlayVC.swift */,
 				7143D7AB1CBE4BCA00C7E11F /* OverlayAnimationController.swift */,
 				7143D7A71CBE39FD00C7E11F /* OverlayPresentationController.swift */,
@@ -193,10 +196,11 @@
 				71E99AC71CBFA2090055BAEF /* QuizVC.swift in Sources */,
 				71E99AF61CC66A800055BAEF /* QuizMainVC.swift in Sources */,
 				84C6BAEC1CCA607000D00BF6 /* VideoVC.swift in Sources */,
+				713AF6CB1CCBD5BA00DF0856 /* TutorialVCExt.swift in Sources */,
 				71E99AC51CBF8C3E0055BAEF /* QuizStore.swift in Sources */,
 				7143D7A01CBE389A00C7E11F /* AppDelegate.swift in Sources */,
 				71E99AC31CBF8C230055BAEF /* Quiz.swift in Sources */,
-				71E99AFC1CC77BB70055BAEF /* TrophyVC.swift in Sources */,
+				71E99AFC1CC77BB70055BAEF /* TrophyOverlayVC.swift in Sources */,
 				7143D79E1CBE389A00C7E11F /* MainVC.swift in Sources */,
 				7143D7AC1CBE4BCA00C7E11F /* OverlayAnimationController.swift in Sources */,
 				7143D79F1CBE389A00C7E11F /* MainVCExtension.swift in Sources */,

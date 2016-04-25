@@ -31,6 +31,10 @@ class TutorialVC: UIViewController, UITextViewDelegate {
     var selectedOptionImage = UIImage(named: "questionBarGreen.png")
     var wrongOptionImage = UIImage(named: "questionBarRed.png")
     
+    //Variables for the EXTENSION
+    let imagePicker = UIImagePickerController()
+    var newImage: UIImage?
+    
 
     @IBOutlet var tutorialText: UILabel!
     @IBOutlet var tutorialCodeView: UITextView!
@@ -72,7 +76,14 @@ class TutorialVC: UIViewController, UITextViewDelegate {
 
                 prepareOverlayVC(overlayVC)
                 
-                overlayVC.updateOverlay(currentChallenge.correctAnswerText!, currentChallenge: indexOfChallenges, totalChallenges: numberOfChallenges, endText: tutorial.endText!, displayImage: currentChallenge.imageToDisplay!, imageName: imageToBeDisplayed)
+                if currentChallenge.imageToDisplay == "false" {
+                overlayVC.updateOverlay(currentChallenge.correctAnswerText!, currentChallenge: indexOfChallenges, totalChallenges: numberOfChallenges, endText: tutorial.endText!, displayImage: false, imageName: imageToBeDisplayed)
+                } else if currentChallenge.imageToDisplay == "fromOptions" {
+                    overlayVC.updateOverlay(currentChallenge.correctAnswerText!, currentChallenge: indexOfChallenges, totalChallenges: numberOfChallenges, endText: tutorial.endText!, displayImage: true, imageName: imageToBeDisplayed)
+                } else if currentChallenge.imageToDisplay == "fromTakenPhoto" {
+                    performSelectorOnMainThread(#selector(takeAPhoto), withObject: nil, waitUntilDone: true)
+                    overlayVC.updateOverlay(currentChallenge.correctAnswerText!, currentChallenge: indexOfChallenges, totalChallenges: numberOfChallenges, endText: tutorial.endText!, displayImage: true, imageName: (newImage?.images?.description)!)
+                }
                 
                 presentViewController(overlayVC, animated: true, completion: nil)
 

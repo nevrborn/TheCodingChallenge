@@ -22,7 +22,6 @@ class QuizMainVC: UIViewController {
     
     @IBOutlet var quizButton: UIButton!{
 
-
 didSet {
     quizButton.transform = CGAffineTransformMakeScale(0, 0)
     UIView.animateWithDuration(1.0, delay: 1.0, usingSpringWithDamping: 0.3,initialSpringVelocity:4, options: .CurveLinear, animations: {

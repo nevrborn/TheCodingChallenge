@@ -11,7 +11,6 @@
       "option2": "var String",
       "option3": "var text: String",
       "option4": "text: String",
-      "correctOption": 3,
       "correctAnswerText": "Correct! \r\r You declare a text string with var text: String"}]
      },
      
@@ -69,15 +68,13 @@
       "option4": "Fraction",
       "correctOption": 1,
       "correctAnswerText": "Correct! \r\r You have assigned the type Double to totalCost"},
-      
-      {"question": "How do you declare a variable that holds text?",
+        {"question": "How do you declare a variable that holds text?",
       "option1": "var text: Text",
       "option2": "var String",
       "option3": "var text: String",
       "option4": "text: String",
       "correctOption": 3,
       "correctAnswerText": "Correct! \r\r You declare a text string with var text: String"},
-      
       {"question": "Which of these examples are an Array?",
       "option1": "var arrayOfInts: [Int] = [1,2,3]",
       "option2": "var arrayOfStrings: [string] = [\"willy\",\"Jarle\",\"swift\"]",
@@ -85,7 +82,6 @@
       "option4": "All the above",
       "correctOption": 4,
       "correctAnswerText": "Correct! \r\r You have shown that all the above are examples of Arrays "},
-      
       {"question": "if we have variable favouriteFood is Pizza,how do we declare it as an optional?",
       "option1": "var favouriteFood = \"Pizza\"",
       "option2": "var favouriteFood : String = \"Pizza\"",
@@ -93,13 +89,13 @@
       "option4": "var favouriteFood : String = Pizza",
       "correctOption": 3,
       "correctAnswerText": "Correct! \r\r You declared var favouriteFood : String? = \"Pizza\" as an Optional"},
-      
       {"question": "which of this is an example of an empty array?",
       "option1": "var emptyArray: [Int] = [1,2,3]",
       "option2": "var emptyArray: [string] = [\"willy\",\"Jarle\",\"swift\"]",
       "option3": "var emptyArray: [Int]",
       "option4": "Non of the above",
       "correctOption": 3,
+
       "correctAnswerText": "Correct! \r\r You created empty array with var emptyArray: [Int]" },
       
       {"question": "Add \"Seattle\" to the end of this  Array.\r\r var cityArray: [String] = [\"Portland\",\"San Francisco\",\"Cupertino\"]",
@@ -225,3 +221,22 @@
                                 }]
                                 
                             }
+
+      "correctAnswerText": "Correct! \r\r You created empty array with var emptyArray: [Int]"},
+      {"question": "How do you declare a variable that holds text?",
+      "option1": "var text: Text",
+      "option2": "var String",
+      "option3": "var text: String",
+      "option4": "text: String",
+      "correctOption": 3,
+      "correctAnswerText": "Correct! \r\r You declare a text string with var text: String"},
+      {"question": "How do you declare a variable that holds text?",
+      "option1": "var text: Text",
+      "option2": "var String",
+      "option3": "var text: String",
+      "option4": "text: String",
+      "correctOption": 3,
+      "correctAnswerText": "Correct! \r\r You declare a text string with var text: String"}
+       ]
+     }]
+}

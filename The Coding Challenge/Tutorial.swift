@@ -44,8 +44,9 @@ public struct Challenge {
     public var input1: String?
     public var input2: String?
     public var input3: String?
-    public var imageToDisplay: Bool?
+    public var imageToDisplay: String?
     public var correctInput: Int?
+    public var codeToExecute: String?
     public var correctAnswerText: String?
     
     public init?(dictionary: NSDictionary) {
@@ -55,7 +56,8 @@ public struct Challenge {
         let input2 = dictionary["input2"] as? String
         let input3 = dictionary["input3"] as? String
         let correctInput = dictionary["correctInput"] as? Int
-        let imageToDisplay = dictionary["imageToDisplay"] as? Bool
+        let imageToDisplay = dictionary["imageToDisplay"] as? String
+        let codeToExecute = dictionary["codeToExecute"] as? String
         let correctAnswerText = dictionary["correctAnswerText"] as? String
         
         self.text = text
@@ -65,6 +67,7 @@ public struct Challenge {
         self.input3 = input3
         self.correctInput = correctInput
         self.imageToDisplay = imageToDisplay
+        self.codeToExecute = codeToExecute
         self.correctAnswerText = correctAnswerText
         
     }
