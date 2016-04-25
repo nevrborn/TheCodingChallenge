@@ -10,11 +10,13 @@ import UIKit
 
 class QuizSegue: UIStoryboardSegue {
     
+    var button: UIButton?
+    
     override func perform() {
         let firstVCView = self.sourceViewController.view as UIView!
         let secondVCView = self.destinationViewController.view as UIView!
         
-        
+        let quizViewController = destinationViewController as! QuizVC
         
         // Get the screen width and height.
         let screenWidth = UIScreen.mainScreen().bounds.size.width
@@ -26,35 +28,26 @@ class QuizSegue: UIStoryboardSegue {
         let window = UIApplication.sharedApplication().keyWindow
         window?.insertSubview(secondVCView, aboveSubview: firstVCView)
         
+        quizViewController.quizView.transform = CGAffineTransformScale(quizViewController.quizView.transform, 0.001, 0.001)
+        secondVCView.transform = CGAffineTransformScale(secondVCView.transform, 0.001, 0.001)
+        
+        UIView.animateWithDuration(1, animations: { () -> Void in
+            self.button!.transform = CGAffineTransformMakeScale(15,15)
+            quizViewController.quizView.transform = CGAffineTransformIdentity
+            
+        }) { (Finished) -> Void in
+            
+            UIView.animateWithDuration(1, animations: { () -> Void in
+                secondVCView.transform = CGAffineTransformIdentity
+                
+                }, completion: { (Finished) -> Void in
+                    
+                    firstVCView.transform = CGAffineTransformIdentity
+                    self.sourceViewController.presentViewController(self.destinationViewController as UIViewController, animated: false, completion: nil)
+            })
+        }
+        
         
     }
-    
-    
-//    func showQuizQuestion(button: UIButton) {
-//        
-//        button.setTitle("", forState: .Normal)
-//        
-//        self.view.bringSubviewToFront(button)
-//        
-//        self.quizQuestionView.transform = CGAffineTransformMakeScale(0, 0)
-//        
-//        UIView.animateWithDuration(1, animations: { () -> Void in
-//            button.transform = CGAffineTransformMakeScale(15,15)
-//            self.quizQuestionView.hidden = false
-//            self.view.bringSubviewToFront(self.quizQuestionView)
-//            self.quizQuestionView.transform = CGAffineTransformIdentity
-//            
-//        }) { (Finished) -> Void in
-//            
-//            UIView.animateWithDuration(1, animations: { () -> Void in
-//                //button.transform = CGAffineTransformMakeScale(1,1)
-//                
-//            }) { (Finished) -> Void in
-//                button.setTitle("", forState: .Normal)
-//                button.enabled = false
-//            }
-//        }
-//    }
-    
     
 }

@@ -161,15 +161,14 @@
                                     <action selector="taaLogoButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ClJ-Pc-4Ri"/>
                                 </connections>
                             </button>
-                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="emptyTile" translatesAutoresizingMaskIntoConstraints="NO" id="SLi-YQ-Pde">
-                                <rect key="frame" x="73" y="423" width="121" height="122"/>
-                            </imageView>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0 / 100 points" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E6d-Tx-4sW">
-                                <rect key="frame" x="92" y="462" width="84" height="41"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hFe-Ee-bIS" userLabel="Score Button">
+                                <rect key="frame" x="71" y="424" width="124" height="124"/>
+                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="16"/>
+                                <state key="normal" backgroundImage="emptyTile"/>
+                                <connections>
+                                    <action selector="quizScoreButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="g9o-p5-sIq"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -194,8 +193,7 @@
                         <outlet property="quizTile7" destination="5yf-Tb-HkI" id="dbw-sR-U6F"/>
                         <outlet property="quizTile8" destination="gfH-bG-2YO" id="5hl-KZ-CRd"/>
                         <outlet property="quizTile9" destination="D38-HB-NNy" id="0Yb-Oy-B5y"/>
-                        <outlet property="scoreLabel" destination="E6d-Tx-4sW" id="MIu-Hg-VFK"/>
-                        <outlet property="scoreTile" destination="SLi-YQ-Pde" id="d5e-Qe-aLI"/>
+                        <outlet property="scoreTile" destination="hFe-Ee-bIS" id="psN-LE-PQW"/>
                         <segue destination="tLL-7b-j4n" kind="presentation" identifier="showTutorial" id="nkO-6t-V5C"/>
                         <segue destination="LQf-jf-a7e" kind="presentation" identifier="showFAQ" id="8EX-Yh-vLe"/>
                         <segue destination="Xtc-GB-uaz" kind="presentation" identifier="showQuiz" customClass="QuizSegue" customModule="The_Coding_Challenge" customModuleProvider="target" id="NSa-T1-gSG"/>
@@ -220,53 +218,50 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yaQ-Yd-HFK">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="692"/>
                                 <subviews>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" indicatorStyle="black" editable="NO" text="Code Text" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="LjV-Vf-lmE">
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" indicatorStyle="black" editable="NO" text="Code Text" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="LjV-Vf-lmE">
                                         <rect key="frame" x="8" y="52" width="398" height="398"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" red="0.93333333333333335" green="0.90196078431372551" blue="0.70980392156862748" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tutorial Explanation" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="20" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MFl-Cr-G9R">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Tutorial Explanation" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="20" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MFl-Cr-G9R">
                                         <rect key="frame" x="8" y="18" width="398" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UQ1-V8-PZO">
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UQ1-V8-PZO">
                                         <rect key="frame" x="8" y="464" width="398" height="39"/>
-                                        <color key="backgroundColor" red="0.93605279679999998" green="1" blue="0.74568491810000004" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="18"/>
-                                        <state key="normal" title="Option1" backgroundImage="questionBar">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="15"/>
+                                        <state key="normal" title="Option1" backgroundImage="tutorialOption">
+                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                         </state>
                                         <connections>
                                             <action selector="pressedOption1:" destination="Bhz-8r-BOe" eventType="touchUpInside" id="Iwl-Xp-yuI"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R7P-hQ-8h3">
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R7P-hQ-8h3">
                                         <rect key="frame" x="8" y="513" width="398" height="39"/>
-                                        <color key="backgroundColor" red="0.93605279679999998" green="1" blue="0.74568491810000004" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="18"/>
-                                        <state key="normal" title="Option2" backgroundImage="questionBar">
-                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="15"/>
+                                        <state key="normal" title="Option2" backgroundImage="tutorialOption">
+                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                         </state>
                                         <connections>
                                             <action selector="pressedOption2:" destination="Bhz-8r-BOe" eventType="touchUpInside" id="odo-H4-Azx"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1EV-cT-JpM">
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1EV-cT-JpM">
                                         <rect key="frame" x="8" y="562" width="398" height="39"/>
-                                        <color key="backgroundColor" red="0.93605279679999998" green="1" blue="0.74568491810000004" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="18"/>
-                                        <state key="normal" title="Option3" backgroundImage="questionBar">
-                                            <color key="titleColor" red="0.96686698719999997" green="0.96686698719999997" blue="0.96686698719999997" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="15"/>
+                                        <state key="normal" title="Option3" backgroundImage="tutorialOption">
+                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                         </state>
                                         <connections>
                                             <action selector="pressedOption3:" destination="Bhz-8r-BOe" eventType="touchUpInside" id="RF3-DQ-Fzd"/>
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.93333333333333335" green="0.90196078431372551" blue="0.70980392156862748" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="UQ1-V8-PZO" firstAttribute="leading" secondItem="yaQ-Yd-HFK" secondAttribute="leading" constant="8" id="CFW-Ia-BX4"/>
                                     <constraint firstItem="R7P-hQ-8h3" firstAttribute="leading" secondItem="yaQ-Yd-HFK" secondAttribute="leading" constant="8" id="Eit-RO-uwu"/>
@@ -290,8 +285,8 @@
                                     <constraint firstAttribute="height" constant="40" id="hY6-u8-2mm"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <state key="normal" title="Start coding!" backgroundImage="questionBarRed">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Start coding!" backgroundImage="tutorialRunButton">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="runButtonPressed:" destination="Bhz-8r-BOe" eventType="touchUpInside" id="0NN-aW-SBd"/>
@@ -472,131 +467,107 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView hidden="YES" userInteractionEnabled="NO" alpha="0.10000000000000001" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BackgroungLargeLogo" translatesAutoresizingMaskIntoConstraints="NO" id="CTz-Ba-x4i">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tSN-Ig-UWY">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EFS-ww-lsw">
-                                <rect key="frame" x="20" y="429" width="374" height="40"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EFS-ww-lsw">
+                                        <rect key="frame" x="8" y="462" width="398" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="Dcc-I8-5rT"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <state key="normal" title="Option 1" backgroundImage="questionBar">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="option1ButtonPressed:" destination="Xtc-GB-uaz" eventType="touchUpInside" id="Uwk-ad-a3B"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qSv-Pl-mqF">
+                                        <rect key="frame" x="8" y="562" width="398" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="bgG-Lh-RRr"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <state key="normal" title="Option 3" backgroundImage="questionBar">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="option3ButtonPressed:" destination="Xtc-GB-uaz" eventType="touchUpInside" id="7ED-z9-elu"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dPP-jM-U8G">
+                                        <rect key="frame" x="8" y="612" width="398" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="tNc-kv-ttP"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <state key="normal" title="Option 4" backgroundImage="questionBar">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="option4ButtonPressed:" destination="Xtc-GB-uaz" eventType="touchUpInside" id="yKs-nv-TQk"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u9R-gY-viI">
+                                        <rect key="frame" x="8" y="667" width="398" height="39"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <state key="normal" title="Answer" backgroundImage="questionBarRed">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="runButton:" destination="Xtc-GB-uaz" eventType="touchUpInside" id="n8M-up-ARg"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Question Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k4R-Td-kQB">
+                                        <rect key="frame" x="20" y="8" width="374" height="241"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="241" id="2aT-pj-vqY"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OgQ-gY-chZ">
+                                        <rect key="frame" x="8" y="512" width="398" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="Hzp-xD-7Pz"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <state key="normal" title="Option 2" backgroundImage="questionBar">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="option2ButtonPressed:" destination="Xtc-GB-uaz" eventType="touchUpInside" id="HLp-rC-Fu2"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="Dcc-I8-5rT"/>
+                                    <constraint firstAttribute="trailing" secondItem="dPP-jM-U8G" secondAttribute="trailing" constant="8" id="1T8-SS-n81"/>
+                                    <constraint firstAttribute="trailing" secondItem="EFS-ww-lsw" secondAttribute="trailing" constant="8" id="1jA-Pt-jep"/>
+                                    <constraint firstItem="OgQ-gY-chZ" firstAttribute="top" secondItem="EFS-ww-lsw" secondAttribute="bottom" constant="10" id="9VN-wW-T1v"/>
+                                    <constraint firstItem="k4R-Td-kQB" firstAttribute="top" secondItem="tSN-Ig-UWY" secondAttribute="top" constant="8" id="Fwy-RB-Fcd"/>
+                                    <constraint firstItem="qSv-Pl-mqF" firstAttribute="top" secondItem="OgQ-gY-chZ" secondAttribute="bottom" constant="10" id="aEg-Qm-qma"/>
+                                    <constraint firstAttribute="trailing" secondItem="k4R-Td-kQB" secondAttribute="trailing" constant="20" id="b90-74-UOI"/>
+                                    <constraint firstAttribute="trailing" secondItem="qSv-Pl-mqF" secondAttribute="trailing" constant="8" id="eBd-yj-mmA"/>
+                                    <constraint firstItem="qSv-Pl-mqF" firstAttribute="leading" secondItem="tSN-Ig-UWY" secondAttribute="leading" constant="8" id="egN-Cl-Lg7"/>
+                                    <constraint firstAttribute="trailing" secondItem="OgQ-gY-chZ" secondAttribute="trailing" constant="8" id="ggY-OW-TdJ"/>
+                                    <constraint firstItem="k4R-Td-kQB" firstAttribute="leading" secondItem="tSN-Ig-UWY" secondAttribute="leading" constant="20" id="hgE-q4-qMc"/>
+                                    <constraint firstItem="dPP-jM-U8G" firstAttribute="top" secondItem="qSv-Pl-mqF" secondAttribute="bottom" constant="10" id="ip2-Cm-eeb"/>
+                                    <constraint firstAttribute="bottom" secondItem="u9R-gY-viI" secondAttribute="bottom" constant="30" id="rPm-Rb-D7P"/>
+                                    <constraint firstItem="OgQ-gY-chZ" firstAttribute="leading" secondItem="tSN-Ig-UWY" secondAttribute="leading" constant="8" id="rU3-Vh-nkK"/>
+                                    <constraint firstItem="EFS-ww-lsw" firstAttribute="leading" secondItem="tSN-Ig-UWY" secondAttribute="leading" constant="8" id="tl2-Xe-yMg"/>
+                                    <constraint firstItem="dPP-jM-U8G" firstAttribute="leading" secondItem="tSN-Ig-UWY" secondAttribute="leading" constant="8" id="wy2-HO-Ftq"/>
+                                    <constraint firstItem="u9R-gY-viI" firstAttribute="top" secondItem="dPP-jM-U8G" secondAttribute="bottom" constant="15" id="zUP-uM-b5G"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <state key="normal" title="Option 1" backgroundImage="questionBar">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="option1ButtonPressed:" destination="Xtc-GB-uaz" eventType="touchUpInside" id="Uwk-ad-a3B"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OgQ-gY-chZ">
-                                <rect key="frame" x="20" y="484" width="374" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="Hzp-xD-7Pz"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <state key="normal" title="Option 2" backgroundImage="questionBar">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="option2ButtonPressed:" destination="Xtc-GB-uaz" eventType="touchUpInside" id="HLp-rC-Fu2"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qSv-Pl-mqF">
-                                <rect key="frame" x="20" y="539" width="374" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="bgG-Lh-RRr"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <state key="normal" title="Option 3" backgroundImage="questionBar">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="option3ButtonPressed:" destination="Xtc-GB-uaz" eventType="touchUpInside" id="7ED-z9-elu"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Question Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k4R-Td-kQB">
-                                <rect key="frame" x="113" y="99" width="189" height="112"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="112" id="2aT-pj-vqY"/>
-                                    <constraint firstAttribute="width" constant="189" id="B3h-d2-SgZ"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="NHs-o4-lal">
-                                <rect key="frame" x="0.0" y="56" width="414" height="2"/>
-                                <color key="tintColor" red="0.062745098040000002" green="0.1843137255" blue="0.56078431370000004" alpha="1" colorSpace="calibratedRGB"/>
-                            </progressView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 %" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lzu-e7-k32">
-                                <rect key="frame" x="20" y="28" width="27" height="20"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 / 100 pts." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gz8-DB-8nZ">
-                                <rect key="frame" x="312" y="28" width="82" height="20"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dPP-jM-U8G">
-                                <rect key="frame" x="20" y="594" width="374" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="tNc-kv-ttP"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <state key="normal" title="Option 4" backgroundImage="questionBar">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="option4ButtonPressed:" destination="Xtc-GB-uaz" eventType="touchUpInside" id="yKs-nv-TQk"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u9R-gY-viI">
-                                <rect key="frame" x="0.0" y="656" width="414" height="39"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <state key="normal" title="Answer" backgroundImage="questionBarRed">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="runButton:" destination="Xtc-GB-uaz" eventType="touchUpInside" id="n8M-up-ARg"/>
-                                </connections>
-                            </button>
+                            </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.23529411759999999" green="0.49803921569999998" blue="0.51764705879999995" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="OgQ-gY-chZ" firstAttribute="centerY" secondItem="H4p-rQ-5IR" secondAttribute="centerY" constant="135.5" id="10X-W3-X4g"/>
-                            <constraint firstItem="Lzu-e7-k32" firstAttribute="leading" secondItem="H4p-rQ-5IR" secondAttribute="leadingMargin" id="1u5-xy-JqS"/>
-                            <constraint firstItem="NHs-o4-lal" firstAttribute="top" secondItem="Lzu-e7-k32" secondAttribute="bottom" constant="8" id="3GL-T1-8zA"/>
-                            <constraint firstItem="OgQ-gY-chZ" firstAttribute="trailing" secondItem="H4p-rQ-5IR" secondAttribute="trailingMargin" id="6FL-Zh-pQK"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="qSv-Pl-mqF" secondAttribute="trailing" id="6nX-Wi-Voi"/>
-                            <constraint firstItem="k4R-Td-kQB" firstAttribute="centerX" secondItem="H4p-rQ-5IR" secondAttribute="centerX" id="7aN-k2-gnq"/>
-                            <constraint firstItem="CTz-Ba-x4i" firstAttribute="leading" secondItem="H4p-rQ-5IR" secondAttribute="leading" id="9e2-1Z-v1K"/>
-                            <constraint firstItem="k4R-Td-kQB" firstAttribute="top" secondItem="UaM-lx-M52" secondAttribute="bottom" constant="79" id="9hi-0d-8sy"/>
-                            <constraint firstItem="Gz8-DB-8nZ" firstAttribute="trailing" secondItem="H4p-rQ-5IR" secondAttribute="trailingMargin" id="Dgs-u2-hqv"/>
-                            <constraint firstAttribute="trailing" secondItem="CTz-Ba-x4i" secondAttribute="trailing" id="E4U-D2-HDW"/>
-                            <constraint firstItem="jMX-3c-epr" firstAttribute="top" secondItem="CTz-Ba-x4i" secondAttribute="bottom" id="FvF-me-tgY"/>
-                            <constraint firstItem="EFS-ww-lsw" firstAttribute="leading" secondItem="H4p-rQ-5IR" secondAttribute="leadingMargin" id="GID-HJ-DNa"/>
-                            <constraint firstItem="Gz8-DB-8nZ" firstAttribute="top" secondItem="UaM-lx-M52" secondAttribute="bottom" constant="8" id="GWS-tT-Kwn"/>
-                            <constraint firstItem="qSv-Pl-mqF" firstAttribute="top" secondItem="OgQ-gY-chZ" secondAttribute="bottom" constant="15" id="KPq-Ut-fby"/>
-                            <constraint firstItem="Lzu-e7-k32" firstAttribute="top" secondItem="UaM-lx-M52" secondAttribute="bottom" constant="8" id="Klx-ep-L8v"/>
-                            <constraint firstItem="CTz-Ba-x4i" firstAttribute="top" secondItem="H4p-rQ-5IR" secondAttribute="top" id="MKH-ri-Shn"/>
-                            <constraint firstItem="OgQ-gY-chZ" firstAttribute="top" secondItem="EFS-ww-lsw" secondAttribute="bottom" constant="15" id="MNw-IO-Asw"/>
-                            <constraint firstItem="dPP-jM-U8G" firstAttribute="top" secondItem="qSv-Pl-mqF" secondAttribute="bottom" constant="15" id="Sj2-bS-jwn"/>
-                            <constraint firstItem="OgQ-gY-chZ" firstAttribute="centerX" secondItem="H4p-rQ-5IR" secondAttribute="centerX" id="XHb-Pc-Lzh"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="NHs-o4-lal" secondAttribute="trailing" constant="-20" id="Xie-3Z-s0b"/>
-                            <constraint firstItem="qSv-Pl-mqF" firstAttribute="leading" secondItem="H4p-rQ-5IR" secondAttribute="leadingMargin" id="aJy-64-T1O"/>
-                            <constraint firstItem="OgQ-gY-chZ" firstAttribute="leading" secondItem="H4p-rQ-5IR" secondAttribute="leadingMargin" id="ajf-V5-JHf"/>
-                            <constraint firstItem="NHs-o4-lal" firstAttribute="leading" secondItem="H4p-rQ-5IR" secondAttribute="leadingMargin" constant="-20" id="b9J-f2-IzS"/>
-                            <constraint firstItem="u9R-gY-viI" firstAttribute="leading" secondItem="H4p-rQ-5IR" secondAttribute="leadingMargin" constant="-20" id="bfo-Kn-uql"/>
-                            <constraint firstItem="u9R-gY-viI" firstAttribute="top" secondItem="CTz-Ba-x4i" secondAttribute="bottom" constant="-80" id="csT-Mu-IhM"/>
-                            <constraint firstItem="NHs-o4-lal" firstAttribute="top" secondItem="Gz8-DB-8nZ" secondAttribute="bottom" constant="8" id="drA-nv-tMm"/>
-                            <constraint firstItem="Gz8-DB-8nZ" firstAttribute="trailing" secondItem="H4p-rQ-5IR" secondAttribute="trailingMargin" id="dwC-q9-Fip"/>
-                            <constraint firstItem="u9R-gY-viI" firstAttribute="trailing" secondItem="H4p-rQ-5IR" secondAttribute="trailingMargin" constant="20" id="paf-dz-5bm"/>
-                            <constraint firstItem="EFS-ww-lsw" firstAttribute="trailing" secondItem="H4p-rQ-5IR" secondAttribute="trailingMargin" id="s74-cS-h4r"/>
-                            <constraint firstItem="dPP-jM-U8G" firstAttribute="leading" secondItem="H4p-rQ-5IR" secondAttribute="leadingMargin" id="trP-r9-oKm"/>
-                            <constraint firstItem="dPP-jM-U8G" firstAttribute="trailing" secondItem="H4p-rQ-5IR" secondAttribute="trailingMargin" id="wYo-fm-SrA"/>
+                            <constraint firstItem="tSN-Ig-UWY" firstAttribute="leading" secondItem="H4p-rQ-5IR" secondAttribute="leadingMargin" constant="-20" id="9l5-lV-Tig"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="tSN-Ig-UWY" secondAttribute="trailing" constant="-20" id="ece-zJ-Dam"/>
+                            <constraint firstItem="jMX-3c-epr" firstAttribute="top" secondItem="tSN-Ig-UWY" secondAttribute="bottom" id="igM-zO-87h"/>
+                            <constraint firstItem="tSN-Ig-UWY" firstAttribute="top" secondItem="H4p-rQ-5IR" secondAttribute="topMargin" id="s12-bw-fpB"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="KU5-Aa-HBX"/>
@@ -605,53 +576,16 @@
                         <outlet property="option2Button" destination="OgQ-gY-chZ" id="Hhy-gU-sfq"/>
                         <outlet property="option3Button" destination="qSv-Pl-mqF" id="s3u-fh-hpz"/>
                         <outlet property="option4Button" destination="dPP-jM-U8G" id="uwA-HS-VFX"/>
-                        <outlet property="progressLabel" destination="Lzu-e7-k32" id="yho-kv-cE4"/>
-                        <outlet property="progressView" destination="NHs-o4-lal" id="qOl-v3-SYn"/>
                         <outlet property="questionLabel" destination="k4R-Td-kQB" id="woA-YT-Jex"/>
+                        <outlet property="quizView" destination="tSN-Ig-UWY" id="wBp-BG-WbC"/>
                         <outlet property="runButton" destination="u9R-gY-viI" id="K04-Sf-eSS"/>
-                        <outlet property="scoreLabel" destination="Gz8-DB-8nZ" id="Ebe-zM-Y55"/>
-                        <segue destination="UTz-Pp-FSe" kind="unwind" identifier="unwindToMenu" unwindAction="unwindToMenu:" id="gnT-gn-1pg"/>
+                        <segue destination="UTz-Pp-FSe" kind="unwind" identifier="unwindToQuiz" customClass="QuizUnwindSegue" customModule="The_Coding_Challenge" customModuleProvider="target" unwindAction="unwindToMenu:" id="gnT-gn-1pg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q9H-q6-rwt" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="UTz-Pp-FSe" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="838" y="1319"/>
-        </scene>
-        <!--Quiz MainVC-->
-        <scene sceneID="bLC-qj-BCg">
-            <objects>
-                <viewController id="1F2-HU-z22" customClass="QuizMainVC" customModule="The_Coding_Challenge" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="pgg-lx-cA8"/>
-                        <viewControllerLayoutGuide type="bottom" id="1z0-B5-HkW"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="nbq-zl-y5q">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="BackgroundFAQ" translatesAutoresizingMaskIntoConstraints="NO" id="HY3-X1-UTa">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wX9-RG-Orq">
-                                <rect key="frame" x="127" y="181" width="176" height="122"/>
-                                <state key="normal" image="quizIcon"/>
-                                <connections>
-                                    <action selector="quizTapped:" destination="1F2-HU-z22" eventType="touchUpInside" id="PG4-GK-IgO"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="yQY-TC-v1l"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
-                    <connections>
-                        <outlet property="quiz1Button" destination="wX9-RG-Orq" id="XTX-RG-xZG"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="LcO-Ws-xnq" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2955" y="1319"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="yxY-Z0-7Gh">
@@ -774,95 +708,10 @@
             </objects>
             <point key="canvasLocation" x="2779" y="280"/>
         </scene>
-        <!--Quiz MainVC-->
-        <scene sceneID="Dg2-rF-daa">
-            <objects>
-                <viewController id="3dr-6A-M8f" customClass="QuizMainVC" customModule="The_Coding_Challenge" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="N6d-Iu-Ai5"/>
-                        <viewControllerLayoutGuide type="bottom" id="bu9-66-ecW"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="G56-Jc-x1P">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Background2" translatesAutoresizingMaskIntoConstraints="NO" id="UGf-Sa-s2q">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nnQ-L8-HIr">
-                                <rect key="frame" x="81" y="108" width="176" height="123"/>
-                                <state key="normal" image="quizMainMenu"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oFk-It-hNa">
-                                <rect key="frame" x="198" y="512" width="101" height="105"/>
-                                <state key="normal" image="quiz5"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MSi-Bp-e6u">
-                                <rect key="frame" x="40" y="197" width="105" height="105"/>
-                                <state key="normal" image="quiz4"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ecQ-vk-UH5">
-                                <rect key="frame" x="40" y="30" width="119" height="123"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
-                                <state key="normal" title="Button" image="questionBar"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q1O-Jl-Qb8">
-                                <rect key="frame" x="197" y="354" width="105" height="105"/>
-                                <state key="normal" image="quiz9"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e1Z-vl-Lmg">
-                                <rect key="frame" x="40" y="512" width="105" height="105"/>
-                                <state key="normal" image="quiz9"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nr6-uk-Mri">
-                                <rect key="frame" x="40" y="356" width="105" height="105"/>
-                                <state key="normal" image="quiz7"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4kZ-1U-YJG">
-                                <rect key="frame" x="198" y="197" width="103" height="104"/>
-                                <state key="normal" image="quiz3"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nDw-x6-agc">
-                                <rect key="frame" x="118" y="276" width="105" height="105"/>
-                                <state key="normal" image="quiz8"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gcH-70-AJd">
-                                <rect key="frame" x="118" y="433" width="105" height="105"/>
-                                <state key="normal" image="quiz10"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DC0-M0-Ckg">
-                                <rect key="frame" x="179" y="33" width="151" height="114"/>
-                                <state key="normal" title="Button" image="mainMenu"/>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="kgE-7y-vB6"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
-                    <connections>
-                        <outlet property="quiz10Button" destination="gcH-70-AJd" id="XnP-fR-eFw"/>
-                        <outlet property="quiz1Button1" destination="oFk-It-hNa" id="LGG-vd-0DC"/>
-                        <outlet property="quiz2Button" destination="DC0-M0-Ckg" id="5DE-ys-4pr"/>
-                        <outlet property="quiz3Button" destination="MSi-Bp-e6u" id="2Xh-IX-x2q"/>
-                        <outlet property="quiz4Button" destination="ecQ-vk-UH5" id="Hgt-jj-V0o"/>
-                        <outlet property="quiz5Button" destination="Q1O-Jl-Qb8" id="hbf-zX-taq"/>
-                        <outlet property="quiz6Button" destination="e1Z-vl-Lmg" id="ZFw-g1-i1S"/>
-                        <outlet property="quiz7Button" destination="Nr6-uk-Mri" id="bmx-L3-Z1X"/>
-                        <outlet property="quiz8Button" destination="4kZ-1U-YJG" id="dO1-gJ-ihF"/>
-                        <outlet property="quiz9Button" destination="nDw-x6-agc" id="EbG-Yb-bDm"/>
-                        <outlet property="quizButton" destination="nnQ-L8-HIr" id="Kdd-hB-qSE"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="tfK-oA-z5c" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2072.5" y="1311.5"/>
-        </scene>
     </scenes>
     <resources>
-        <image name="Background2" width="414" height="736"/>
         <image name="Background3" width="414" height="736"/>
         <image name="BackgroundFAQ" width="414" height="736"/>
-        <image name="BackgroungLargeLogo" width="1024" height="768"/>
         <image name="codingTitle" width="282" height="93"/>
         <image name="emptyTile" width="122" height="122"/>
         <image name="faqIcon" width="122" height="121"/>
@@ -874,15 +723,8 @@
         <image name="mainMenu" width="122" height="122"/>
         <image name="questionBar" width="289" height="39"/>
         <image name="questionBarRed" width="289" height="39"/>
-        <image name="quiz10" width="105" height="105"/>
-        <image name="quiz3" width="105" height="105"/>
-        <image name="quiz4" width="105" height="105"/>
-        <image name="quiz5" width="105" height="105"/>
-        <image name="quiz7" width="105" height="105"/>
-        <image name="quiz8" width="105" height="105"/>
-        <image name="quiz9" width="105" height="105"/>
         <image name="quizIcon" width="122" height="122"/>
-        <image name="quizMainMenu" width="89" height="90"/>
+        <image name="quizMainMenu" width="122" height="122"/>
         <image name="quizTile1" width="137" height="137"/>
         <image name="quizTile10" width="137" height="137"/>
         <image name="quizTile2" width="137" height="137"/>
@@ -898,6 +740,8 @@
         <image name="taaLogoFull" width="107" height="32"/>
         <image name="trophy" width="185" height="209"/>
         <image name="tutMainMenu" width="141" height="142"/>
+        <image name="tutorialOption" width="301" height="53"/>
+        <image name="tutorialRunButton" width="301" height="53"/>
         <image name="tutorialsIcon" width="121" height="122"/>
     </resources>
 </document>

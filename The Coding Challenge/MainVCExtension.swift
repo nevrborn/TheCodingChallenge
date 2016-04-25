@@ -43,6 +43,7 @@ extension MainVC {
         quizTile9.enabled = false
         quizTile10.enabled = false
         quizMainMenu.enabled = false
+        scoreTile.enabled = false
         
         quizTile1.hidden = true
         quizTile2.hidden = true
@@ -55,7 +56,6 @@ extension MainVC {
         quizTile9.hidden = true
         quizTile10.hidden = true
         quizMainMenu.hidden = true
-        scoreLabel.hidden = true
         scoreTile.hidden = true
         
         logoButton.hidden = false
@@ -97,6 +97,7 @@ extension MainVC {
         quizTile9.enabled = false
         quizTile10.enabled = false
         quizMainMenu.enabled = false
+        scoreTile.enabled = false
         
         quizTile1.hidden = true
         quizTile2.hidden = true
@@ -109,7 +110,6 @@ extension MainVC {
         quizTile9.hidden = true
         quizTile10.hidden = true
         quizMainMenu.hidden = true
-        scoreLabel.hidden = true
         scoreTile.hidden = true
         
         logoButton.hidden = false
@@ -227,6 +227,7 @@ extension MainVC {
         buttonNo5.enabled = true
         mainMenuButton.enabled = true
         mainMenuButton.hidden = false
+        scoreTile.enabled = false
         
         indexOfPage = 0
         
@@ -324,6 +325,7 @@ extension MainVC {
         quizTile9.enabled = true
         quizTile10.enabled = true
         quizMainMenu.enabled = true
+        scoreTile.enabled = false
         
         quizTile1.hidden = false
         quizTile2.hidden = false
@@ -336,7 +338,6 @@ extension MainVC {
         quizTile9.hidden = false
         quizTile10.hidden = false
         quizMainMenu.hidden = false
-        scoreLabel.hidden = false
         scoreTile.hidden = false
         
         quizTile1.setTitle("?", forState: .Normal)
@@ -350,7 +351,8 @@ extension MainVC {
         quizTile9.setTitle("?", forState: .Normal)
         quizTile10.setTitle("?", forState: .Normal)
         
-        scoreLabel.text = "0 / 100\rpoints"
+        scoreTile.setTitle("0 / 100\rpoints", forState: .Normal)
+        scoreTile.setBackgroundImage(UIImage(named: "emptyTile.png"), forState: .Normal)
 
         codeChallengeLogo.hidden = true
         logoButton.hidden = true
@@ -466,30 +468,6 @@ extension MainVC {
         )
         
     }
+
     
-    func showQuizQuestion(button: UIButton) {
-        
-        button.setTitle("", forState: .Normal)
-        
-        self.view.bringSubviewToFront(button)
-        
-//        self.quizQuestionView.transform = CGAffineTransformMakeScale(0, 0)
-//        
-        UIView.animateWithDuration(1, animations: { () -> Void in
-//            button.transform = CGAffineTransformMakeScale(15,15)
-//            self.quizQuestionView.hidden = false
-//            self.view.bringSubviewToFront(self.quizQuestionView)
-//            self.quizQuestionView.transform = CGAffineTransformIdentity
-        
-        }) { (Finished) -> Void in
-            
-            UIView.animateWithDuration(1, animations: { () -> Void in
-                //button.transform = CGAffineTransformMakeScale(1,1)
-                
-            }) { (Finished) -> Void in
-                button.setTitle("", forState: .Normal)
-                button.enabled = false
-            }
-        }
-    }
 }
