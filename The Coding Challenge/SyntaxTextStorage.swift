@@ -83,10 +83,10 @@ class SyntaxTextStorage: NSTextStorage {
     func performFormatting(codeText: String) {
         
         let textString = NSMutableAttributedString(string: challenge.text!, attributes:nil)
-        textString.addAttribute(NSFontAttributeName, value: UIFont.init(name: "Menlo", size: 14)!, range: NSMakeRange(0, textString.length))
+        textString.addAttribute(NSFontAttributeName, value: UIFont.init(name: "Menlo", size: 12)!, range: NSMakeRange(0, textString.length))
         
         let codeString = NSMutableAttributedString(string: challenge.code!, attributes:nil)
-        codeString.addAttribute(NSFontAttributeName, value: UIFont.init(name: "Menlo", size: 14)!, range: NSMakeRange(0, codeString.length))
+        codeString.addAttribute(NSFontAttributeName, value: UIFont.init(name: "Menlo", size: 12)!, range: NSMakeRange(0, codeString.length))
         
         tutorialDictionary[AttributedCode] = codeString
         tutorialDictionary[AttributedText] = textString

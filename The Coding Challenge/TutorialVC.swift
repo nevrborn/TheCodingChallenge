@@ -27,9 +27,9 @@ class TutorialVC: UIViewController, UITextViewDelegate {
     var syntaxTextStorage: SyntaxTextStorage?
     var tutorialOverlayDelegate = TutorialOverlayVC()
     
-    var optionImage = UIImage(named: "questionBar.png")
-    var selectedOptionImage = UIImage(named: "questionBarGreen.png")
-    var wrongOptionImage = UIImage(named: "questionBarRed.png")
+    var optionImage = UIImage(named: "tutorialOption.png")
+    var selectedOptionImage = UIImage(named: "tutorialOptionSelected.png")
+    var wrongOptionImage = UIImage(named: "tutorialOptionWrong.png")
     
     //Variables for the EXTENSION
     let imagePicker = UIImagePickerController()
@@ -42,7 +42,9 @@ class TutorialVC: UIViewController, UITextViewDelegate {
     @IBOutlet var option2Button: UIButton!
     @IBOutlet var option3Button: UIButton!
     @IBOutlet var runButton: UIButton!
-    @IBOutlet var tutorialTitle: UINavigationItem!
+    @IBOutlet var tutorialTitle: UILabel!
+    @IBOutlet var backButton: UIButton!
+
     
     
     override func viewDidLoad() {
@@ -57,9 +59,11 @@ class TutorialVC: UIViewController, UITextViewDelegate {
         option1Button.hidden = true
         option2Button.hidden = true
         option3Button.hidden = true
+        backButton.hidden = true
         
-        tutorialTitle.title = tutorial.name
+        tutorialTitle.text = tutorial.name
         tutorialText.text = tutorial.introText
+        tutorialText.font = UIFont(name: "Menlo", size: 13)
         
         super.viewDidLoad()
     }
@@ -76,7 +80,7 @@ class TutorialVC: UIViewController, UITextViewDelegate {
 
                 prepareOverlayVC(overlayVC)
                 
-                if currentChallenge.imageToDisplay == "false" {
+                if currentChallenge.imageToDisplay == "noImageToDisplay" {
                 overlayVC.updateOverlay(currentChallenge.correctAnswerText!, currentChallenge: indexOfChallenges, totalChallenges: numberOfChallenges, endText: tutorial.endText!, displayImage: false, imageName: imageToBeDisplayed)
                 } else if currentChallenge.imageToDisplay == "fromOptions" {
                     overlayVC.updateOverlay(currentChallenge.correctAnswerText!, currentChallenge: indexOfChallenges, totalChallenges: numberOfChallenges, endText: tutorial.endText!, displayImage: true, imageName: imageToBeDisplayed)
@@ -91,6 +95,8 @@ class TutorialVC: UIViewController, UITextViewDelegate {
                     indexOfChallenges += 1
                     nextChallenge(indexOfChallenges)
                 }
+                
+                backButton.hidden = false
                 
             } else if selectedUserOption != currentChallenge.correctInput! {
                 AudioServicesPlayAlertSound(kSystemSoundID_Vibrate)
@@ -126,7 +132,6 @@ class TutorialVC: UIViewController, UITextViewDelegate {
             tutorialIntroFinished = true
             runButton.setTitle("Try it out!", forState: .Normal)
             nextChallenge(indexOfChallenges)
-            
         }
         
     }
@@ -173,11 +178,24 @@ class TutorialVC: UIViewController, UITextViewDelegate {
         option3Button.setTitle(currentChallenge.input3! as String, forState: .Normal)
     }
     
+    @IBAction func backButton(sender: UIButton) {
+        indexOfChallenges -= 1
+        nextChallenge(indexOfChallenges)
+    }
+    
+    @IBAction func exitButton(sender: UIButton) {
+        performSegueWithIdentifier("unwindToMenu", sender: sender)
+    }
+    
     
     func nextChallenge(challengeIndex: Int) {
         
         let challenge = tutorial.challenges[challengeIndex]
         syntaxTextStorage?.processText(challenge)
+        
+        if challengeIndex == 0 {
+            backButton.hidden = true
+        }
 
         self.processedChallenges = (syntaxTextStorage?.tutorialDictionary)!
         

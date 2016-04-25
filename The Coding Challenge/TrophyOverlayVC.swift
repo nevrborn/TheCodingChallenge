@@ -14,6 +14,8 @@ class TrophyOverlayVC: UIViewController, UIViewControllerTransitioningDelegate {
     @IBOutlet var throphy: UIImageView!
     @IBOutlet var congratulationsLabel: UILabel!
     @IBOutlet var textLabel: UILabel!
+    @IBOutlet var shareButton: UIButton!
+    @IBOutlet var mainMenuButton: UIButton!
     
     var tutorialName: String = ""
     var score: Int = 0
@@ -21,7 +23,15 @@ class TrophyOverlayVC: UIViewController, UIViewControllerTransitioningDelegate {
     var toBeDisplayed: String = ""
     
     @IBAction func share(sender: UIButton) {
-        let vc = UIActivityViewController(activityItems:["\(Int(score)) / 100 points on the \(quizName) quiz with CodeChallenge app.\r\r Interested in coding? Check out @AppAcademyNL"], applicationActivities: nil)
+        var textToShare: String = ""
+        
+        if toBeDisplayed == "quiz" {
+            textToShare = "\(Int(score)) / 100 points on the \(quizName) quiz with CodeChallenge app.\r\r Interested in coding? Check out @AppAcademyNL"
+        } else if toBeDisplayed == "tutorial" {
+            textToShare = "I just completed an Swift tutorial with CodeChallenge app\r\r Interested in coding? Check out @AppAcademyNL"
+        }
+        
+        let vc = UIActivityViewController(activityItems:[textToShare], applicationActivities: nil)
         self.presentViewController(vc, animated: true, completion: nil)
     }
     
@@ -41,9 +51,16 @@ class TrophyOverlayVC: UIViewController, UIViewControllerTransitioningDelegate {
             textLabel.text = "You've completed the \(tutorialName) tutorial! \r\r"
         }
         
-        for _ in 0..<100 {
-            drawCircle(20)
+        for _ in 0..<80 {
+            drawCircles(25)
         }
+        
+        self.view.bringSubviewToFront(logo)
+        self.view.bringSubviewToFront(throphy)
+        self.view.bringSubviewToFront(shareButton)
+        self.view.bringSubviewToFront(mainMenuButton)
+        self.view.bringSubviewToFront(congratulationsLabel)
+        self.view.bringSubviewToFront(textLabel)
         
     }
     
@@ -58,7 +75,7 @@ class TrophyOverlayVC: UIViewController, UIViewControllerTransitioningDelegate {
         self.score = score
     }
     
-    func drawCircle(radiusDivider: CGFloat) {
+    func drawCircles(radiusDivider: CGFloat) {
         
         let circleLayer = CAShapeLayer()
         

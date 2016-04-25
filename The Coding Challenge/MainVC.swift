@@ -21,7 +21,7 @@ class MainVC: UIViewController, JSONSourceDelegate, JSONQuizSourceDelegate, UIVi
     var indexOfSelectedQuiz = 0
     var indexOfQuizQuestion = 0
     var firstTimeLoad: Bool?
-    var quizOrTutorial: String?
+    var quizOrTutorial: String? = ""
     
     var quizScore: Int = 0
     var numberOfQuestionsFinished = 0
@@ -272,8 +272,7 @@ class MainVC: UIViewController, JSONSourceDelegate, JSONQuizSourceDelegate, UIVi
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "showTutorial" {
             
-            let navigationViewController = segue.destinationViewController as! UINavigationController
-            let tutorialViewController = navigationViewController.childViewControllers[0] as! TutorialVC
+            let tutorialViewController = segue.destinationViewController as! TutorialVC
             tutorialViewController.indexOfTutorial = indexOfSelectedTutorial
             tutorialViewController.tutorialStore = self.tutorialStore
         }

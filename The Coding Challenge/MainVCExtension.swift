@@ -176,7 +176,7 @@ extension MainVC {
                 self.buttonNo3.hidden = true
                 self.buttonNo4.hidden = true
                 
-                self.buttonNo1.enabled = false
+                self.buttonNo1.enabled = true
                 self.buttonNo2.enabled = true
                 self.buttonNo3.enabled = false
                 self.buttonNo4.enabled = false
@@ -192,8 +192,8 @@ extension MainVC {
                 self.buttonNo3.hidden = false
                 self.buttonNo4.hidden = true
                 
-                self.buttonNo1.enabled = false
-                self.buttonNo2.enabled = false
+                self.buttonNo1.enabled = true
+                self.buttonNo2.enabled = true
                 self.buttonNo3.enabled = true
                 self.buttonNo4.enabled = false
             }
@@ -209,9 +209,9 @@ extension MainVC {
                 self.buttonNo3.hidden = false
                 self.buttonNo4.hidden = false
                 
-                self.buttonNo1.enabled = false
-                self.buttonNo2.enabled = false
-                self.buttonNo3.enabled = false
+                self.buttonNo1.enabled = true
+                self.buttonNo2.enabled = true
+                self.buttonNo3.enabled = true
                 self.buttonNo4.enabled = true
             }
         }
@@ -261,6 +261,11 @@ extension MainVC {
                 self.buttonNo2.hidden = true
                 self.buttonNo3.hidden = true
                 self.buttonNo4.hidden = true
+                
+                self.buttonNo1.enabled = true
+                self.buttonNo2.enabled = false
+                self.buttonNo3.enabled = false
+                self.buttonNo4.enabled = false
             }
             
             if numberOfItemsOnLastPage == 2 {
@@ -271,6 +276,11 @@ extension MainVC {
                 self.buttonNo2.hidden = false
                 self.buttonNo3.hidden = true
                 self.buttonNo4.hidden = true
+                
+                self.buttonNo1.enabled = true
+                self.buttonNo2.enabled = true
+                self.buttonNo3.enabled = false
+                self.buttonNo4.enabled = false
             }
             
             if numberOfItemsOnLastPage == 3 {
@@ -282,6 +292,11 @@ extension MainVC {
                 self.buttonNo2.hidden = false
                 self.buttonNo3.hidden = false
                 self.buttonNo4.hidden = true
+                
+                self.buttonNo1.enabled = true
+                self.buttonNo2.enabled = true
+                self.buttonNo3.enabled = true
+                self.buttonNo4.enabled = false
             }
             
             if numberOfItemsOnLastPage == 4 {
@@ -294,6 +309,11 @@ extension MainVC {
                 self.buttonNo2.hidden = false
                 self.buttonNo3.hidden = false
                 self.buttonNo4.hidden = false
+                
+                self.buttonNo1.enabled = true
+                self.buttonNo2.enabled = true
+                self.buttonNo3.enabled = true
+                self.buttonNo4.enabled = true
             }
         }
     }

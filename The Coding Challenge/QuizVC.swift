@@ -28,9 +28,9 @@ class QuizVC: UIViewController {
     var pointsToScore: Double = 10
     var firstTimeLoad = true
     
-    var optionImage = UIImage(named: "questionBar.png")
-    var selectedOptionImage = UIImage(named: "questionBarGreen.png")
-    var wrongOptionImage = UIImage(named: "questionBarRed.png")
+    var optionImage = UIImage(named: "tutorialOption.png")
+    var selectedOptionImage = UIImage(named: "tutorialOptionSelected.png")
+    var wrongOptionImage = UIImage(named: "tutorialOptionWrong.png")
     
     @IBOutlet var questionLabel: UILabel!
     @IBOutlet var option1Button: UIButton!
@@ -167,10 +167,11 @@ class QuizVC: UIViewController {
             let mainViewController = segue.destinationViewController as! MainVC
             
             mainViewController.quizScore = mainViewController.quizScore + Int(score)
-            mainViewController.scoreTile.setTitle("\(mainViewController.quizScore) / 100\rpoints", forState: .Normal)
+            mainViewController.scoreTile.setTitle("\(mainViewController.quizScore) / 100\r points", forState: .Disabled)
             
             if mainViewController.numberOfQuestionsFinished == 10 {
                 mainViewController.scoreTile.setBackgroundImage(UIImage(named: "finishedQuizTile.png"), forState: .Normal)
+                mainViewController.scoreTile.setTitle("Press me!!", forState: .Normal)
                 mainViewController.scoreTile.enabled = true
             }
             

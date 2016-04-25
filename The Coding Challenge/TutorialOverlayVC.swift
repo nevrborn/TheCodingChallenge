@@ -11,6 +11,7 @@ import UIKit
 class TutorialOverlayVC: UIViewController, UIViewControllerTransitioningDelegate {
     
     @IBOutlet var textLabel: UILabel!
+    @IBOutlet var pictureTextLabel: UILabel!
     @IBOutlet var imageView: UIImageView!
     @IBOutlet var nextButton: UIButton!
     
@@ -44,9 +45,11 @@ class TutorialOverlayVC: UIViewController, UIViewControllerTransitioningDelegate
     override func viewDidLoad() {
         if displayImage == false {
             textLabel.text = answerText
-            imageView.hidden = false
+            pictureTextLabel.hidden = true
+            imageView.hidden = true
         } else if displayImage == true {
-            textLabel.text = answerText
+            textLabel.hidden = true
+            pictureTextLabel.hidden = false
             imageView.image = UIImage(named: imageToDisplay)
             imageView.hidden = false
         }
@@ -89,10 +92,14 @@ class TutorialOverlayVC: UIViewController, UIViewControllerTransitioningDelegate
             
             self.dismissViewControllerAnimated(true, completion: nil)
             
-        } else if currentChallenge! == totalChallenges! && finishedChallenge == false {
+        } else if currentChallenge == totalChallenges && finishedChallenge == false {
+            
+            textLabel.text = endText
+            textLabel.hidden = false
+            imageView.hidden = true
+            pictureTextLabel.hidden = true
             
             nextButton.setTitle("Finish Tutorial", forState: .Normal)
-            textLabel.text = endText
             finishedChallenge = true
             
         } else if finishedChallenge == true {
