@@ -47,7 +47,6 @@ class MainVC: UIViewController, JSONSourceDelegate, JSONQuizSourceDelegate {
     @IBOutlet var quizMainMenu: UIButton!
     @IBOutlet var scoreLabel: UILabel!
     @IBOutlet var scoreTile: UIImageView!
-    @IBOutlet var quizQuestionView: UIView!
 
     
     override func viewDidLoad() {
