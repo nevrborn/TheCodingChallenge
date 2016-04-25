@@ -30,31 +30,31 @@ class QuizSegue: UIStoryboardSegue {
     }
     
     
-    func showQuizQuestion(button: UIButton) {
-        
-        button.setTitle("", forState: .Normal)
-        
-        self.view.bringSubviewToFront(button)
-        
-        self.quizQuestionView.transform = CGAffineTransformMakeScale(0, 0)
-        
-        UIView.animateWithDuration(1, animations: { () -> Void in
-            button.transform = CGAffineTransformMakeScale(15,15)
-            self.quizQuestionView.hidden = false
-            self.view.bringSubviewToFront(self.quizQuestionView)
-            self.quizQuestionView.transform = CGAffineTransformIdentity
-            
-        }) { (Finished) -> Void in
-            
-            UIView.animateWithDuration(1, animations: { () -> Void in
-                //button.transform = CGAffineTransformMakeScale(1,1)
-                
-            }) { (Finished) -> Void in
-                button.setTitle("", forState: .Normal)
-                button.enabled = false
-            }
-        }
-    }
+//    func showQuizQuestion(button: UIButton) {
+//        
+//        button.setTitle("", forState: .Normal)
+//        
+//        self.view.bringSubviewToFront(button)
+//        
+//        self.quizQuestionView.transform = CGAffineTransformMakeScale(0, 0)
+//        
+//        UIView.animateWithDuration(1, animations: { () -> Void in
+//            button.transform = CGAffineTransformMakeScale(15,15)
+//            self.quizQuestionView.hidden = false
+//            self.view.bringSubviewToFront(self.quizQuestionView)
+//            self.quizQuestionView.transform = CGAffineTransformIdentity
+//            
+//        }) { (Finished) -> Void in
+//            
+//            UIView.animateWithDuration(1, animations: { () -> Void in
+//                //button.transform = CGAffineTransformMakeScale(1,1)
+//                
+//            }) { (Finished) -> Void in
+//                button.setTitle("", forState: .Normal)
+//                button.enabled = false
+//            }
+//        }
+//    }
     
     
 }
