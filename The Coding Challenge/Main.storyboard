@@ -28,6 +28,7 @@
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OAi-Ix-DUY">
                                 <rect key="frame" x="-8" y="13" width="137" height="138"/>
                                 <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="59"/>
+                                <inset key="titleEdgeInsets" minX="0.0" minY="0.0" maxX="1" maxY="0.0"/>
                                 <state key="normal" title="?" backgroundImage="quizTile1"/>
                                 <connections>
                                     <action selector="quizTile1:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0GW-sh-bgH"/>
@@ -36,6 +37,7 @@
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wwz-dz-avW">
                                 <rect key="frame" x="150" y="13" width="137" height="138"/>
                                 <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="47"/>
+                                <inset key="titleEdgeInsets" minX="0.0" minY="0.0" maxX="1" maxY="0.0"/>
                                 <state key="normal" title="?" backgroundImage="quizTile2"/>
                                 <connections>
                                     <action selector="quizTile2:" destination="BYZ-38-t0r" eventType="touchUpInside" id="U2s-SD-iWw"/>
@@ -44,6 +46,7 @@
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yAl-39-Jee">
                                 <rect key="frame" x="68" y="94" width="137" height="138"/>
                                 <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="80"/>
+                                <inset key="titleEdgeInsets" minX="0.0" minY="0.0" maxX="1" maxY="0.0"/>
                                 <state key="normal" title="?" backgroundImage="quizTile3"/>
                                 <connections>
                                     <action selector="quizTile3:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nmg-HG-DP1"/>
@@ -52,6 +55,7 @@
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a4z-6v-3Ho">
                                 <rect key="frame" x="-10" y="174" width="137" height="138"/>
                                 <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="51"/>
+                                <inset key="titleEdgeInsets" minX="0.0" minY="0.0" maxX="1" maxY="0.0"/>
                                 <state key="normal" title="?" backgroundImage="quizTile5"/>
                                 <connections>
                                     <action selector="quizTile5:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xaq-JX-cN0"/>
@@ -60,6 +64,7 @@
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CYv-bC-dnn">
                                 <rect key="frame" x="145" y="175" width="137" height="138"/>
                                 <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="49"/>
+                                <inset key="titleEdgeInsets" minX="0.0" minY="0.0" maxX="1" maxY="0.0"/>
                                 <state key="normal" title="?" backgroundImage="quizTile6"/>
                                 <connections>
                                     <action selector="quizTile6:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lsA-Wx-yXP"/>
@@ -68,6 +73,7 @@
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5yf-Tb-HkI">
                                 <rect key="frame" x="67" y="256" width="137" height="138"/>
                                 <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="45"/>
+                                <inset key="titleEdgeInsets" minX="0.0" minY="0.0" maxX="1" maxY="0.0"/>
                                 <state key="normal" title="?" backgroundImage="quizTile7"/>
                                 <connections>
                                     <action selector="quizTile7:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RIM-3F-DYU"/>
@@ -76,6 +82,7 @@
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gfH-bG-2YO">
                                 <rect key="frame" x="221" y="257" width="137" height="138"/>
                                 <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="66"/>
+                                <inset key="titleEdgeInsets" minX="0.0" minY="0.0" maxX="1" maxY="0.0"/>
                                 <state key="normal" title="?" backgroundImage="quizTile8"/>
                                 <connections>
                                     <action selector="quizTile8:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kwL-N2-mEo"/>
@@ -84,6 +91,7 @@
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D38-HB-NNy">
                                 <rect key="frame" x="-12" y="337" width="137" height="138"/>
                                 <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="78"/>
+                                <inset key="titleEdgeInsets" minX="0.0" minY="0.0" maxX="1" maxY="0.0"/>
                                 <state key="normal" title="?" backgroundImage="quizTile9"/>
                                 <connections>
                                     <action selector="quizTile9:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SHZ-aA-Sfx"/>
@@ -92,6 +100,7 @@
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aeO-1T-21o">
                                 <rect key="frame" x="142" y="337" width="137" height="138"/>
                                 <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="47"/>
+                                <inset key="titleEdgeInsets" minX="0.0" minY="0.0" maxX="1" maxY="0.0"/>
                                 <state key="normal" title="?" backgroundImage="quizTile10"/>
                                 <connections>
                                     <action selector="quizTile10:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Tm9-1w-WpC"/>
@@ -99,6 +108,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gf3-uw-Xwb" userLabel="Button No2">
                                 <rect key="frame" x="65" y="253" width="143" height="143"/>
+                                <inset key="titleEdgeInsets" minX="0.0" minY="0.0" maxX="1" maxY="0.0"/>
                                 <state key="normal" image="faqIcon"/>
                                 <connections>
                                     <action selector="button2Pressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1Al-NM-O2K"/>
@@ -106,6 +116,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jFi-Hx-V5I" userLabel="Button No3">
                                 <rect key="frame" x="142" y="333" width="142" height="143"/>
+                                <inset key="titleEdgeInsets" minX="0.0" minY="0.0" maxX="1" maxY="0.0"/>
                                 <state key="normal" image="quizIcon"/>
                                 <connections>
                                     <action selector="button3Pressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pvV-2x-6h6"/>
@@ -113,6 +124,7 @@
                             </button>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wyl-6e-2MG">
                                 <rect key="frame" x="-15" y="333" width="142" height="143"/>
+                                <inset key="titleEdgeInsets" minX="0.0" minY="0.0" maxX="1" maxY="0.0"/>
                                 <state key="normal" image="quizIcon"/>
                                 <connections>
                                     <action selector="button4Pressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QM6-rM-Hxi"/>
@@ -120,6 +132,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CwV-I5-jSX">
                                 <rect key="frame" x="229" y="424" width="120" height="120"/>
+                                <inset key="titleEdgeInsets" minX="0.0" minY="0.0" maxX="1" maxY="0.0"/>
                                 <state key="normal" image="taaLogo"/>
                                 <connections>
                                     <action selector="showMoreTutorials:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sph-6f-4Vy"/>
@@ -127,6 +140,7 @@
                             </button>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QOb-gT-LVX" userLabel="Quiz Main Menu">
                                 <rect key="frame" x="218" y="413" width="141" height="142"/>
+                                <inset key="titleEdgeInsets" minX="0.0" minY="0.0" maxX="1" maxY="0.0"/>
                                 <state key="normal" image="quizMainMenu"/>
                                 <connections>
                                     <action selector="goToMainMenu:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qFG-P0-wOJ"/>
@@ -134,6 +148,7 @@
                             </button>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pal-vF-Nsd">
                                 <rect key="frame" x="-11" y="171" width="141" height="142"/>
+                                <inset key="titleEdgeInsets" minX="0.0" minY="0.0" maxX="1" maxY="0.0"/>
                                 <state key="normal" image="mainMenu"/>
                                 <connections>
                                     <action selector="goToMainMenu:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VEo-BP-e7O"/>
@@ -141,6 +156,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HFI-bR-Uq4">
                                 <rect key="frame" x="20" y="33" width="107" height="32"/>
+                                <inset key="titleEdgeInsets" minX="0.0" minY="0.0" maxX="1" maxY="0.0"/>
                                 <state key="normal" title="appAcademy" image="taaLogoFull"/>
                                 <connections>
                                     <action selector="taaLogoButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ClJ-Pc-4Ri"/>
@@ -148,6 +164,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fmi-Sr-f2C" userLabel="Button No1">
                                 <rect key="frame" x="144" y="172" width="143" height="142"/>
+                                <inset key="titleEdgeInsets" minX="0.0" minY="0.0" maxX="1" maxY="0.0"/>
                                 <state key="normal" image="tutorialsIcon"/>
                                 <connections>
                                     <action selector="buttonNo1Pressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="L1a-53-RQN"/>
@@ -156,6 +173,7 @@
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="hFe-Ee-bIS" userLabel="Score Button">
                                 <rect key="frame" x="73" y="424" width="122" height="121"/>
                                 <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="16"/>
+                                <inset key="titleEdgeInsets" minX="0.0" minY="0.0" maxX="1" maxY="0.0"/>
                                 <state key="normal" backgroundImage="emptyTile">
                                     <color key="titleColor" red="0.031372549020000001" green="0.16078431369999999" blue="0.47843137250000001" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -166,6 +184,7 @@
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UPJ-tH-FoV">
                                 <rect key="frame" x="222" y="94" width="137" height="138"/>
                                 <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="56"/>
+                                <inset key="titleEdgeInsets" minX="0.0" minY="0.0" maxX="1" maxY="0.0"/>
                                 <state key="normal" title="?" backgroundImage="quizTile4"/>
                                 <connections>
                                     <action selector="quizTile4:" destination="BYZ-38-t0r" eventType="touchUpInside" id="04h-jH-fDJ"/>
@@ -493,13 +512,66 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view alpha="0.14999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iAT-i5-afx">
-                                <rect key="frame" x="-4" y="236" width="328" height="264"/>
-                                <color key="backgroundColor" red="0.031372549020000001" green="0.16078431369999999" blue="0.47843137250000001" alpha="1" colorSpace="calibratedRGB"/>
-                            </view>
-                            <imageView userInteractionEnabled="NO" alpha="0.10000000000000001" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="BackgroundFAQ" translatesAutoresizingMaskIntoConstraints="NO" id="qVC-SI-2fJ">
+                            <imageView hidden="YES" userInteractionEnabled="NO" alpha="0.29999999999999999" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="BackgroundFAQ" translatesAutoresizingMaskIntoConstraints="NO" id="qVC-SI-2fJ">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                             </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iAT-i5-afx">
+                                <rect key="frame" x="-4" y="236" width="332" height="264"/>
+                                <subviews>
+                                    <view alpha="0.40000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fow-Z1-Q3u">
+                                        <rect key="frame" x="0.0" y="0.0" width="332" height="264"/>
+                                        <color key="backgroundColor" red="0.031372549020000001" green="0.16078431369999999" blue="0.47843137250000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    </view>
+                                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="26" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="Wkp-iF-tQw">
+                                        <rect key="frame" x="10" y="0.0" width="312" height="264"/>
+                                        <string key="text">We are the Dutch coding academy offering bootcamp trainings in Amsterdam and London. We teach full-time iOS programming which covers all aspects of developing native mobile apps. Our bootcamps are intensive and prepare you to start working as an app developer at an agency, software company or on your own project.
+ 
+During the bootcamp you will build mobile apps with fellow students. This will prepare you for a final graduation project and showcase on your app portfolio.
+ 
+</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="fow-Z1-Q3u" firstAttribute="leading" secondItem="iAT-i5-afx" secondAttribute="leading" id="C3L-sg-GQC"/>
+                                    <constraint firstAttribute="bottom" secondItem="fow-Z1-Q3u" secondAttribute="bottom" id="Juk-RT-uh2"/>
+                                    <constraint firstAttribute="trailing" secondItem="Wkp-iF-tQw" secondAttribute="trailing" constant="10" id="KKH-Ok-DjH"/>
+                                    <constraint firstItem="Wkp-iF-tQw" firstAttribute="top" secondItem="iAT-i5-afx" secondAttribute="top" id="aaF-4x-Mfr"/>
+                                    <constraint firstAttribute="bottom" secondItem="Wkp-iF-tQw" secondAttribute="bottom" id="mGT-WW-Avg"/>
+                                    <constraint firstItem="Wkp-iF-tQw" firstAttribute="leading" secondItem="iAT-i5-afx" secondAttribute="leading" constant="10" id="nQ6-AI-fc1"/>
+                                    <constraint firstItem="fow-Z1-Q3u" firstAttribute="top" secondItem="iAT-i5-afx" secondAttribute="top" id="pwc-Ws-cPn"/>
+                                    <constraint firstAttribute="trailing" secondItem="fow-Z1-Q3u" secondAttribute="trailing" id="qLB-Gl-KTu"/>
+                                </constraints>
+                            </view>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eL8-Bf-e43">
+                                <rect key="frame" x="0.0" y="236" width="320" height="266"/>
+                                <subviews>
+                                    <view alpha="0.40000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T07-E6-4TN">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="266"/>
+                                        <color key="backgroundColor" red="0.031372549020000001" green="0.16078431369999999" blue="0.47843137250000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    </view>
+                                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="25" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="mYD-oI-Njz">
+                                        <rect key="frame" x="10" y="0.0" width="300" height="266"/>
+                                        <string key="text">Follow us on ..........
+</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="T07-E6-4TN" secondAttribute="trailing" id="CFz-YK-omu"/>
+                                    <constraint firstItem="mYD-oI-Njz" firstAttribute="top" secondItem="eL8-Bf-e43" secondAttribute="top" id="IVV-3W-Pwe"/>
+                                    <constraint firstAttribute="trailing" secondItem="mYD-oI-Njz" secondAttribute="trailing" constant="10" id="K6B-xf-6Go"/>
+                                    <constraint firstItem="T07-E6-4TN" firstAttribute="top" secondItem="eL8-Bf-e43" secondAttribute="top" id="PRG-Ha-SkA"/>
+                                    <constraint firstAttribute="bottom" secondItem="mYD-oI-Njz" secondAttribute="bottom" id="Y8E-UV-3ET"/>
+                                    <constraint firstItem="mYD-oI-Njz" firstAttribute="leading" secondItem="eL8-Bf-e43" secondAttribute="leading" constant="10" id="fFu-lD-NO2"/>
+                                    <constraint firstAttribute="bottom" secondItem="T07-E6-4TN" secondAttribute="bottom" id="fvc-0A-WpK"/>
+                                    <constraint firstItem="T07-E6-4TN" firstAttribute="leading" secondItem="eL8-Bf-e43" secondAttribute="leading" id="tOU-PV-h6V"/>
+                                </constraints>
+                            </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="taaLogoBig" translatesAutoresizingMaskIntoConstraints="NO" id="OWy-Le-PwB">
                                 <rect key="frame" x="16" y="56" width="288" height="84"/>
                                 <constraints>
@@ -543,45 +615,33 @@
                                     <constraint firstAttribute="width" secondItem="zUb-UT-lWC" secondAttribute="height" multiplier="460:83" id="mEa-4t-sa6"/>
                                 </constraints>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AAC-pr-7Tp">
-                                <rect key="frame" x="-4" y="156" width="161" height="72"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow" translatesAutoresizingMaskIntoConstraints="NO" id="9HG-3H-xSM">
+                                <rect key="frame" x="53" y="212" width="45" height="24"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="AAC-pr-7Tp" secondAttribute="height" multiplier="103:36" id="GLU-hJ-03e"/>
-                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="206" id="VpQ-aH-Iqy"/>
-                                    <constraint firstAttribute="height" constant="72" id="cxa-kM-FaM"/>
+                                    <constraint firstAttribute="width" constant="45" id="QLw-Hh-SXn"/>
+                                    <constraint firstAttribute="width" secondItem="9HG-3H-xSM" secondAttribute="height" multiplier="15:8" id="YPy-mW-JBH"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="29"/>
-                                <state key="normal" title="About" backgroundImage="faqSelected">
+                            </imageView>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow" translatesAutoresizingMaskIntoConstraints="NO" id="Qzl-Z4-DGi">
+                                <rect key="frame" x="223" y="212" width="45" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="45" id="c8U-mo-7A7"/>
+                                    <constraint firstAttribute="width" secondItem="Qzl-Z4-DGi" secondAttribute="height" multiplier="15:8" id="sEa-5l-Kll"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AAC-pr-7Tp">
+                                <rect key="frame" x="0.0" y="156" width="158" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="CAg-CM-1jK"/>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="158" id="Uex-Jc-X0n"/>
+                                </constraints>
+                                <state key="normal" image="aboutSelected">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="GLU-hJ-03e"/>
-                                    </mask>
-                                </variation>
+                                <connections>
+                                    <action selector="aboutButtonPressed:" destination="LQf-jf-a7e" eventType="touchUpInside" id="Ej1-mH-Kfe"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Py-we-LOU">
-                                <rect key="frame" x="163" y="156" width="161" height="62"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="62" id="J2Q-Rr-gv6"/>
-                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="202" id="f0j-aA-eH8"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="29"/>
-                                <state key="normal" title="Social" backgroundImage="faqUnselected">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="22" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wkp-iF-tQw">
-                                <rect key="frame" x="16" y="236" width="288" height="266"/>
-                                <string key="text">We are the Dutch coding academy offering bootcamp trainings in Amsterdam and London. We teach full-time iOS programming which covers all aspects of developing native mobile apps. Our bootcamps are intensive and prepare you to start working as an app developer at an agency, software company or on your own project.
- 
-During the bootcamp you will build mobile apps with fellow students. This will prepare you for a final graduation project and showcase on your app portfolio.
- 
-</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b4D-m1-gC4" userLabel="Main Menu Button">
                                 <rect key="frame" x="164" y="-25" width="137" height="114"/>
                                 <constraints>
@@ -593,46 +653,80 @@ During the bootcamp you will build mobile apps with fellow students. This will p
                                     <segue destination="3FT-o2-kuN" kind="unwind" unwindAction="unwindToMenu:" id="To5-eX-fb5"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fkf-XO-WYI">
+                                <rect key="frame" x="162" y="156" width="158" height="60"/>
+                                <state key="normal" image="socialUnselected">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="socialButtonPressed:" destination="LQf-jf-a7e" eventType="touchUpInside" id="k1T-J3-obH"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="iAT-i5-afx" firstAttribute="leading" secondItem="H7k-vu-m2S" secondAttribute="leadingMargin" constant="-20" id="1xW-cI-21B"/>
+                            <constraint firstItem="Fkf-XO-WYI" firstAttribute="height" secondItem="AAC-pr-7Tp" secondAttribute="height" id="03s-j2-3RT"/>
+                            <constraint firstItem="Fkf-XO-WYI" firstAttribute="leading" secondItem="AAC-pr-7Tp" secondAttribute="trailing" constant="2" id="1W5-XG-FNa"/>
+                            <constraint firstItem="zUb-UT-lWC" firstAttribute="top" secondItem="eL8-Bf-e43" secondAttribute="bottom" constant="8" id="1ot-CP-ZRx"/>
+                            <constraint firstItem="iAT-i5-afx" firstAttribute="top" secondItem="Qzl-Z4-DGi" secondAttribute="bottom" id="4eE-ob-Js9"/>
+                            <constraint firstItem="Fkf-XO-WYI" firstAttribute="leading" secondItem="AAC-pr-7Tp" secondAttribute="trailing" constant="2" id="5Ss-ro-C9H"/>
                             <constraint firstAttribute="trailingMargin" secondItem="b4D-m1-gC4" secondAttribute="trailing" constant="3" id="73l-Xj-MwF"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="iAT-i5-afx" secondAttribute="trailing" constant="-24" id="7lf-ra-HXD"/>
+                            <constraint firstItem="zUb-UT-lWC" firstAttribute="top" secondItem="iAT-i5-afx" secondAttribute="bottom" constant="10" id="7mz-V1-9dN"/>
                             <constraint firstItem="OWy-Le-PwB" firstAttribute="trailing" secondItem="H7k-vu-m2S" secondAttribute="trailingMargin" id="8iF-Ef-dyV"/>
-                            <constraint firstItem="Wkp-iF-tQw" firstAttribute="top" secondItem="AAC-pr-7Tp" secondAttribute="bottom" constant="8" id="9h2-xx-Zdy"/>
+                            <constraint firstItem="Fkf-XO-WYI" firstAttribute="width" secondItem="AAC-pr-7Tp" secondAttribute="width" id="8m6-h6-I1D"/>
+                            <constraint firstItem="Qzl-Z4-DGi" firstAttribute="centerX" secondItem="Fkf-XO-WYI" secondAttribute="centerX" constant="4.5" id="9ZQ-oa-UIX"/>
                             <constraint firstItem="AAC-pr-7Tp" firstAttribute="leading" secondItem="H7k-vu-m2S" secondAttribute="leadingMargin" constant="-20" id="GgV-1D-6qv"/>
-                            <constraint firstItem="1Py-we-LOU" firstAttribute="top" secondItem="b4D-m1-gC4" secondAttribute="bottom" constant="67" id="H3b-07-JTc"/>
-                            <constraint firstItem="1Py-we-LOU" firstAttribute="width" secondItem="AAC-pr-7Tp" secondAttribute="width" id="JQq-Fe-HHt"/>
+                            <constraint firstItem="9HG-3H-xSM" firstAttribute="centerX" secondItem="AAC-pr-7Tp" secondAttribute="centerX" constant="-3.5" id="ICb-wv-UAJ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Fkf-XO-WYI" secondAttribute="trailing" constant="-20" id="N7Y-WN-JGb"/>
                             <constraint firstItem="AAC-pr-7Tp" firstAttribute="top" secondItem="OWy-Le-PwB" secondAttribute="bottom" constant="16" id="OAV-fh-Flo"/>
+                            <constraint firstItem="Fkf-XO-WYI" firstAttribute="width" secondItem="AAC-pr-7Tp" secondAttribute="width" id="Ocn-L5-XyV"/>
+                            <constraint firstItem="eL8-Bf-e43" firstAttribute="leading" secondItem="H7k-vu-m2S" secondAttribute="leading" id="Qwy-Zj-cQd"/>
+                            <constraint firstItem="Fkf-XO-WYI" firstAttribute="leading" secondItem="AAC-pr-7Tp" secondAttribute="trailing" constant="4" id="RIK-MB-8k9"/>
                             <constraint firstItem="OWy-Le-PwB" firstAttribute="leading" secondItem="H7k-vu-m2S" secondAttribute="leadingMargin" id="Tm1-WJ-v8s"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="iAT-i5-afx" secondAttribute="trailing" constant="-20" id="UxL-NI-WUX"/>
                             <constraint firstItem="b4D-m1-gC4" firstAttribute="top" secondItem="H7k-vu-m2S" secondAttribute="topMargin" constant="-25" id="VCN-EI-JPC"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Wkp-iF-tQw" secondAttribute="trailing" id="WxO-YY-sxm"/>
-                            <constraint firstItem="zUb-UT-lWC" firstAttribute="top" secondItem="iAT-i5-afx" secondAttribute="bottom" constant="10" id="YMh-Jq-C25"/>
+                            <constraint firstItem="eL8-Bf-e43" firstAttribute="top" secondItem="Fkf-XO-WYI" secondAttribute="bottom" constant="20" id="WwZ-9N-bTV"/>
                             <constraint firstAttribute="trailingMargin" secondItem="zUb-UT-lWC" secondAttribute="trailing" constant="348" id="ZFy-Jf-GMT"/>
-                            <constraint firstItem="zUb-UT-lWC" firstAttribute="top" secondItem="Wkp-iF-tQw" secondAttribute="bottom" constant="8" id="ZPc-IP-pln"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="1Py-we-LOU" secondAttribute="trailing" constant="-20" id="c0O-nk-WuS"/>
-                            <constraint firstItem="1Py-we-LOU" firstAttribute="leading" secondItem="AAC-pr-7Tp" secondAttribute="trailing" constant="6" id="cyT-wP-NWO"/>
-                            <constraint firstItem="Wkp-iF-tQw" firstAttribute="leading" secondItem="H7k-vu-m2S" secondAttribute="leadingMargin" id="ezz-ac-J96"/>
-                            <constraint firstItem="1Py-we-LOU" firstAttribute="top" secondItem="OWy-Le-PwB" secondAttribute="bottom" constant="16" id="gFR-X1-Szl"/>
-                            <constraint firstItem="iAT-i5-afx" firstAttribute="top" secondItem="AAC-pr-7Tp" secondAttribute="bottom" constant="8" id="lu7-GF-YmS"/>
+                            <constraint firstItem="9HG-3H-xSM" firstAttribute="top" secondItem="AAC-pr-7Tp" secondAttribute="bottom" constant="-4" id="bxn-92-NYN"/>
+                            <constraint firstItem="Fkf-XO-WYI" firstAttribute="centerY" secondItem="AAC-pr-7Tp" secondAttribute="centerY" id="cRN-a4-A9K"/>
+                            <constraint firstItem="Fkf-XO-WYI" firstAttribute="leading" secondItem="AAC-pr-7Tp" secondAttribute="trailing" constant="1" id="fWX-EH-rrM"/>
+                            <constraint firstItem="Qzl-Z4-DGi" firstAttribute="top" secondItem="Fkf-XO-WYI" secondAttribute="bottom" constant="-4" id="haL-56-vae"/>
+                            <constraint firstItem="iAT-i5-afx" firstAttribute="leading" secondItem="H7k-vu-m2S" secondAttribute="leadingMargin" constant="-20" id="jgW-5L-j1X"/>
+                            <constraint firstItem="eL8-Bf-e43" firstAttribute="top" secondItem="AAC-pr-7Tp" secondAttribute="bottom" constant="20" id="lwa-nF-xfh"/>
                             <constraint firstAttribute="trailingMargin" secondItem="zUb-UT-lWC" secondAttribute="trailing" constant="-20" id="nlR-1F-ga6"/>
+                            <constraint firstItem="Fkf-XO-WYI" firstAttribute="height" secondItem="AAC-pr-7Tp" secondAttribute="height" id="nuz-MV-sEo"/>
                             <constraint firstItem="OWy-Le-PwB" firstAttribute="top" secondItem="cIN-Qp-C2o" secondAttribute="bottom" constant="36" id="owo-uz-Mvh"/>
+                            <constraint firstAttribute="trailing" secondItem="Fkf-XO-WYI" secondAttribute="trailing" id="rOq-Sn-cRe"/>
                             <constraint firstAttribute="trailing" secondItem="zUb-UT-lWC" secondAttribute="trailing" id="s4J-GJ-nhI"/>
-                            <constraint firstItem="1Py-we-LOU" firstAttribute="height" secondItem="AAC-pr-7Tp" secondAttribute="height" id="t0E-f2-LKc"/>
+                            <constraint firstAttribute="trailing" secondItem="eL8-Bf-e43" secondAttribute="trailing" id="smT-eG-U3x"/>
                             <constraint firstAttribute="bottomMargin" secondItem="zUb-UT-lWC" secondAttribute="bottom" id="tF6-gf-esK"/>
+                            <constraint firstItem="AAC-pr-7Tp" firstAttribute="leading" secondItem="H7k-vu-m2S" secondAttribute="leading" id="taR-8v-1Lq"/>
                             <constraint firstItem="zUb-UT-lWC" firstAttribute="leading" secondItem="H7k-vu-m2S" secondAttribute="leading" id="xht-MS-zGZ"/>
-                            <constraint firstItem="1Py-we-LOU" firstAttribute="width" secondItem="AAC-pr-7Tp" secondAttribute="width" id="yQg-i2-Cmc"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Fkf-XO-WYI" secondAttribute="trailing" constant="-20" id="z4w-k9-BNZ"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="JQq-Fe-HHt"/>
-                                <exclude reference="t0E-f2-LKc"/>
+                                <exclude reference="GgV-1D-6qv"/>
+                                <exclude reference="03s-j2-3RT"/>
+                                <exclude reference="1W5-XG-FNa"/>
+                                <exclude reference="5Ss-ro-C9H"/>
+                                <exclude reference="N7Y-WN-JGb"/>
+                                <exclude reference="Ocn-L5-XyV"/>
+                                <exclude reference="fWX-EH-rrM"/>
+                                <exclude reference="z4w-k9-BNZ"/>
                                 <exclude reference="ZFy-Jf-GMT"/>
                             </mask>
                         </variation>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="aboutArrow" destination="9HG-3H-xSM" id="KXo-oq-5qB"/>
+                        <outlet property="aboutButton" destination="AAC-pr-7Tp" id="SfR-fJ-hwG"/>
+                        <outlet property="aboutView" destination="iAT-i5-afx" id="IWe-Uj-2WU"/>
+                        <outlet property="socialArrow" destination="Qzl-Z4-DGi" id="ath-87-t1X"/>
+                        <outlet property="socialButton" destination="Fkf-XO-WYI" id="Puk-IM-ewM"/>
+                        <outlet property="socialView" destination="eL8-Bf-e43" id="Wze-eH-ADU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UYb-7g-nzH" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="3FT-o2-kuN" userLabel="Exit" sceneMemberID="exit"/>
@@ -659,8 +753,8 @@ During the bootcamp you will build mobile apps with fellow students. This will p
                                         <constraints>
                                             <constraint firstAttribute="height" constant="453" id="2aT-pj-vqY"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="18"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                         <variation key="default">
                                             <mask key="constraints">
@@ -946,11 +1040,11 @@ During the bootcamp you will build mobile apps with fellow students. This will p
         <image name="Background3" width="414" height="736"/>
         <image name="BackgroundFAQ" width="414" height="736"/>
         <image name="Line" width="271" height="2"/>
+        <image name="aboutSelected" width="596" height="267"/>
+        <image name="arrow" width="203" height="102"/>
         <image name="backButton" width="51" height="12"/>
         <image name="emptyTile" width="122" height="122"/>
         <image name="faqIcon" width="122" height="121"/>
-        <image name="faqSelected" width="502" height="315"/>
-        <image name="faqUnselected" width="503" height="267"/>
         <image name="iconMail" width="32" height="43"/>
         <image name="iconNewsLetter" width="45" height="42"/>
         <image name="iconPhone" width="38" height="45"/>
@@ -971,6 +1065,7 @@ During the bootcamp you will build mobile apps with fellow students. This will p
         <image name="quizTile7" width="137" height="137"/>
         <image name="quizTile8" width="137" height="137"/>
         <image name="quizTile9" width="137" height="137"/>
+        <image name="socialUnselected" width="595" height="267"/>
         <image name="taaLogo" width="120" height="120"/>
         <image name="taaLogoBig" width="291" height="87"/>
         <image name="taaLogoFull" width="107" height="32"/>

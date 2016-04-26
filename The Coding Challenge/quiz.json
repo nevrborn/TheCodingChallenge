@@ -76,5 +76,5 @@
       "correctOption": 4,
       "correctAnswerText": " \r\r Yes, all of them are valid types for variables when coding in Swift.\r\r  String - hold a text string \r\r  NSURL - holds an URL link, which can either be to a location on your iphone, computer or web \r\r  UIColor - used when you want a specific color to have a variable, for example: \r\r   var favoriteColor: UIColor = UIColor.blueColor()"}]
      }
-      ]
-     }
+     ]
+}

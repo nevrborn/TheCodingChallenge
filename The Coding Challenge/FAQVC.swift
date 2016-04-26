@@ -11,6 +11,46 @@ import MessageUI
 
 class FAQVC: UIViewController, MFMailComposeViewControllerDelegate {
     
+    var socialSelectedImage = UIImage(named: "socialSelected.png")
+    var socialUnselectedImage = UIImage(named: "socialUnselected.png")
+    var aboutSelectedImage = UIImage(named: "aboutSelected.png")
+    var aboutUnselectedImage = UIImage(named: "aboutUnselected.png")
+    
+    @IBOutlet var aboutButton: UIButton!
+    @IBOutlet var socialButton: UIButton!
+    @IBOutlet var aboutArrow: UIImageView!
+    @IBOutlet var socialArrow: UIImageView!
+    @IBOutlet var aboutView: UIView!
+    @IBOutlet var socialView: UIView!
+    
+    @IBAction func aboutButtonPressed(sender: UIButton) {
+        aboutArrow.hidden = false
+        socialArrow.hidden = true
+        socialButton.setImage(socialUnselectedImage, forState: .Normal)
+        aboutButton.setImage(aboutSelectedImage, forState: .Normal)
+        aboutView.hidden = false
+        socialView.hidden = true
+    }
+    
+    @IBAction func socialButtonPressed(sender: UIButton) {
+        aboutArrow.hidden = true
+        socialArrow.hidden = false
+        socialButton.setImage(socialSelectedImage, forState: .Normal)
+        aboutButton.setImage(aboutUnselectedImage, forState: .Normal)
+        aboutView.hidden = true
+        socialView.hidden = false
+    }
+    
+    override func viewDidLoad() {
+        aboutArrow.hidden = false
+        socialArrow.hidden = true
+        socialButton.setImage(socialUnselectedImage, forState: .Normal)
+        aboutButton.setImage(aboutSelectedImage, forState: .Normal)
+        aboutView.hidden = false
+        socialView.hidden = true
+    }
+    
+    
     @IBAction func webButton(sender: AnyObject) {
         
         let url = NSURL(string: "http://en.theappacademy.nl")!
@@ -128,7 +168,7 @@ class FAQVC: UIViewController, MFMailComposeViewControllerDelegate {
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.addValue("application/json", forHTTPHeaderField: "Accept")
         
-        let params = ["apikey":"******************-us4", "id":"*******", "email":["email":email, "euid": "", "leid": ""], "merge_vars":["FNAME": name,"LNAME": ""], "double_optin": "false"]
+        let params = ["apikey":"a62c8e83cc3c031bf910efd60a536244-us9", "id":"1781fc944c", "email":["email":email, "euid": "", "leid": ""], "merge_vars":["FNAME": name,"LNAME": ""], "double_optin": "false"]
         request.HTTPBody = try! NSJSONSerialization.dataWithJSONObject(params, options: [])
         
         let task = session.dataTaskWithRequest(request) { data, response, error in

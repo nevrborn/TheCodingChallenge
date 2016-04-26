@@ -229,6 +229,7 @@ extension MainVC {
         mainMenuButton.hidden = false
         scoreTile.enabled = false
         
+        
         indexOfPage = 0
         
         if quizStore.count <= 4 {
@@ -371,8 +372,8 @@ extension MainVC {
         quizTile9.setTitle("?", forState: .Normal)
         quizTile10.setTitle("?", forState: .Normal)
         
-        scoreTile.setTitle("0 / 100\rpoints", forState: .Normal)
         scoreTile.setBackgroundImage(UIImage(named: "emptyTile.png"), forState: .Normal)
+        scoreTile.setTitle("0 / 100\rpoints", forState: .Disabled)
 
         codeChallengeLogo.hidden = true
         logoButton.hidden = true
