@@ -173,6 +173,7 @@ class MainVC: UIViewController, JSONSourceDelegate, JSONQuizSourceDelegate, UIVi
             if buttonNo3.imageView?.image == quizImage {
                 showQuizzes()
                 quizOrTutorial = "quiz"
+                quizScore = 0
             } else if quizOrTutorial == "tutorial" {
                 findIndexOfTutorialFromImage(sender)
                 performSegueWithIdentifier("showTutorial", sender: sender)
