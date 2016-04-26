@@ -52,7 +52,7 @@ class TrophyOverlayVC: UIViewController, UIViewControllerTransitioningDelegate {
         }
         
         for _ in 0..<80 {
-            drawCircles(25)
+            drawRandomCircles(25)
         }
         
         self.view.bringSubviewToFront(logo)
@@ -75,7 +75,7 @@ class TrophyOverlayVC: UIViewController, UIViewControllerTransitioningDelegate {
         self.tutorialName = tutorialName
     }
     
-    func drawCircles(radiusDivider: CGFloat) {
+    func drawRandomCircles(radiusDivider: CGFloat) {
         
         let circleLayer = CAShapeLayer()
         

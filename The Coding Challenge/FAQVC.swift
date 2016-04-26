@@ -100,7 +100,6 @@ class FAQVC: UIViewController, MFMailComposeViewControllerDelegate {
     }
     
     @IBAction func signUPNewsletter(sender: UIButton) {
-        var nameTextField: UITextField?
         var emailTextField: UITextField?
         
         //Create the AlertController
@@ -108,7 +107,7 @@ class FAQVC: UIViewController, MFMailComposeViewControllerDelegate {
         
         //Create and an option action
         let nextAction: UIAlertAction = UIAlertAction(title: "Sign me up!", style: .Default) { action -> Void in
-            //self.addMailToNewsletter((nameTextField?.text)!, email: (emailTextField?.text)!)
+        self.addMailToNewsletter((emailTextField?.text)!)
            // print(nameTextField)
             print(emailTextField)
         }
@@ -119,12 +118,6 @@ class FAQVC: UIViewController, MFMailComposeViewControllerDelegate {
             //Do some stuff
         }
         actionSheetController.addAction(cancelAction)
-        
-//        //Add a text field
-//        actionSheetController.addTextFieldWithConfigurationHandler { nameField -> Void in
-//            // you can use this text field
-//            nameTextField = nameField
-//        }
         
         //Add a text field
         actionSheetController.addTextFieldWithConfigurationHandler { emailField -> Void in
@@ -148,8 +141,8 @@ class FAQVC: UIViewController, MFMailComposeViewControllerDelegate {
     }
     
     func showSendMailErrorAlert() {
-        let sendMailErrorAlert = UIAlertView(title: "Could Not Send Email", message: "Your device could not send e-mail.  Please check e-mail configuration and try again.", delegate: self, cancelButtonTitle: "OK")
-        sendMailErrorAlert.show()
+        let sendMailErrorAlert: UIAlertController = UIAlertController(title: "Could Not Send Email", message: "Your device could not send e-mail.  Please check e-mail configuration and try again.", preferredStyle: .Alert)
+        self.presentViewController(sendMailErrorAlert, animated: true, completion: nil)
     }
     
     // MARK: MFMailComposeViewControllerDelegate Method
@@ -158,7 +151,7 @@ class FAQVC: UIViewController, MFMailComposeViewControllerDelegate {
     }
     
     
-    func addMailToNewsletter(name: String, email: String) {
+    func addMailToNewsletter(email: String) {
         let url = "https://us4.api.mailchimp.com/2.0/lists/subscribe"
         
         let request = NSMutableURLRequest(URL: NSURL(string: url)!)
@@ -168,7 +161,7 @@ class FAQVC: UIViewController, MFMailComposeViewControllerDelegate {
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.addValue("application/json", forHTTPHeaderField: "Accept")
         
-        let params = ["apikey":"a62c8e83cc3c031bf910efd60a536244-us9", "id":"1781fc944c", "email":["email":email, "euid": "", "leid": ""], "merge_vars":["FNAME": name,"LNAME": ""], "double_optin": "false"]
+        let params = ["apikey":"a62c8e83cc3c031bf910efd60a536244", "id":"1781fc944c", "email":["email":email, "euid": "", "leid": ""], "merge_vars":["FNAME": "","LNAME": ""], "double_optin": "false"]
         request.HTTPBody = try! NSJSONSerialization.dataWithJSONObject(params, options: [])
         
         let task = session.dataTaskWithRequest(request) { data, response, error in
