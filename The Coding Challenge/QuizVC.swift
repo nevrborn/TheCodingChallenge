@@ -11,22 +11,15 @@ import AudioToolbox
 
 class QuizVC: UIViewController {
     
-    var quizStore: QuizStore!
-    var quiz: Quiz!
-    
     var button: UIButton?
     
-    
-    var indexOfQuiz: Int?
-    var indexOfQuestion: Int = 0
+    var currentQuestion: Question!
+    var quizName = ""
     var userAnswer: Int = 0
     
-    var lastchallenge = false
-    var numberOfQuestions: Int = 0
-    var lastQuestion = false
     var score: Double = 0
     var pointsToScore: Double = 10
-    var firstTimeLoad = true
+    var correctAnswerNeeded = false
     
     var optionImage = UIImage(named: "tutorialOption.png")
     var selectedOptionImage = UIImage(named: "tutorialOptionSelected.png")
@@ -39,6 +32,7 @@ class QuizVC: UIViewController {
     @IBOutlet var option4Button: UIButton!
     @IBOutlet var runButton: UIButton!
     @IBOutlet var quizView: UIView!
+    @IBOutlet var titleLabel: UILabel!
     
     @IBAction func option1ButtonPressed(sender: UIButton) {
         userAnswer = 1
@@ -55,6 +49,7 @@ class QuizVC: UIViewController {
         option3Button.setBackgroundImage(optionImage, forState: .Normal)
         option4Button.setBackgroundImage(optionImage, forState: .Normal)
     }
+    
     
     @IBAction func option3ButtonPressed(sender: UIButton) {
         userAnswer = 3
@@ -73,21 +68,29 @@ class QuizVC: UIViewController {
     }
     
     @IBAction func share(sender: UIButton) {
-        let vc = UIActivityViewController(activityItems:["\(Int(score)) / 100 points on the \(quiz.name!) quiz with CodeChallenge app.\r\r Interested in coding? Check out @AppAcademyNL"], applicationActivities: nil)
+        let vc = UIActivityViewController(activityItems:["\(Int(score)) / 100 points on the \(quizName) quiz with CodeChallenge app.\r\r Interested in coding? Check out @AppAcademyNL"], applicationActivities: nil)
         self.presentViewController(vc, animated: true, completion: nil)
     }
     
     
     @IBAction func runButton(sender: AnyObject) {
         
-        let currentQuestion = quiz.questions[indexOfQuestion]
-        
-        if userAnswer == currentQuestion.correctOption {
+        if userAnswer == currentQuestion.correctOption && correctAnswerNeeded == false {
             score = ceil(pointsToScore)
+            option1Button.hidden = true
+            option2Button.hidden = true
+            option3Button.hidden = true
+            option4Button.hidden = true
+            titleLabel.text = "CORRECT"
+            questionLabel.text = currentQuestion?.correctAnswerText
+            runButton.setTitle("Next question", forState: .Normal)
+            correctAnswerNeeded = true
+        
+        } else if userAnswer == currentQuestion.correctOption && correctAnswerNeeded == true {
             self.performSegueWithIdentifier("unwindToQuiz", sender: self)
-
-
-        } else if userAnswer != quizStore[indexOfQuiz!].questions[indexOfQuestion].correctOption {
+            correctAnswerNeeded = false
+        }
+        else if userAnswer != currentQuestion.correctOption {
             AudioServicesPlayAlertSound(kSystemSoundID_Vibrate)
             if userAnswer == 1 {
                 pointsToScore = pointsToScore * 0.8
@@ -141,25 +144,24 @@ class QuizVC: UIViewController {
     }
     
     override func viewDidLoad() {
-        quiz = quizStore[indexOfQuiz!]
-        numberOfQuestions = quiz.questions.count - 1
-        let question = quiz.questions[indexOfQuestion]
+
+        questionLabel.text = currentQuestion!.question
+        option1Button.setTitle(currentQuestion!.option1! as String, forState: .Normal)
+        option2Button.setTitle(currentQuestion!.option2! as String, forState: .Normal)
+        option3Button.setTitle(currentQuestion!.option3! as String, forState: .Normal)
+        option4Button.setTitle(currentQuestion!.option4! as String, forState: .Normal)
         
-        questionLabel.text = question.question
-        option1Button.setTitle(question.option1! as String, forState: .Normal)
-        option2Button.setTitle(question.option2! as String, forState: .Normal)
-        option3Button.setTitle(question.option3! as String, forState: .Normal)
-        option4Button.setTitle(question.option4! as String, forState: .Normal)
+        option1Button.hidden = false
+        option2Button.hidden = false
+        option3Button.hidden = false
+        option4Button.hidden = false
+        titleLabel.text = "QUESTION"
+        runButton.setTitle("Answer", forState: .Normal)
+        
+        correctAnswerNeeded = false
 
     }
     
-
-    func calculatePercentage(indexOfCurrentQuiz: Int) -> Double {
-        
-        let percentage = Double(indexOfCurrentQuiz+1) / Double(quiz.questions.count)
-        
-        return percentage
-    }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "unwindToQuiz" {

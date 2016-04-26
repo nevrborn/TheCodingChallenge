@@ -144,8 +144,9 @@ class MainVC: UIViewController, JSONSourceDelegate, JSONQuizSourceDelegate, UIVi
                 findIndexOfTutorialFromImage(sender)
                 performSegueWithIdentifier("showTutorial", sender: sender)
             } else if quizOrTutorial == "quiz" {
-                numberOfQuestionsFinished = 0
                 let index = findIndexOfQuizFromImage(sender)
+                numberOfQuestionsFinished = 0
+                quizScore = 0
                 showQuiz(index)
             }
         }
@@ -161,6 +162,7 @@ class MainVC: UIViewController, JSONSourceDelegate, JSONQuizSourceDelegate, UIVi
         } else if quizOrTutorial == "quiz" {
             let index = findIndexOfQuizFromImage(sender)
             numberOfQuestionsFinished = 0
+            quizScore = 0
             showQuiz(index)
         }
     }
@@ -177,6 +179,7 @@ class MainVC: UIViewController, JSONSourceDelegate, JSONQuizSourceDelegate, UIVi
             } else if quizOrTutorial == "quiz" {
                 let index = findIndexOfQuizFromImage(sender)
                 numberOfQuestionsFinished = 0
+                quizScore = 0
                 showQuiz(index)
             }
         }
@@ -189,6 +192,7 @@ class MainVC: UIViewController, JSONSourceDelegate, JSONQuizSourceDelegate, UIVi
         } else if quizOrTutorial == "quiz" {
             let index = findIndexOfQuizFromImage(sender)
             numberOfQuestionsFinished = 0
+            quizScore = 0
             showQuiz(index)
         }
     }
@@ -209,8 +213,9 @@ class MainVC: UIViewController, JSONSourceDelegate, JSONQuizSourceDelegate, UIVi
     
     @IBAction func quizScoreButton(sender: UIButton) {
         let overlayVC = storyboard!.instantiateViewControllerWithIdentifier("TrophyOverlayVC") as! TrophyOverlayVC
-        
+        overlayVC.updateQuizTrophyOverlay("quiz", quizName: quizStore[indexOfSelectedQuiz].name!, score: quizScore)
         prepareOverlayVC(overlayVC)
+        presentViewController(overlayVC, animated: true, completion: nil)
     }
     
     func prepareOverlayVC(overlayVC: UIViewController) {
@@ -220,13 +225,6 @@ class MainVC: UIViewController, JSONSourceDelegate, JSONQuizSourceDelegate, UIVi
     
     @IBAction func unwindToMenu(segue: UIStoryboardSegue) {
         
-        
-    }
-    
-    func randomNumber() -> Double {
-        let randomNumber = Double(arc4random_uniform(2))
-        print("Random number is: \(randomNumber)")
-        return randomNumber
     }
     
     func setImages() {
@@ -282,9 +280,8 @@ class MainVC: UIViewController, JSONSourceDelegate, JSONQuizSourceDelegate, UIVi
             self.view.bringSubviewToFront(sender as! UIButton)
             sender?.setTitle("", forState: .Normal)
             let quizViewController = segue.destinationViewController as! QuizVC
-            quizViewController.indexOfQuiz = indexOfSelectedQuiz
-            quizViewController.indexOfQuestion = indexOfQuizQuestion
-            quizViewController.quizStore = quizStore
+            quizViewController.currentQuestion = quizStore[indexOfSelectedQuiz].questions[indexOfQuizQuestion]
+            quizViewController.quizName = quizStore[indexOfSelectedQuiz].name!
             quizViewController.button = sender as? UIButton
             quizViewController.view.backgroundColor = newBackgroundColor
             

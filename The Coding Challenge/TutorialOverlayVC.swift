@@ -107,7 +107,7 @@ class TutorialOverlayVC: UIViewController, UIViewControllerTransitioningDelegate
             
             prepareOverlayVC(overlayVC)
             
-            overlayVC.updateTutorialTrophyOverlay("tutorial", tutorialName: "Functions", score: 20)
+            overlayVC.updateTutorialTrophyOverlay("tutorial", tutorialName: "Functions")
             
             presentViewController(overlayVC, animated: true, completion: nil)
 

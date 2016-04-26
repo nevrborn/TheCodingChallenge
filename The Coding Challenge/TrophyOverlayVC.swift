@@ -64,15 +64,15 @@ class TrophyOverlayVC: UIViewController, UIViewControllerTransitioningDelegate {
         
     }
     
-    func updateQuizTrophyOverlay(toBeDisplayed: String, quizName: String) {
+    func updateQuizTrophyOverlay(toBeDisplayed: String, quizName: String, score: Int) {
         self.toBeDisplayed = toBeDisplayed
         self.quizName = quizName
+        self.score = score
     }
     
-    func updateTutorialTrophyOverlay(toBeDiplayed: String, tutorialName: String, score: Int) {
+    func updateTutorialTrophyOverlay(toBeDiplayed: String, tutorialName: String) {
         self.toBeDisplayed = toBeDiplayed
         self.tutorialName = tutorialName
-        self.score = score
     }
     
     func drawCircles(radiusDivider: CGFloat) {

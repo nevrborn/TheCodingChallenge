@@ -23,7 +23,7 @@ class QuizUnwindSegue: UIStoryboardSegue {
         let window = UIApplication.sharedApplication().keyWindow
         window?.insertSubview(mainVCView, aboveSubview: quizVCView)
         
-        UIView.animateWithDuration(1, animations: { () -> Void in
+        UIView.animateWithDuration(0.6, animations: { () -> Void in
             
             self.button!.transform = CGAffineTransformMakeScale(1,1)
             

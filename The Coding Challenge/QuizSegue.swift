@@ -31,13 +31,13 @@ class QuizSegue: UIStoryboardSegue {
         quizViewController.quizView.transform = CGAffineTransformScale(quizViewController.quizView.transform, 0.001, 0.001)
         secondVCView.transform = CGAffineTransformScale(secondVCView.transform, 0.001, 0.001)
         
-        UIView.animateWithDuration(1, animations: { () -> Void in
+        UIView.animateWithDuration(0.8, animations: { () -> Void in
             self.button!.transform = CGAffineTransformMakeScale(15,15)
             quizViewController.quizView.transform = CGAffineTransformIdentity
             
         }) { (Finished) -> Void in
             
-            UIView.animateWithDuration(1, animations: { () -> Void in
+            UIView.animateWithDuration(0.1, animations: { () -> Void in
                 secondVCView.transform = CGAffineTransformIdentity
                 
                 }, completion: { (Finished) -> Void in

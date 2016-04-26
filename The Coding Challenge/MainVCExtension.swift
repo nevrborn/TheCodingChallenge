@@ -438,55 +438,61 @@ extension MainVC {
     
     func animateHideQuizButtons() {
         quizTile1.transform = CGAffineTransformMakeScale(0.0001, 0.0001)
-        UIView.animateWithDuration(1.0, delay: 0.9, usingSpringWithDamping: 0.3,initialSpringVelocity: 4, options: .CurveLinear, animations: {
+        UIView.animateWithDuration(randomNumber(), delay: randomNumber(), usingSpringWithDamping: 0.3,initialSpringVelocity: 4, options: .CurveLinear, animations: {
             self.quizTile1.transform = CGAffineTransformIdentity }, completion: nil
         )
         
         quizTile2.transform = CGAffineTransformMakeScale(0.0001, 0.0001)
-        UIView.animateWithDuration(1.0, delay: 0.8, usingSpringWithDamping: 0.3,initialSpringVelocity: 4, options: .CurveLinear, animations: {
+        UIView.animateWithDuration(1.0, delay: randomNumber(), usingSpringWithDamping: 0.3,initialSpringVelocity: 4, options: .CurveLinear, animations: {
             self.quizTile2.transform = CGAffineTransformIdentity }, completion: nil
         )
         
         quizTile3.transform = CGAffineTransformMakeScale(0, 0)
-        UIView.animateWithDuration(1.0, delay: 0.7, usingSpringWithDamping: 0.3,initialSpringVelocity: 4, options: .CurveLinear, animations: {
+        UIView.animateWithDuration(randomNumber(), delay: randomNumber(), usingSpringWithDamping: 0.3,initialSpringVelocity: 4, options: .CurveLinear, animations: {
             self.quizTile3.transform = CGAffineTransformIdentity }, completion: nil
         )
         
         quizTile4.transform = CGAffineTransformMakeScale(0, 0)
-        UIView.animateWithDuration(1.0, delay: 0.6, usingSpringWithDamping: 3,initialSpringVelocity: 4, options: .CurveLinear, animations: {
+        UIView.animateWithDuration(randomNumber(), delay: randomNumber(), usingSpringWithDamping: 3,initialSpringVelocity: 4, options: .CurveLinear, animations: {
             self.quizTile4.transform = CGAffineTransformIdentity }, completion: nil
         )
         
         quizTile5.transform = CGAffineTransformMakeScale(0, 0)
-        UIView.animateWithDuration(1.0, delay: 0.5, usingSpringWithDamping: 0.3,initialSpringVelocity: 4, options: .CurveLinear, animations: {
+        UIView.animateWithDuration(randomNumber(), delay: randomNumber(), usingSpringWithDamping: 0.3,initialSpringVelocity: 4, options: .CurveLinear, animations: {
             self.quizTile5.transform = CGAffineTransformIdentity }, completion: nil
         )
         
         quizTile6.transform = CGAffineTransformMakeScale(0, 0)
-        UIView.animateWithDuration(1.0, delay: 0.4, usingSpringWithDamping: 0.3,initialSpringVelocity: 4, options: .CurveLinear, animations: {
+        UIView.animateWithDuration(1.0, delay: randomNumber(), usingSpringWithDamping: 0.3,initialSpringVelocity: 4, options: .CurveLinear, animations: {
             self.quizTile6.transform = CGAffineTransformIdentity }, completion: nil
         )
         
         quizTile7.transform = CGAffineTransformMakeScale(0, 0)
-        UIView.animateWithDuration(1.0, delay: 0.3, usingSpringWithDamping: 0.3,initialSpringVelocity: 4, options: .CurveLinear, animations: {
+        UIView.animateWithDuration(1.0, delay: randomNumber(), usingSpringWithDamping: 0.3,initialSpringVelocity: 4, options: .CurveLinear, animations: {
             self.quizTile7.transform = CGAffineTransformIdentity }, completion: nil
         )
         
         quizTile8.transform = CGAffineTransformMakeScale(0, 0)
-        UIView.animateWithDuration(1.0, delay: 0.4, usingSpringWithDamping: 0.3,initialSpringVelocity: 4, options: .CurveLinear, animations: {
+        UIView.animateWithDuration(randomNumber(), delay: randomNumber(), usingSpringWithDamping: 0.3,initialSpringVelocity: 4, options: .CurveLinear, animations: {
             self.quizTile8.transform = CGAffineTransformIdentity }, completion: nil
         )
         
         quizTile9.transform = CGAffineTransformMakeScale(0, 0)
-        UIView.animateWithDuration(1.0, delay: 0.2, usingSpringWithDamping: 0.3,initialSpringVelocity: 4, options: .CurveLinear, animations: {
+        UIView.animateWithDuration(1.0, delay: randomNumber(), usingSpringWithDamping: 0.3,initialSpringVelocity: 4, options: .CurveLinear, animations: {
             self.quizTile9.transform = CGAffineTransformIdentity }, completion: nil
         )
         
         quizTile10.transform = CGAffineTransformMakeScale(0, 0)
-        UIView.animateWithDuration(1.0, delay: 0.1, usingSpringWithDamping: 0.3,initialSpringVelocity: 4, options: .CurveLinear, animations: {
+        UIView.animateWithDuration(randomNumber(), delay: randomNumber(), usingSpringWithDamping: 0.3,initialSpringVelocity: 4, options: .CurveLinear, animations: {
             self.quizTile10.transform = CGAffineTransformIdentity }, completion: nil
         )
         
+    }
+    
+    func randomNumber() -> Double {
+        let randomNumber = Double(arc4random_uniform(3))
+        print("Random number is: \(randomNumber)")
+        return randomNumber
     }
 
     
