@@ -168,7 +168,7 @@
      "name": "Functions",
      "forTutorial": "Functions",
      "introText": "For this Quizz we will have a look at Functions like Nested Function, External Function,Parametric Functions,Default Parameters,Local Parameters ,among others and their examples",
-     "iconName": "quiz1main.png",
+     "iconName": "quizFunctions.png",
      "endQuizText": "Congratulations!\r\r You've just completed the Function Quizz!\r\rLet's try some more :-)",
      "quizquestions": [{
                        "question": "Which of the statement is true for Functions declared as Void data types.",

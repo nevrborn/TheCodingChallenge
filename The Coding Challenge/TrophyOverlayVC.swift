@@ -26,9 +26,9 @@ class TrophyOverlayVC: UIViewController, UIViewControllerTransitioningDelegate {
         var textToShare: String = ""
         
         if toBeDisplayed == "quiz" {
-            textToShare = "\(Int(score)) / 100 points on the \(quizName) quiz with CodeChallenge app.\r\r Interested in coding? Check out @AppAcademyNL"
+            textToShare = "\(Int(score)) / 100 pts. on \(quizName) quiz with CodeChallenge app.\r\r Interested in coding? Check out en.theappacademy.nl"
         } else if toBeDisplayed == "tutorial" {
-            textToShare = "I just completed an Swift tutorial with CodeChallenge app\r\r Interested in coding? Check out @AppAcademyNL"
+            textToShare = "I just completed a Swift tutorial with CodeChallenge app\r\r Interested in coding? Check out en.theappacademy.nl"
         }
         
         let vc = UIActivityViewController(activityItems:[textToShare], applicationActivities: nil)

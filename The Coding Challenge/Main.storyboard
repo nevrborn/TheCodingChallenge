@@ -97,12 +97,22 @@
                                 </connections>
                             </button>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aeO-1T-21o">
-                                <rect key="frame" x="142" y="337" width="137" height="138"/>
+                                <rect key="frame" x="142" y="338" width="137" height="138"/>
                                 <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="47"/>
                                 <inset key="titleEdgeInsets" minX="0.0" minY="0.0" maxX="1" maxY="0.0"/>
                                 <state key="normal" title="?" backgroundImage="quizTile10"/>
                                 <connections>
                                     <action selector="quizTile10:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Tm9-1w-WpC"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jFi-Hx-V5I" userLabel="Button No3">
+                                <rect key="frame" x="142" y="333" width="142" height="143"/>
+                                <inset key="contentEdgeInsets" minX="-30" minY="-30" maxX="-30" maxY="-30"/>
+                                <inset key="titleEdgeInsets" minX="0.0" minY="0.0" maxX="1" maxY="0.0"/>
+                                <inset key="imageEdgeInsets" minX="-30" minY="-30" maxX="-30" maxY="-30"/>
+                                <state key="normal" image="quizIcon"/>
+                                <connections>
+                                    <action selector="button3Pressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pvV-2x-6h6"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gf3-uw-Xwb" userLabel="Button No2">
@@ -111,14 +121,6 @@
                                 <state key="normal" image="faqIcon"/>
                                 <connections>
                                     <action selector="button2Pressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1Al-NM-O2K"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jFi-Hx-V5I" userLabel="Button No3">
-                                <rect key="frame" x="142" y="333" width="142" height="143"/>
-                                <inset key="titleEdgeInsets" minX="0.0" minY="0.0" maxX="1" maxY="0.0"/>
-                                <state key="normal" image="quizIcon"/>
-                                <connections>
-                                    <action selector="button3Pressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pvV-2x-6h6"/>
                                 </connections>
                             </button>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wyl-6e-2MG">
@@ -517,7 +519,7 @@
                                     <constraint firstAttribute="height" constant="736" id="lNa-Hz-bag"/>
                                 </constraints>
                             </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iAT-i5-afx">
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iAT-i5-afx">
                                 <rect key="frame" x="-4" y="236" width="332" height="264"/>
                                 <subviews>
                                     <view alpha="0.40000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fow-Z1-Q3u">
@@ -548,7 +550,7 @@ During the bootcamp you will build mobile apps with fellow students. This will p
                                     <constraint firstAttribute="bottom" secondItem="fow-Z1-Q3u" secondAttribute="bottom" id="v6p-oc-ooZ"/>
                                 </constraints>
                             </view>
-                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eL8-Bf-e43">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eL8-Bf-e43">
                                 <rect key="frame" x="0.0" y="236" width="320" height="264"/>
                                 <subviews>
                                     <view alpha="0.40000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T07-E6-4TN">
@@ -557,7 +559,7 @@ During the bootcamp you will build mobile apps with fellow students. This will p
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tDc-7z-6at">
                                         <rect key="frame" x="123" y="99" width="73" height="67"/>
-                                        <state key="normal" image="linkedin"/>
+                                        <state key="normal" image="LinkedIn-1"/>
                                         <connections>
                                             <action selector="linkedlinButton:" destination="LQf-jf-a7e" eventType="touchUpInside" id="olD-QW-VKc"/>
                                         </connections>
@@ -568,14 +570,14 @@ During the bootcamp you will build mobile apps with fellow students. This will p
                                             <constraint firstAttribute="width" constant="73" id="OBG-MH-Rga"/>
                                             <constraint firstAttribute="height" constant="67" id="wmS-P5-9cX"/>
                                         </constraints>
-                                        <state key="normal" image="facebook"/>
+                                        <state key="normal" image="Facebook-1"/>
                                         <connections>
                                             <action selector="facebookButton:" destination="LQf-jf-a7e" eventType="touchUpInside" id="BFW-nE-7cQ"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bGm-MC-cpb">
                                         <rect key="frame" x="123" y="174" width="73" height="67"/>
-                                        <state key="normal" image="twitter"/>
+                                        <state key="normal" image="Twitter-1"/>
                                         <connections>
                                             <action selector="twitterButton:" destination="LQf-jf-a7e" eventType="touchUpInside" id="Pjk-J7-w2Q"/>
                                         </connections>
@@ -1115,19 +1117,20 @@ During the bootcamp you will build mobile apps with fellow students. This will p
     <resources>
         <image name="Background3" width="414" height="736"/>
         <image name="BackgroundFAQ" width="414" height="736"/>
+        <image name="Facebook-1" width="48" height="48"/>
         <image name="Line" width="271" height="2"/>
+        <image name="LinkedIn-1" width="44" height="40"/>
+        <image name="Twitter-1" width="48" height="40"/>
         <image name="aboutSelected" width="596" height="267"/>
         <image name="arrow" width="203" height="102"/>
         <image name="backButton" width="51" height="12"/>
         <image name="emptyTile" width="122" height="122"/>
-        <image name="facebook" width="128" height="128"/>
         <image name="faqIcon" width="122" height="121"/>
         <image name="iconMail" width="32" height="43"/>
         <image name="iconNewsLetter" width="45" height="42"/>
         <image name="iconPhone" width="38" height="45"/>
         <image name="iconWebsite" width="26" height="42"/>
         <image name="largeBackgroungLogo" width="1024" height="768"/>
-        <image name="linkedin" width="128" height="128"/>
         <image name="logoMainMenu" width="309" height="105"/>
         <image name="mainMenu" width="122" height="122"/>
         <image name="questionBar" width="289" height="39"/>
@@ -1152,6 +1155,5 @@ During the bootcamp you will build mobile apps with fellow students. This will p
         <image name="tutorialOption" width="301" height="53"/>
         <image name="tutorialRunButton" width="301" height="53"/>
         <image name="tutorialsIcon" width="121" height="122"/>
-        <image name="twitter" width="128" height="128"/>
     </resources>
 </document>

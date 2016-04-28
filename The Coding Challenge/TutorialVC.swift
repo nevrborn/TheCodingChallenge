@@ -8,6 +8,7 @@
 
 import UIKit
 import AudioToolbox
+import AVFoundation
 
 class TutorialVC: UIViewController, UITextViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
@@ -34,6 +35,8 @@ class TutorialVC: UIViewController, UITextViewDelegate, UIImagePickerControllerD
     //Variables for the EXTENSION
     let imagePicker = UIImagePickerController()
     var newImage: UIImage? = UIImage(named: "tutorialOption.png")
+    
+    var audioPlayer: AVAudioPlayer?
     
 
     @IBOutlet var tutorialText: UILabel!
@@ -102,6 +105,7 @@ class TutorialVC: UIViewController, UITextViewDelegate, UIImagePickerControllerD
                 
             } else if selectedUserOption != currentChallenge.correctInput! {
                 AudioServicesPlayAlertSound(kSystemSoundID_Vibrate)
+                playErrorSound()
                 if selectedUserOption == 1 {
                     option1Button.setBackgroundImage(wrongOptionImage, forState: .Normal)
                     option2Button.setBackgroundImage(optionImage, forState: .Normal)
@@ -216,6 +220,15 @@ class TutorialVC: UIViewController, UITextViewDelegate, UIImagePickerControllerD
         option2Button.hidden = false
         option3Button.hidden = false
         
+    }
+    
+    func playErrorSound() {
+        
+        let audioFileURL = NSBundle.mainBundle().URLForResource("error sound", withExtension: ".mp3")!
+        
+        audioPlayer = try! AVAudioPlayer(contentsOfURL: audioFileURL)
+        
+        audioPlayer?.play()
     }
     
     func prepareOverlayVC(overlayVC: UIViewController) {
