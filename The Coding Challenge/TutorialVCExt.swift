@@ -15,10 +15,6 @@ extension TutorialVC {
         performSelector(NSSelectorFromString(code))
     }
     
-    func printHello() {
-        print("Hello")
-    }
-    
     func takeAPhoto() {
         imagePicker.allowsEditing = false
         imagePicker.sourceType = .Camera

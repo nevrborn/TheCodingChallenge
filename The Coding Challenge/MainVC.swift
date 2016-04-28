@@ -80,7 +80,7 @@ class MainVC: UIViewController, JSONSourceDelegate, JSONQuizSourceDelegate, UIVi
         firstTimeLoad = true
         super.viewDidLoad()
     }
-    
+    // animation of Buttons
     @IBOutlet weak var buttonNo1: UIButton! {
         didSet {
             buttonNo1.transform = CGAffineTransformMakeScale(0, 0)
@@ -128,7 +128,7 @@ class MainVC: UIViewController, JSONSourceDelegate, JSONQuizSourceDelegate, UIVi
                 self.mainMenuButton.transform = CGAffineTransformIdentity }, completion: nil
             )}
     }
-    
+    //Button to display The App Academy website.
     @IBAction func taaLogoButton(sender: UIButton) {
         let url = NSURL(string: "http://en.theappacademy.nl")!
         UIApplication.sharedApplication().openURL(url)
@@ -268,7 +268,7 @@ class MainVC: UIViewController, JSONSourceDelegate, JSONQuizSourceDelegate, UIVi
         }
         return indexOfSelectedQuiz
     }
-    
+    // segue
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "showTutorial" {
             
@@ -386,19 +386,7 @@ class MainVC: UIViewController, JSONSourceDelegate, JSONQuizSourceDelegate, UIVi
         
     }
     
-    
-//    override func pointInside(point: CGPoint, withEvent event: UIEvent?) -> Bool {
-//        // padding : local variable of your custom UIView, CGFloat
-//        // you can change clickable area dynamically by setting this value.
-//        
-//        let newBound = CGRect(
-//            x: self.bounds.origin.x - 10,
-//            y: self.bounds.origin.y - 10,
-//            width: self.bounds.width + 2 * 10,
-//            height: self.bounds.width + 2 * 10
-//        )
-//        return CGRectContainsPoint(newBound, point)
-//    }
+
     
 }
 

@@ -383,7 +383,7 @@ extension MainVC {
         
         
     }
-    
+    //Animation of Quiz Buttons
     func animateQuizButtons() {
         quizTile1.transform = CGAffineTransformMakeScale(0, 0)
         UIView.animateWithDuration(1.0, delay: 0.9, usingSpringWithDamping: 0.3,initialSpringVelocity: 4, options: .CurveLinear, animations: {
@@ -436,7 +436,7 @@ extension MainVC {
         )
         
     }
-    
+    //Hide animation for Quiz Button
     func animateHideQuizButtons() {
         quizTile1.transform = CGAffineTransformMakeScale(0.0001, 0.0001)
         UIView.animateWithDuration(randomNumber(), delay: randomNumber(), usingSpringWithDamping: 0.3,initialSpringVelocity: 4, options: .CurveLinear, animations: {
@@ -489,7 +489,7 @@ extension MainVC {
         )
         
     }
-    
+    //animation Appeare randomly
     func randomNumber() -> Double {
         let randomNumber = Double(arc4random_uniform(2))
         print("Random number is: \(randomNumber)")

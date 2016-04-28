@@ -20,7 +20,7 @@ class OverlayAnimationController: NSObject, UIViewControllerAnimatedTransitionin
     }
     
     
-    // ---- UIViewControllerAnimatedTransitioning methods
+    //UIViewControllerAnimatedTransitioning methods
     
     func transitionDuration(transitionContext: UIViewControllerContextTransitioning?) -> NSTimeInterval {
         return self.duration
@@ -36,7 +36,7 @@ class OverlayAnimationController: NSObject, UIViewControllerAnimatedTransitionin
     }
     
     
-    // ---- Helper methods
+    //Helper methods
     
     func animatePresentationWithTransitionContext(transitionContext: UIViewControllerContextTransitioning) {
         
