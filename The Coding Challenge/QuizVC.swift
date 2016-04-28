@@ -32,7 +32,13 @@ class QuizVC: UIViewController {
     @IBOutlet var option4Button: UIButton!
     @IBOutlet var runButton: UIButton!
     @IBOutlet var quizView: UIView!
-    @IBOutlet var titleLabel: UILabel!
+    @IBOutlet var correctLabel: UILabel!
+    @IBOutlet var quizNameLabel: UILabel!
+    @IBOutlet var quizHeaderView: UIView!
+    
+    @IBAction func exitButton(sender: UIButton) {
+        self.performSegueWithIdentifier("unwindToQuiz", sender: self)
+    }
     
     @IBAction func option1ButtonPressed(sender: UIButton) {
         userAnswer = 1
@@ -81,7 +87,8 @@ class QuizVC: UIViewController {
             option2Button.hidden = true
             option3Button.hidden = true
             option4Button.hidden = true
-            titleLabel.text = "CORRECT"
+            correctLabel.hidden = false
+            quizHeaderView.hidden = true
             questionLabel.text = currentQuestion?.correctAnswerText
             runButton.setTitle("Next question", forState: .Normal)
             correctAnswerNeeded = true
@@ -93,7 +100,7 @@ class QuizVC: UIViewController {
         else if userAnswer != currentQuestion.correctOption {
             AudioServicesPlayAlertSound(kSystemSoundID_Vibrate)
             if userAnswer == 1 {
-                pointsToScore = pointsToScore * 0.8
+                pointsToScore = pointsToScore - 3
                 option1Button.setBackgroundImage(wrongOptionImage, forState: .Normal)
                 option2Button.setBackgroundImage(optionImage, forState: .Normal)
                 option3Button.setBackgroundImage(optionImage, forState: .Normal)
@@ -105,7 +112,7 @@ class QuizVC: UIViewController {
                 option4Button.setTitle(currentQuestion.option4! as String, forState: .Normal)
             }
             if userAnswer == 2 {
-                pointsToScore = pointsToScore * 0.8
+                pointsToScore = pointsToScore - 3
                 option1Button.setBackgroundImage(optionImage, forState: .Normal)
                 option2Button.setBackgroundImage(wrongOptionImage, forState: .Normal)
                 option3Button.setBackgroundImage(optionImage, forState: .Normal)
@@ -117,7 +124,7 @@ class QuizVC: UIViewController {
                 option4Button.setTitle(currentQuestion.option4! as String, forState: .Normal)
             }
             if userAnswer == 3 {
-                pointsToScore = pointsToScore * 0.8
+                pointsToScore = pointsToScore - 3
                 option1Button.setBackgroundImage(optionImage, forState: .Normal)
                 option2Button.setBackgroundImage(optionImage, forState: .Normal)
                 option3Button.setBackgroundImage(wrongOptionImage, forState: .Normal)
@@ -129,7 +136,7 @@ class QuizVC: UIViewController {
                 option4Button.setTitle(currentQuestion.option4! as String, forState: .Normal)
             }
             if userAnswer == 4 {
-                pointsToScore = pointsToScore * 0.8
+                pointsToScore = pointsToScore - 3
                 option1Button.setBackgroundImage(optionImage, forState: .Normal)
                 option2Button.setBackgroundImage(optionImage, forState: .Normal)
                 option3Button.setBackgroundImage(optionImage, forState: .Normal)
@@ -155,7 +162,11 @@ class QuizVC: UIViewController {
         option2Button.hidden = false
         option3Button.hidden = false
         option4Button.hidden = false
-        titleLabel.text = "QUESTION"
+
+        correctLabel.hidden = true
+        quizHeaderView.hidden = false
+        quizNameLabel.text = quizName
+        
         runButton.setTitle("Answer", forState: .Normal)
         
         correctAnswerNeeded = false

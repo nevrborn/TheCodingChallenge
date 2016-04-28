@@ -511,8 +511,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView hidden="YES" userInteractionEnabled="NO" alpha="0.29999999999999999" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BackgroundFAQ" translatesAutoresizingMaskIntoConstraints="NO" id="qVC-SI-2fJ">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                            <imageView userInteractionEnabled="NO" alpha="0.10000000000000001" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="BackgroundFAQ" translatesAutoresizingMaskIntoConstraints="NO" id="qVC-SI-2fJ">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="736" id="lNa-Hz-bag"/>
                                 </constraints>
@@ -532,7 +532,7 @@ During the bootcamp you will build mobile apps with fellow students. This will p
  
 </string>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -668,7 +668,7 @@ During the bootcamp you will build mobile apps with fellow students. This will p
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b4D-m1-gC4" userLabel="Main Menu Button">
-                                <rect key="frame" x="168" y="-25" width="122" height="114"/>
+                                <rect key="frame" x="209" y="-28" width="122" height="114"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="122" id="aei-zH-eVJ"/>
                                 </constraints>
@@ -710,19 +710,20 @@ During the bootcamp you will build mobile apps with fellow students. This will p
                             <constraint firstItem="Fkf-XO-WYI" firstAttribute="width" secondItem="AAC-pr-7Tp" secondAttribute="width" id="Ocn-L5-XyV"/>
                             <constraint firstItem="AAC-pr-7Tp" firstAttribute="top" secondItem="OWy-Le-PwB" secondAttribute="bottom" constant="16" id="PCh-ds-A6q"/>
                             <constraint firstItem="eL8-Bf-e43" firstAttribute="centerY" secondItem="qVC-SI-2fJ" secondAttribute="centerY" id="RmS-mr-2eb"/>
-                            <constraint firstItem="Fkf-XO-WYI" firstAttribute="top" secondItem="b4D-m1-gC4" secondAttribute="bottom" constant="67" id="S3H-0h-dBZ"/>
+                            <constraint firstItem="Fkf-XO-WYI" firstAttribute="top" secondItem="b4D-m1-gC4" secondAttribute="bottom" constant="70" id="S3H-0h-dBZ"/>
                             <constraint firstItem="qVC-SI-2fJ" firstAttribute="top" secondItem="H7k-vu-m2S" secondAttribute="top" id="T50-C4-R42"/>
                             <constraint firstItem="AAC-pr-7Tp" firstAttribute="leading" secondItem="eL8-Bf-e43" secondAttribute="leading" id="U3g-Qk-GMJ"/>
-                            <constraint firstItem="b4D-m1-gC4" firstAttribute="top" secondItem="H7k-vu-m2S" secondAttribute="topMargin" constant="-25" id="UZ4-k9-Dg3"/>
+                            <constraint firstItem="b4D-m1-gC4" firstAttribute="top" secondItem="H7k-vu-m2S" secondAttribute="topMargin" constant="-28" id="UZ4-k9-Dg3"/>
                             <constraint firstItem="Fkf-XO-WYI" firstAttribute="leading" secondItem="9HG-3H-xSM" secondAttribute="trailing" constant="64" id="VwZ-5J-cMT"/>
                             <constraint firstAttribute="trailingMargin" secondItem="zUb-UT-lWC" secondAttribute="trailing" constant="348" id="ZFy-Jf-GMT"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="b4D-m1-gC4" secondAttribute="trailing" constant="14" id="c7V-0M-c8k"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="b4D-m1-gC4" secondAttribute="trailing" constant="-27" id="c7V-0M-c8k"/>
                             <constraint firstItem="iAT-i5-afx" firstAttribute="top" secondItem="eL8-Bf-e43" secondAttribute="top" id="cOy-br-XkN"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Qzl-Z4-DGi" secondAttribute="trailing" constant="36" id="eEj-xo-DM4"/>
                             <constraint firstItem="Fkf-XO-WYI" firstAttribute="leading" secondItem="AAC-pr-7Tp" secondAttribute="trailing" constant="1" id="fWX-EH-rrM"/>
                             <constraint firstItem="eL8-Bf-e43" firstAttribute="leading" secondItem="zUb-UT-lWC" secondAttribute="leading" id="gyw-HS-rWt"/>
                             <constraint firstItem="9HG-3H-xSM" firstAttribute="top" secondItem="Qzl-Z4-DGi" secondAttribute="top" id="h6e-Dc-g8W"/>
                             <constraint firstItem="AAC-pr-7Tp" firstAttribute="leading" secondItem="H7k-vu-m2S" secondAttribute="leading" id="ivv-ae-Fcg"/>
+                            <constraint firstItem="Fkf-XO-WYI" firstAttribute="width" secondItem="AAC-pr-7Tp" secondAttribute="width" id="jDj-AO-Rsk"/>
                             <constraint firstItem="OWy-Le-PwB" firstAttribute="leading" secondItem="H7k-vu-m2S" secondAttribute="leadingMargin" id="knN-LY-NNE"/>
                             <constraint firstAttribute="trailingMargin" secondItem="zUb-UT-lWC" secondAttribute="trailing" constant="-20" id="nlR-1F-ga6"/>
                             <constraint firstAttribute="trailingMargin" secondItem="iAT-i5-afx" secondAttribute="trailing" constant="-24" id="oSA-6e-doM"/>
@@ -779,12 +780,12 @@ During the bootcamp you will build mobile apps with fellow students. This will p
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tSN-Ig-UWY">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Question Label" lineBreakMode="wordWrap" numberOfLines="23" baselineAdjustment="alignBaselines" minimumFontSize="11" translatesAutoresizingMaskIntoConstraints="NO" id="k4R-Td-kQB">
-                                        <rect key="frame" x="20" y="105" width="374" height="395"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Question Label" lineBreakMode="wordWrap" numberOfLines="26" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="k4R-Td-kQB">
+                                        <rect key="frame" x="20" y="83" width="374" height="417"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="453" id="2aT-pj-vqY"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="18"/>
+                                        <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="14"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                         <variation key="default">
@@ -793,16 +794,44 @@ During the bootcamp you will build mobile apps with fellow students. This will p
                                             </mask>
                                         </variation>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="QUESTION" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dpx-9h-BfF">
-                                        <rect key="frame" x="0.0" y="50" width="414" height="47"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yui-zW-CoE">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quiz Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h8y-U3-rjh">
+                                                <rect key="frame" x="172" y="48" width="71" height="16"/>
+                                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="13"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cjf-4B-qQg">
+                                                <rect key="frame" x="372" y="21" width="34" height="29"/>
+                                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="14"/>
+                                                <state key="normal" title="Exit">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="exitButton:" destination="Xtc-GB-uaz" eventType="touchUpInside" id="SkF-wN-pGV"/>
+                                                    <action selector="exitButton:" destination="Bhz-8r-BOe" eventType="touchUpInside" id="eJo-yz-9gg"/>
+                                                </connections>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Code Challenge" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FIg-5R-eGV">
+                                                <rect key="frame" x="128" y="24" width="161" height="23"/>
+                                                <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="19"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
                                         <color key="backgroundColor" red="0.031372549020000001" green="0.16078431369999999" blue="0.47843137250000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="47" id="9OV-sT-EiE"/>
+                                            <constraint firstItem="h8y-U3-rjh" firstAttribute="centerX" secondItem="Yui-zW-CoE" secondAttribute="centerX" id="6Es-fw-7Lx"/>
+                                            <constraint firstItem="Cjf-4B-qQg" firstAttribute="centerY" secondItem="Yui-zW-CoE" secondAttribute="centerY" id="9iM-Er-6Ed"/>
+                                            <constraint firstAttribute="height" constant="70" id="HZI-Lg-Avw"/>
+                                            <constraint firstItem="FIg-5R-eGV" firstAttribute="centerX" secondItem="Yui-zW-CoE" secondAttribute="centerX" constant="1" id="IyK-MZ-ZEB"/>
+                                            <constraint firstAttribute="bottom" secondItem="h8y-U3-rjh" secondAttribute="bottom" constant="6" id="JB3-QF-OI0"/>
+                                            <constraint firstItem="FIg-5R-eGV" firstAttribute="top" secondItem="Yui-zW-CoE" secondAttribute="top" constant="24" id="bMT-ot-LdD"/>
+                                            <constraint firstAttribute="trailing" secondItem="Cjf-4B-qQg" secondAttribute="trailing" constant="8" id="iIL-aN-WPl"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="39"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hOm-Fh-xY5">
                                         <rect key="frame" x="0.0" y="508" width="414" height="229"/>
                                         <subviews>
@@ -916,18 +945,32 @@ During the bootcamp you will build mobile apps with fellow students. This will p
                                             </mask>
                                         </variation>
                                     </view>
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CORRECT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dpx-9h-BfF">
+                                        <rect key="frame" x="0.0" y="23" width="414" height="47"/>
+                                        <color key="backgroundColor" red="0.031372549020000001" green="0.16078431369999999" blue="0.47843137250000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="47" id="9OV-sT-EiE"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="39"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="hOm-Fh-xY5" firstAttribute="top" secondItem="k4R-Td-kQB" secondAttribute="bottom" constant="8" id="6EO-bS-TYj"/>
                                     <constraint firstAttribute="bottom" secondItem="hOm-Fh-xY5" secondAttribute="bottom" constant="-1" id="EAc-4o-LwP"/>
-                                    <constraint firstItem="k4R-Td-kQB" firstAttribute="top" secondItem="Dpx-9h-BfF" secondAttribute="bottom" constant="8" id="NIL-ev-fPG"/>
+                                    <constraint firstItem="Yui-zW-CoE" firstAttribute="leading" secondItem="tSN-Ig-UWY" secondAttribute="leading" id="HgF-a0-JPb"/>
+                                    <constraint firstItem="k4R-Td-kQB" firstAttribute="top" secondItem="Dpx-9h-BfF" secondAttribute="bottom" constant="13" id="NIL-ev-fPG"/>
                                     <constraint firstItem="Dpx-9h-BfF" firstAttribute="leading" secondItem="tSN-Ig-UWY" secondAttribute="leading" id="NLw-gc-3DC"/>
-                                    <constraint firstItem="Dpx-9h-BfF" firstAttribute="top" secondItem="tSN-Ig-UWY" secondAttribute="top" constant="50" id="NPM-4q-L69"/>
+                                    <constraint firstItem="Dpx-9h-BfF" firstAttribute="top" secondItem="tSN-Ig-UWY" secondAttribute="top" constant="23" id="NPM-4q-L69"/>
+                                    <constraint firstItem="Yui-zW-CoE" firstAttribute="top" secondItem="tSN-Ig-UWY" secondAttribute="top" id="PVm-ig-bNa"/>
                                     <constraint firstItem="hOm-Fh-xY5" firstAttribute="leading" secondItem="tSN-Ig-UWY" secondAttribute="leading" id="Qcb-Py-Fsi"/>
+                                    <constraint firstItem="k4R-Td-kQB" firstAttribute="top" secondItem="Yui-zW-CoE" secondAttribute="bottom" constant="13" id="ab4-KA-UFQ"/>
                                     <constraint firstAttribute="trailing" secondItem="k4R-Td-kQB" secondAttribute="trailing" constant="20" id="b90-74-UOI"/>
                                     <constraint firstItem="Dpx-9h-BfF" firstAttribute="centerX" secondItem="tSN-Ig-UWY" secondAttribute="centerX" id="cpc-uO-QpG"/>
                                     <constraint firstItem="k4R-Td-kQB" firstAttribute="leading" secondItem="tSN-Ig-UWY" secondAttribute="leading" constant="20" id="hgE-q4-qMc"/>
                                     <constraint firstAttribute="trailing" secondItem="Dpx-9h-BfF" secondAttribute="trailing" id="nC0-4a-W23"/>
+                                    <constraint firstAttribute="trailing" secondItem="Yui-zW-CoE" secondAttribute="trailing" id="vHF-h8-dRj"/>
                                     <constraint firstAttribute="trailing" secondItem="hOm-Fh-xY5" secondAttribute="trailing" id="zh8-dE-hyz"/>
                                 </constraints>
                             </view>
@@ -943,14 +986,16 @@ During the bootcamp you will build mobile apps with fellow students. This will p
                     <navigationItem key="navigationItem" id="KU5-Aa-HBX"/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
+                        <outlet property="correctLabel" destination="Dpx-9h-BfF" id="0yr-4N-150"/>
                         <outlet property="option1Button" destination="EFS-ww-lsw" id="43p-YB-URc"/>
                         <outlet property="option2Button" destination="OgQ-gY-chZ" id="Hhy-gU-sfq"/>
                         <outlet property="option3Button" destination="qSv-Pl-mqF" id="s3u-fh-hpz"/>
                         <outlet property="option4Button" destination="dPP-jM-U8G" id="uwA-HS-VFX"/>
                         <outlet property="questionLabel" destination="k4R-Td-kQB" id="woA-YT-Jex"/>
+                        <outlet property="quizHeaderView" destination="Yui-zW-CoE" id="iv8-cS-s4Y"/>
+                        <outlet property="quizNameLabel" destination="h8y-U3-rjh" id="fq4-GI-aCd"/>
                         <outlet property="quizView" destination="tSN-Ig-UWY" id="wBp-BG-WbC"/>
                         <outlet property="runButton" destination="u9R-gY-viI" id="K04-Sf-eSS"/>
-                        <outlet property="titleLabel" destination="Dpx-9h-BfF" id="wNz-Eg-lMM"/>
                         <segue destination="UTz-Pp-FSe" kind="unwind" identifier="unwindToQuiz" customClass="QuizUnwindSegue" customModule="The_Coding_Challenge" customModuleProvider="target" unwindAction="unwindToMenu:" id="gnT-gn-1pg"/>
                     </connections>
                 </viewController>

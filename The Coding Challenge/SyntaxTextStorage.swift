@@ -63,7 +63,7 @@ class SyntaxTextStorage: NSTextStorage {
         // Create the different attributes
         let declarationAttribute = [NSForegroundColorAttributeName: UIColor.purpleColor()]
         let blueAttribute = [NSForegroundColorAttributeName: UIColor.blueColor()]
-        let redAttribute = [NSForegroundColorAttributeName: UIColor.redColor()]
+        let redAttribute = [NSForegroundColorAttributeName: UIColor.redColor(), NSBackgroundColorAttributeName: UIColor.blackColor()]
         
         // Construct a dictionary of replacements based on regexes
         regExFormats = [

@@ -169,6 +169,7 @@ class MainVC: UIViewController, JSONSourceDelegate, JSONQuizSourceDelegate, UIVi
     
     // QUIZ BUTTON
     @IBAction func button3Pressed(sender: UIButton) {
+        
         if quizStore!.count != 0 {
             if buttonNo3.imageView?.image == quizImage {
                 showQuizzes()

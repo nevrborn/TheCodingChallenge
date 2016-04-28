@@ -23,8 +23,9 @@ class TutorialOverlayVC: UIViewController, UIViewControllerTransitioningDelegate
     var tutorialStore: TutorialStore!
     var trophyOverlayDelegate = TrophyOverlayVC()
     
-    var displayImage = false
+    var displayImage = ""
     var imageToDisplay: String = ""
+    var image: UIImage?
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -43,14 +44,21 @@ class TutorialOverlayVC: UIViewController, UIViewControllerTransitioningDelegate
     }
     
     override func viewDidLoad() {
-        if displayImage == false {
+        if displayImage == "noImageToDisplay" {
             textLabel.text = answerText
             pictureTextLabel.hidden = true
             imageView.hidden = true
-        } else if displayImage == true {
+        } else if displayImage == "fromOptions" {
             textLabel.hidden = true
             pictureTextLabel.hidden = false
+            pictureTextLabel.text = answerText
             imageView.image = UIImage(named: imageToDisplay)
+            imageView.hidden = false
+        } else if displayImage == "fromTakenPhoto" {
+            textLabel.hidden = true
+            pictureTextLabel.hidden = false
+            pictureTextLabel.text = answerText
+            imageView.image = image
             imageView.hidden = false
         }
     }
@@ -116,22 +124,31 @@ class TutorialOverlayVC: UIViewController, UIViewControllerTransitioningDelegate
     }
     
     
-    func updateOverlay(correctAnswer: String, currentChallenge: Int, totalChallenges: Int, endText: String, displayImage: Bool, imageName: String) {
+    func updateOverlay(correctAnswer: String, currentChallenge: Int, totalChallenges: Int, endText: String, displayImage: String, imageName: String, image: UIImage?) {
         
-        if displayImage == false {
+        if displayImage == "noImageToDisplay" {
             self.answerText = correctAnswer
             self.currentChallenge = currentChallenge
             self.totalChallenges = totalChallenges
             self.endText = endText
-            self.displayImage = false
+            self.displayImage = "noImageToDisplay"
 
-        } else if displayImage == true {
+        } else if displayImage == "fromOptions" {
             self.answerText = correctAnswer
             self.currentChallenge = currentChallenge
             self.totalChallenges = totalChallenges
             self.endText = endText
             self.imageToDisplay = imageName
-            self.displayImage = true
+            self.displayImage = "fromOptions"
+            self.image = image
+        } else if displayImage == "fromTakenPhoto" {
+            self.answerText = correctAnswer
+            self.currentChallenge = currentChallenge
+            self.totalChallenges = totalChallenges
+            self.endText = endText
+            self.imageToDisplay = ""
+            self.displayImage = "fromTakenPhoto"
+            self.image = image
         }
         
         

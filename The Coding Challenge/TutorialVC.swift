@@ -9,7 +9,7 @@
 import UIKit
 import AudioToolbox
 
-class TutorialVC: UIViewController, UITextViewDelegate {
+class TutorialVC: UIViewController, UITextViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     var indexOfTutorial: Int?
     
@@ -33,7 +33,7 @@ class TutorialVC: UIViewController, UITextViewDelegate {
     
     //Variables for the EXTENSION
     let imagePicker = UIImagePickerController()
-    var newImage: UIImage?
+    var newImage: UIImage? = UIImage(named: "tutorialOption.png")
     
 
     @IBOutlet var tutorialText: UILabel!
@@ -65,6 +65,8 @@ class TutorialVC: UIViewController, UITextViewDelegate {
         tutorialText.text = tutorial.introText
         tutorialText.font = UIFont(name: "Menlo", size: 13)
         
+        imagePicker.delegate = self
+        
         super.viewDidLoad()
     }
     
@@ -80,13 +82,13 @@ class TutorialVC: UIViewController, UITextViewDelegate {
 
                 prepareOverlayVC(overlayVC)
                 
+                
                 if currentChallenge.imageToDisplay == "noImageToDisplay" {
-                overlayVC.updateOverlay(currentChallenge.correctAnswerText!, currentChallenge: indexOfChallenges, totalChallenges: numberOfChallenges, endText: tutorial.endText!, displayImage: false, imageName: imageToBeDisplayed)
+                    overlayVC.updateOverlay(currentChallenge.correctAnswerText!, currentChallenge: indexOfChallenges, totalChallenges: numberOfChallenges, endText: tutorial.endText!, displayImage: "noImageToDisplay", imageName: imageToBeDisplayed, image: nil)
                 } else if currentChallenge.imageToDisplay == "fromOptions" {
-                    overlayVC.updateOverlay(currentChallenge.correctAnswerText!, currentChallenge: indexOfChallenges, totalChallenges: numberOfChallenges, endText: tutorial.endText!, displayImage: true, imageName: imageToBeDisplayed)
+                    overlayVC.updateOverlay(currentChallenge.correctAnswerText!, currentChallenge: indexOfChallenges, totalChallenges: numberOfChallenges, endText: tutorial.endText!, displayImage: "fromOptions", imageName: imageToBeDisplayed, image: nil)
                 } else if currentChallenge.imageToDisplay == "fromTakenPhoto" {
-                    performSelectorOnMainThread(#selector(takeAPhoto), withObject: nil, waitUntilDone: true)
-                    overlayVC.updateOverlay(currentChallenge.correctAnswerText!, currentChallenge: indexOfChallenges, totalChallenges: numberOfChallenges, endText: tutorial.endText!, displayImage: true, imageName: (newImage?.images?.description)!)
+                    performAction(currentChallenge.codeToExecute!)
                 }
                 
                 presentViewController(overlayVC, animated: true, completion: nil)
@@ -216,7 +218,7 @@ class TutorialVC: UIViewController, UITextViewDelegate {
         
     }
     
-    private func prepareOverlayVC(overlayVC: UIViewController) {
+    func prepareOverlayVC(overlayVC: UIViewController) {
         overlayVC.transitioningDelegate = tutorialOverlayDelegate
         overlayVC.modalPresentationStyle = .FullScreen
     }
