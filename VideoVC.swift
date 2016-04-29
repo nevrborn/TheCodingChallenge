@@ -9,7 +9,7 @@ import UIKit
 import WebKit
 
 class VideoVC: UIViewController {
-    
+    //Embeding youtub video tutorial in the App.
     
     @IBOutlet var videoView:UIWebView!
     override func viewDidLoad() {

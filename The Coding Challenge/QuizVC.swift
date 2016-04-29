@@ -72,13 +72,13 @@ class QuizVC: UIViewController {
         option3Button.setBackgroundImage(optionImage, forState: .Normal)
         option4Button.setBackgroundImage(selectedOptionImage, forState: .Normal)
     }
-    
+    //sharing score on social media.
     @IBAction func share(sender: UIButton) {
         let vc = UIActivityViewController(activityItems:["\(Int(score)) / 100 points on the \(quizName) quiz with CodeChallenge app.\r\r Interested in coding? Check out @AppAcademyNL"], applicationActivities: nil)
         self.presentViewController(vc, animated: true, completion: nil)
     }
     
-    
+    //RunButton to display answers options.
     @IBAction func runButton(sender: AnyObject) {
         
         if userAnswer == currentQuestion.correctOption && correctAnswerNeeded == false {
@@ -172,7 +172,7 @@ class QuizVC: UIViewController {
         correctAnswerNeeded = false
 
     }
-    
+    //Going back to the MainVC.
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "unwindToQuiz" {

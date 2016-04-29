@@ -381,7 +381,7 @@ extension MainVC {
         animateQuizButtons()
         
     }
-    
+    //Animation of Quiz Buttons
     func animateQuizButtons() {
         quizTile1.transform = CGAffineTransformMakeScale(0, 0)
         UIView.animateWithDuration(0.5, delay: 0.9, usingSpringWithDamping: 0.3,initialSpringVelocity: 4, options: .CurveLinear, animations: {
@@ -434,7 +434,7 @@ extension MainVC {
         )
         
     }
-    
+    //animation Appeare randomly
     func randomNumber() -> Double {
         let randomNumber = Double(arc4random_uniform(1))
         return randomNumber

@@ -63,7 +63,7 @@ class TutorialOverlayVC: UIViewController, UIViewControllerTransitioningDelegate
         }
     }
     
-    // ---- UIViewControllerTransitioningDelegate methods
+    // UIViewControllerTransitioningDelegate methods
     
     func presentationControllerForPresentedViewController(presented: UIViewController, presentingViewController presenting: UIViewController, sourceViewController source: UIViewController) -> UIPresentationController? {
         

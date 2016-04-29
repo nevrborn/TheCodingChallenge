@@ -50,13 +50,13 @@ class FAQVC: UIViewController, MFMailComposeViewControllerDelegate {
         socialView.hidden = true
     }
     
-    
+    //The App academy website
     @IBAction func webButton(sender: AnyObject) {
         
         let url = NSURL(string: "http://en.theappacademy.nl")!
         UIApplication.sharedApplication().openURL(url)
     }
-    
+    //phone call action
     @IBAction func makeCall(sender: AnyObject) {
         
         let url:NSURL = NSURL(string: "tel//0031202610899")!
@@ -64,12 +64,13 @@ class FAQVC: UIViewController, MFMailComposeViewControllerDelegate {
         UIApplication.sharedApplication().openURL(url)
         
     }
+    // connection to linkedlin
     
     @IBAction func linkedlinButton(sender: AnyObject) {
         
         let url = NSURL(string: "https://www.linkedin.com/company/the-app-academy")!
         UIApplication.sharedApplication().openURL(url)
-        //webView.loadRequest(NSURLRequest(URL: url))
+    
         
         
     }
@@ -79,14 +80,12 @@ class FAQVC: UIViewController, MFMailComposeViewControllerDelegate {
         
         let url = NSURL(string: "https://twitter.com/AppAcademyNL")!
         UIApplication.sharedApplication().openURL(url)
-        //webView.loadRequest(NSURLRequest(URL: url))
         
     }
     
     @IBAction func facebookButton(sender: AnyObject) {
         let url = NSURL(string: "https://www.facebook.com/AppAcademyNL")!
         UIApplication.sharedApplication().openURL(url)
-        //webView.loadRequest(NSURLRequest(URL: url))
     }
     
     @IBAction func emailButton(sender: AnyObject) {
@@ -115,7 +114,7 @@ class FAQVC: UIViewController, MFMailComposeViewControllerDelegate {
         
         //Create and add the Cancel action
         let cancelAction: UIAlertAction = UIAlertAction(title: "Cancel", style: .Cancel) { action -> Void in
-            //Do some stuff
+    
         }
         actionSheetController.addAction(cancelAction)
         
@@ -149,7 +148,7 @@ class FAQVC: UIViewController, MFMailComposeViewControllerDelegate {
     func mailComposeController(controller: MFMailComposeViewController, didFinishWithResult result: MFMailComposeResult, error: NSError?) {
         controller.dismissViewControllerAnimated(true, completion: nil)
     }
-    
+    //Adding news Letter
     
     func addMailToNewsletter(email: String) {
         let url = "https://us4.api.mailchimp.com/2.0/lists/subscribe"
@@ -177,7 +176,7 @@ class FAQVC: UIViewController, MFMailComposeViewControllerDelegate {
                 }
                 
             } catch let parseError {
-                print(parseError)                                                          // Log the error thrown by `JSONObjectWithData`
+                print(parseError)                                                         
                 let jsonStr = NSString(data: data!, encoding: NSUTF8StringEncoding)
                 print("Error could not parse JSON: '\(jsonStr)'")
             }

@@ -77,7 +77,7 @@ class OverlayPresentationController: UIPresentationController {
     }
     
     
-    // ---- UIContentContainer protocol methods
+    // UIContentContainer protocol methods
     
     override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator transitionCoordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransitionToSize(size, withTransitionCoordinator: transitionCoordinator)

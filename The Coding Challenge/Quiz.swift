@@ -18,7 +18,7 @@ public struct Quiz {
     var forTutorial: String?
     var endQuizText: String?
     var questionsDict: Array<NSDictionary>?
-    
+    //initialisation.
     init(dictionary: NSDictionary) {
         
         let name = dictionary["name"] as? String
@@ -50,7 +50,7 @@ public struct Question {
     public var option4: String?
     public var correctOption: Int?
     public var correctAnswerText: String?
-    
+    // initialisation.
     public init?(dictionary: NSDictionary) {
         let question = dictionary["question"] as? String
         let option1 = dictionary["option1"] as? String
