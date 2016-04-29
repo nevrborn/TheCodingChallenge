@@ -105,7 +105,6 @@ class TutorialVC: UIViewController, UITextViewDelegate, UIImagePickerControllerD
                 
             } else if selectedUserOption != currentChallenge.correctInput! {
                 AudioServicesPlayAlertSound(kSystemSoundID_Vibrate)
-                playErrorSound()
                 if selectedUserOption == 1 {
                     option1Button.setBackgroundImage(wrongOptionImage, forState: .Normal)
                     option2Button.setBackgroundImage(optionImage, forState: .Normal)
@@ -220,15 +219,6 @@ class TutorialVC: UIViewController, UITextViewDelegate, UIImagePickerControllerD
         option2Button.hidden = false
         option3Button.hidden = false
         
-    }
-    
-    func playErrorSound() {
-        
-        let audioFileURL = NSBundle.mainBundle().URLForResource("error sound", withExtension: ".mp3")!
-        
-        audioPlayer = try! AVAudioPlayer(contentsOfURL: audioFileURL)
-        
-        audioPlayer?.play()
     }
     
     func prepareOverlayVC(overlayVC: UIViewController) {
