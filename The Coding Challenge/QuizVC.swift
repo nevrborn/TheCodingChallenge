@@ -99,8 +99,14 @@ class QuizVC: UIViewController {
         }
         else if userAnswer != currentQuestion.correctOption {
             AudioServicesPlayAlertSound(kSystemSoundID_Vibrate)
+            
+            pointsToScore = pointsToScore - 3
+            
+            if pointsToScore <= 0 {
+                pointsToScore = 0
+            }
+            
             if userAnswer == 1 {
-                pointsToScore = pointsToScore - 3
                 option1Button.setBackgroundImage(wrongOptionImage, forState: .Normal)
                 option2Button.setBackgroundImage(optionImage, forState: .Normal)
                 option3Button.setBackgroundImage(optionImage, forState: .Normal)
@@ -112,7 +118,6 @@ class QuizVC: UIViewController {
                 option4Button.setTitle(currentQuestion.option4! as String, forState: .Normal)
             }
             if userAnswer == 2 {
-                pointsToScore = pointsToScore - 3
                 option1Button.setBackgroundImage(optionImage, forState: .Normal)
                 option2Button.setBackgroundImage(wrongOptionImage, forState: .Normal)
                 option3Button.setBackgroundImage(optionImage, forState: .Normal)
@@ -124,7 +129,6 @@ class QuizVC: UIViewController {
                 option4Button.setTitle(currentQuestion.option4! as String, forState: .Normal)
             }
             if userAnswer == 3 {
-                pointsToScore = pointsToScore - 3
                 option1Button.setBackgroundImage(optionImage, forState: .Normal)
                 option2Button.setBackgroundImage(optionImage, forState: .Normal)
                 option3Button.setBackgroundImage(wrongOptionImage, forState: .Normal)
@@ -136,7 +140,6 @@ class QuizVC: UIViewController {
                 option4Button.setTitle(currentQuestion.option4! as String, forState: .Normal)
             }
             if userAnswer == 4 {
-                pointsToScore = pointsToScore - 3
                 option1Button.setBackgroundImage(optionImage, forState: .Normal)
                 option2Button.setBackgroundImage(optionImage, forState: .Normal)
                 option3Button.setBackgroundImage(optionImage, forState: .Normal)

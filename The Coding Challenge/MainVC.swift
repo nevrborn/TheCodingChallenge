@@ -53,7 +53,7 @@ class MainVC: UIViewController, JSONSourceDelegate, JSONQuizSourceDelegate, UIVi
     @IBOutlet var quizTile10: UIButton!
     @IBOutlet var quizMainMenu: UIButton!
     @IBOutlet var scoreTile: UIButton!
-
+    
     
     override func viewDidLoad() {
         
@@ -78,9 +78,13 @@ class MainVC: UIViewController, JSONSourceDelegate, JSONQuizSourceDelegate, UIVi
         mainMenuButton.enabled = false
         
         firstTimeLoad = true
+        
+        setImages()
+        
         super.viewDidLoad()
     }
-    // animation of Buttons
+    
+    // Animation of main menu Buttons
     @IBOutlet weak var buttonNo1: UIButton! {
         didSet {
             buttonNo1.transform = CGAffineTransformMakeScale(0, 0)
@@ -128,13 +132,14 @@ class MainVC: UIViewController, JSONSourceDelegate, JSONQuizSourceDelegate, UIVi
                 self.mainMenuButton.transform = CGAffineTransformIdentity }, completion: nil
             )}
     }
+    
     //Button to display The App Academy website.
     @IBAction func taaLogoButton(sender: UIButton) {
         let url = NSURL(string: "http://en.theappacademy.nl")!
         UIApplication.sharedApplication().openURL(url)
     }
     
-    // TUTORIALS BUTTON
+    // Tutorial Button + button for 1st tutorial and quiz
     @IBAction func buttonNo1Pressed(sender: UIButton) {
         if tutorialStore!.count != 0 {
             if buttonNo1.imageView?.image == tutorialsImage {
@@ -152,7 +157,7 @@ class MainVC: UIViewController, JSONSourceDelegate, JSONQuizSourceDelegate, UIVi
         }
     }
     
-    // APP ACADEMY FAQ BUTTON
+    // APP ACADEMY FAQ BUTTON + button for 2nd tutorial and quiz
     @IBAction func button2Pressed(sender: UIButton) {
         if buttonNo2.imageView?.image == faqImage {
             performSegueWithIdentifier("showFAQ", sender: sender)
@@ -167,7 +172,7 @@ class MainVC: UIViewController, JSONSourceDelegate, JSONQuizSourceDelegate, UIVi
         }
     }
     
-    // QUIZ BUTTON
+    // QUIZ BUTTON + button for 3rd tutorial and quiz
     @IBAction func button3Pressed(sender: UIButton) {
         
         if quizStore!.count != 0 {
@@ -187,6 +192,7 @@ class MainVC: UIViewController, JSONSourceDelegate, JSONQuizSourceDelegate, UIVi
         }
     }
     
+    // Button for 4th tutorial and quiz
     @IBAction func button4Pressed(sender: UIButton) {
         if quizOrTutorial == "tutorial" {
             findIndexOfTutorialFromImage(sender)
@@ -208,11 +214,12 @@ class MainVC: UIViewController, JSONSourceDelegate, JSONQuizSourceDelegate, UIVi
             quizOrTutorial = ""
             showMainMenu()
         } else if mainMenuButton.imageView?.image == mainMenuImage && quizOrTutorial == "quiz" {
-            animateMainMenu()
+            quizOrTutorial = ""
+            showMainMenu()
         }
     }
     
-    
+    // Button to show trophy after completing a quiz
     @IBAction func quizScoreButton(sender: UIButton) {
         let overlayVC = storyboard!.instantiateViewControllerWithIdentifier("TrophyOverlayVC") as! TrophyOverlayVC
         overlayVC.updateQuizTrophyOverlay("quiz", quizName: quizStore[indexOfSelectedQuiz].name!, score: quizScore)
@@ -220,6 +227,7 @@ class MainVC: UIViewController, JSONSourceDelegate, JSONQuizSourceDelegate, UIVi
         presentViewController(overlayVC, animated: true, completion: nil)
     }
     
+    // Function to prepare the trophy screen after completing quiz
     func prepareOverlayVC(overlayVC: UIViewController) {
         overlayVC.transitioningDelegate = trophyOverlayDelegate
         overlayVC.modalPresentationStyle = .FullScreen
@@ -229,28 +237,27 @@ class MainVC: UIViewController, JSONSourceDelegate, JSONQuizSourceDelegate, UIVi
         
     }
     
+    // Function to set up array of images from the tutorial and quiz json files
     func setImages() {
         var i = 0
-        
-        while tutorialStore.count == 0 || quizStore.count == 0 {
-        }
-        
-        if tutorialStore.count != 0 {
-            while i < tutorialStore!.count {
-                tutorialIcons.append(UIImage(named: tutorialStore![i].iconName!)!)
-                i += 1
+            // Only set up the array if the json file has been loaded, and also only do if once
+            if tutorialStore.count != 0 && tutorialIcons.count == 0 {
+                while i < tutorialStore!.count {
+                    tutorialIcons.append(UIImage(named: tutorialStore![i].iconName!)!)
+                    i += 1
+                }
             }
-        }
-        
-        if quizStore.count != 0 {
-            i = 0
-            while i < quizStore!.count {
-                quizIcons.append(UIImage(named: quizStore![i].iconName!)!)
-                i += 1
+            // Only set up the array if the json file has been loaded, and also only do if once
+            if quizStore.count != 0 && quizIcons.count == 0 {
+                i = 0
+                while i < quizStore!.count {
+                    quizIcons.append(UIImage(named: quizStore![i].iconName!)!)
+                    i += 1
+                }
             }
-        }
     }
     
+    // Find the index number of tutorial from the selected tutorial button
     func findIndexOfTutorialFromImage(button: UIButton) -> Int {
         for image in 0..<tutorialIcons.count {
             if UIImage(named: tutorialStore[image].iconName!) == button.imageView?.image {
@@ -260,6 +267,7 @@ class MainVC: UIViewController, JSONSourceDelegate, JSONQuizSourceDelegate, UIVi
         return indexOfSelectedTutorial
     }
     
+    // Find the index number of quiz from the selected tutorial button
     func findIndexOfQuizFromImage(button: UIButton) -> Int {
         for image in 0..<quizIcons.count {
             if UIImage(named: quizStore[image].iconName!) == button.imageView?.image {
@@ -268,7 +276,8 @@ class MainVC: UIViewController, JSONSourceDelegate, JSONQuizSourceDelegate, UIVi
         }
         return indexOfSelectedQuiz
     }
-    // segue
+    
+    // Send information to the next view controller
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "showTutorial" {
             
@@ -293,7 +302,6 @@ class MainVC: UIViewController, JSONSourceDelegate, JSONQuizSourceDelegate, UIVi
     }
     
     // Actions for Quiz Buttons
-    
     @IBAction func quizTile1(sender: UIButton) {
         indexOfQuizQuestion = 0
         numberOfQuestionsFinished += 1
@@ -364,17 +372,16 @@ class MainVC: UIViewController, JSONSourceDelegate, JSONQuizSourceDelegate, UIVi
         performSegueWithIdentifier("showQuiz", sender: sender)
     }
     
-
-
-    // JSONDelegate methods
     
+    
+    // JSONDelegate methods
     func tutorialLoadingFailed(errorMessage: String) {
         let error = errorMessage
         print(error)
     }
     
     func tutorialDataIsLoaded() {
-        
+        setImages()
     }
     
     func quizLoadingFailed(errorMessage: String) {
@@ -383,7 +390,7 @@ class MainVC: UIViewController, JSONSourceDelegate, JSONQuizSourceDelegate, UIVi
     }
     
     func quizDataIsLoaded() {
-        
+        setImages()
     }
     
     

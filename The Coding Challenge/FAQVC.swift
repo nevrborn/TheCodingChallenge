@@ -23,6 +23,7 @@ class FAQVC: UIViewController, MFMailComposeViewControllerDelegate {
     @IBOutlet var aboutView: UIView!
     @IBOutlet var socialView: UIView!
     
+    // Displaying the About tab
     @IBAction func aboutButtonPressed(sender: UIButton) {
         aboutArrow.hidden = false
         socialArrow.hidden = true
@@ -32,6 +33,7 @@ class FAQVC: UIViewController, MFMailComposeViewControllerDelegate {
         socialView.hidden = true
     }
     
+    // Displaying the Social tab
     @IBAction func socialButtonPressed(sender: UIButton) {
         aboutArrow.hidden = true
         socialArrow.hidden = false
@@ -50,46 +52,38 @@ class FAQVC: UIViewController, MFMailComposeViewControllerDelegate {
         socialView.hidden = true
     }
     
-    //The App academy website
+    // The App academy website
     @IBAction func webButton(sender: AnyObject) {
-        
         let url = NSURL(string: "http://en.theappacademy.nl")!
         UIApplication.sharedApplication().openURL(url)
     }
-    //phone call action
-    @IBAction func makeCall(sender: AnyObject) {
-        
-        let url:NSURL = NSURL(string: "tel//0031202610899")!
-        
-        UIApplication.sharedApplication().openURL(url)
-        
-    }
-    // connection to linkedlin
     
+    // Phone call action
+    @IBAction func makeCall(sender: AnyObject) {
+        let url:NSURL = NSURL(string: "tel//0031202610899")!
+        UIApplication.sharedApplication().openURL(url)
+    }
+    
+    // Connection to linkedlin
     @IBAction func linkedlinButton(sender: AnyObject) {
-        
         let url = NSURL(string: "https://www.linkedin.com/company/the-app-academy")!
         UIApplication.sharedApplication().openURL(url)
-    
-        
-        
     }
     
-    
+    // Connection to twitter
     @IBAction func twitterButton(sender: AnyObject) {
-        
         let url = NSURL(string: "https://twitter.com/AppAcademyNL")!
         UIApplication.sharedApplication().openURL(url)
-        
     }
     
+    // Connection to facebook
     @IBAction func facebookButton(sender: AnyObject) {
         let url = NSURL(string: "https://www.facebook.com/AppAcademyNL")!
         UIApplication.sharedApplication().openURL(url)
     }
     
+    // Connection to email
     @IBAction func emailButton(sender: AnyObject) {
-        
         let mailComposeViewController = configuredMailComposeViewController()
         if MFMailComposeViewController.canSendMail() {
             self.presentViewController(mailComposeViewController, animated: true, completion: nil)
@@ -98,6 +92,7 @@ class FAQVC: UIViewController, MFMailComposeViewControllerDelegate {
         }
     }
     
+    // Connection to newsletter
     @IBAction func signUPNewsletter(sender: UIButton) {
         var emailTextField: UITextField?
         
@@ -128,6 +123,7 @@ class FAQVC: UIViewController, MFMailComposeViewControllerDelegate {
         self.presentViewController(actionSheetController, animated: true, completion: nil)
     }
     
+    // Functions for setting up email
     func configuredMailComposeViewController() -> MFMailComposeViewController {
         let mailComposerVC = MFMailComposeViewController()
         mailComposerVC.mailComposeDelegate = self // Extremely important to set the --mailComposeDelegate-- property, NOT the --delegate-- property
@@ -144,12 +140,11 @@ class FAQVC: UIViewController, MFMailComposeViewControllerDelegate {
         self.presentViewController(sendMailErrorAlert, animated: true, completion: nil)
     }
     
-    // MARK: MFMailComposeViewControllerDelegate Method
     func mailComposeController(controller: MFMailComposeViewController, didFinishWithResult result: MFMailComposeResult, error: NSError?) {
         controller.dismissViewControllerAnimated(true, completion: nil)
     }
-    //Adding news Letter
     
+    //Adding news Letter
     func addMailToNewsletter(email: String) {
         let url = "https://us4.api.mailchimp.com/2.0/lists/subscribe"
         
@@ -172,9 +167,7 @@ class FAQVC: UIViewController, MFMailComposeViewControllerDelegate {
             do {
                 if let json = try NSJSONSerialization.JSONObjectWithData(data!, options: []) as? NSDictionary {
                     print("Success: \(String(json))")
-                    
                 }
-                
             } catch let parseError {
                 print(parseError)                                                         
                 let jsonStr = NSString(data: data!, encoding: NSUTF8StringEncoding)

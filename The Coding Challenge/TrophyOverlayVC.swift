@@ -22,6 +22,7 @@ class TrophyOverlayVC: UIViewController, UIViewControllerTransitioningDelegate {
     var quizName: String = ""
     var toBeDisplayed: String = ""
     
+    // Functons to share results from Tutorials and Quiz on social media
     @IBAction func share(sender: UIButton) {
         var textToShare: String = ""
         
@@ -35,14 +36,16 @@ class TrophyOverlayVC: UIViewController, UIViewControllerTransitioningDelegate {
         self.presentViewController(vc, animated: true, completion: nil)
     }
     
+    // Empty now, but will contain link to more tutorials/videos online
     @IBAction func learnMore(sender: UIButton) {
     }
     
+    // Unwind to Main Menu
     @IBAction func goToMainMenu(sender: UIButton) {
         self.performSegueWithIdentifier("unwindToMenu", sender: self)
     }
     
-    
+    // Sets up the trophy screen on loading
     override func viewDidLoad() {
         
         if toBeDisplayed == "quiz" {
@@ -55,26 +58,29 @@ class TrophyOverlayVC: UIViewController, UIViewControllerTransitioningDelegate {
             drawRandomCircles(25)
         }
         
+        // Brings all lables ++ infront of the screen, on top of the circles
         self.view.bringSubviewToFront(logo)
         self.view.bringSubviewToFront(throphy)
         self.view.bringSubviewToFront(shareButton)
         self.view.bringSubviewToFront(mainMenuButton)
         self.view.bringSubviewToFront(congratulationsLabel)
         self.view.bringSubviewToFront(textLabel)
-        
     }
     
+    // Update the trophy screen with Quiz info
     func updateQuizTrophyOverlay(toBeDisplayed: String, quizName: String, score: Int) {
         self.toBeDisplayed = toBeDisplayed
         self.quizName = quizName
         self.score = score
     }
     
+    // Update the trophy screen with Tutorial info
     func updateTutorialTrophyOverlay(toBeDiplayed: String, tutorialName: String) {
         self.toBeDisplayed = toBeDiplayed
         self.tutorialName = tutorialName
     }
     
+    // Function to draw random colored circles on the screen
     func drawRandomCircles(radiusDivider: CGFloat) {
         
         let circleLayer = CAShapeLayer()
@@ -101,10 +107,9 @@ class TrophyOverlayVC: UIViewController, UIViewControllerTransitioningDelegate {
         circleLayer.lineWidth = 0.2
         
         view.layer.addSublayer(circleLayer)
-        
     }
     
-    
+    // Get random color for the circles
     func getRandomColor() -> (red: CGFloat, green: CGFloat, blue: CGFloat) {
         
         let randomRed: CGFloat = CGFloat(drand48())

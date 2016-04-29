@@ -27,6 +27,7 @@ public class QuizStore {
     private var session = NSURLSession(configuration: NSURLSessionConfiguration.defaultSessionConfiguration())
     
     private var quiz = [Quiz]()
+    
     // Fetching Quiz from the server/JSON.
     public func loadQuizData() {
         let JSONFileURL = NSBundle.mainBundle().URLForResource("quiz", withExtension: ".json")!

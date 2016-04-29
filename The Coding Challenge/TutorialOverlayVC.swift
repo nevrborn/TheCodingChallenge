@@ -18,6 +18,7 @@ class TutorialOverlayVC: UIViewController, UIViewControllerTransitioningDelegate
     var answerText: String?
     var currentChallenge: Int?
     var totalChallenges: Int?
+    var name: String?
     var endText: String?
     var finishedChallenge: Bool = false
     var tutorialStore: TutorialStore!
@@ -43,6 +44,7 @@ class TutorialOverlayVC: UIViewController, UIViewControllerTransitioningDelegate
         self.transitioningDelegate = self
     }
     
+    // Sets up the overlay depending on what need to be showed
     override func viewDidLoad() {
         if displayImage == "noImageToDisplay" {
             textLabel.text = answerText
@@ -62,9 +64,77 @@ class TutorialOverlayVC: UIViewController, UIViewControllerTransitioningDelegate
             imageView.hidden = false
         }
     }
+
+    // Go to next challenge OR go to trophy screen if this was the last challenge
+    @IBAction func nextChallenge(sender: UIButton) {
+        
+        if currentChallenge != totalChallenges {
+            
+            self.dismissViewControllerAnimated(true, completion: nil)
+            
+        } else if currentChallenge == totalChallenges && finishedChallenge == false {
+            
+            textLabel.text = endText
+            textLabel.hidden = false
+            imageView.hidden = true
+            pictureTextLabel.hidden = true
+            
+            nextButton.setTitle("Finish Tutorial", forState: .Normal)
+            finishedChallenge = true
+            
+        } else if finishedChallenge == true {
+            let overlayVC = storyboard!.instantiateViewControllerWithIdentifier("TrophyOverlayVC") as! TrophyOverlayVC
+            
+            prepareOverlayVC(overlayVC)
+            
+            overlayVC.updateTutorialTrophyOverlay("tutorial", tutorialName: name!)
+            
+            presentViewController(overlayVC, animated: true, completion: nil)
+
+            finishedChallenge = false
+        }
+    }
+    
+    // Function to update the overlay depending on what needs to be displayed
+    func updateOverlay(name: String, correctAnswer: String, currentChallenge: Int, totalChallenges: Int, endText: String, displayImage: String, imageName: String, image: UIImage?) {
+        
+        if displayImage == "noImageToDisplay" {
+            self.name = name
+            self.answerText = correctAnswer
+            self.currentChallenge = currentChallenge
+            self.totalChallenges = totalChallenges
+            self.endText = endText
+            self.displayImage = "noImageToDisplay"
+
+        } else if displayImage == "fromOptions" {
+            self.name = name
+            self.answerText = correctAnswer
+            self.currentChallenge = currentChallenge
+            self.totalChallenges = totalChallenges
+            self.endText = endText
+            self.imageToDisplay = imageName
+            self.displayImage = "fromOptions"
+            self.image = image
+        } else if displayImage == "fromTakenPhoto" {
+            self.name = name
+            self.answerText = correctAnswer
+            self.currentChallenge = currentChallenge
+            self.totalChallenges = totalChallenges
+            self.endText = endText
+            self.imageToDisplay = ""
+            self.displayImage = "fromTakenPhoto"
+            self.image = image
+        }
+        
+        
+    }
+    
+    private func prepareOverlayVC(overlayVC: UIViewController) {
+        overlayVC.transitioningDelegate = trophyOverlayDelegate
+        overlayVC.modalPresentationStyle = .FullScreen
+    }
     
     // UIViewControllerTransitioningDelegate methods
-    
     func presentationControllerForPresentedViewController(presented: UIViewController, presentingViewController presenting: UIViewController, sourceViewController source: UIViewController) -> UIPresentationController? {
         
         if presented == self {
@@ -92,71 +162,6 @@ class TutorialOverlayVC: UIViewController, UIViewControllerTransitioningDelegate
         else {
             return nil
         }
-    }
-
-    @IBAction func nextChallenge(sender: UIButton) {
-        
-        if currentChallenge != totalChallenges {
-            
-            self.dismissViewControllerAnimated(true, completion: nil)
-            
-        } else if currentChallenge == totalChallenges && finishedChallenge == false {
-            
-            textLabel.text = endText
-            textLabel.hidden = false
-            imageView.hidden = true
-            pictureTextLabel.hidden = true
-            
-            nextButton.setTitle("Finish Tutorial", forState: .Normal)
-            finishedChallenge = true
-            
-        } else if finishedChallenge == true {
-            let overlayVC = storyboard!.instantiateViewControllerWithIdentifier("TrophyOverlayVC") as! TrophyOverlayVC
-            
-            prepareOverlayVC(overlayVC)
-            
-            overlayVC.updateTutorialTrophyOverlay("tutorial", tutorialName: "Functions")
-            
-            presentViewController(overlayVC, animated: true, completion: nil)
-
-            finishedChallenge = false
-        }
-    }
-    
-    
-    func updateOverlay(correctAnswer: String, currentChallenge: Int, totalChallenges: Int, endText: String, displayImage: String, imageName: String, image: UIImage?) {
-        
-        if displayImage == "noImageToDisplay" {
-            self.answerText = correctAnswer
-            self.currentChallenge = currentChallenge
-            self.totalChallenges = totalChallenges
-            self.endText = endText
-            self.displayImage = "noImageToDisplay"
-
-        } else if displayImage == "fromOptions" {
-            self.answerText = correctAnswer
-            self.currentChallenge = currentChallenge
-            self.totalChallenges = totalChallenges
-            self.endText = endText
-            self.imageToDisplay = imageName
-            self.displayImage = "fromOptions"
-            self.image = image
-        } else if displayImage == "fromTakenPhoto" {
-            self.answerText = correctAnswer
-            self.currentChallenge = currentChallenge
-            self.totalChallenges = totalChallenges
-            self.endText = endText
-            self.imageToDisplay = ""
-            self.displayImage = "fromTakenPhoto"
-            self.image = image
-        }
-        
-        
-    }
-    
-    private func prepareOverlayVC(overlayVC: UIViewController) {
-        overlayVC.transitioningDelegate = trophyOverlayDelegate
-        overlayVC.modalPresentationStyle = .FullScreen
     }
     
 }

@@ -27,7 +27,8 @@ public class TutorialStore {
     private var session = NSURLSession(configuration: NSURLSessionConfiguration.defaultSessionConfiguration())
     
     private var tutorials = [Tutorial]()
-    //fetching Tutorials from JSON File.
+    
+    // Fetching Tutorials from JSON File.
     public func loadTutorialsData() {
         let JSONFileURL = NSBundle.mainBundle().URLForResource("tutorials", withExtension: ".json")!
         let task = session.dataTaskWithURL(JSONFileURL) { (data, response, error) in

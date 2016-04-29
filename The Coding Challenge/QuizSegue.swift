@@ -7,8 +7,8 @@
 //
 
 import UIKit
-//Going Back.
 
+// Custom animated segue for quiz tiles
 class QuizSegue: UIStoryboardSegue {
     
     var button: UIButton?

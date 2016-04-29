@@ -10,7 +10,7 @@ import UIKit
 
 extension MainVC {
     
-    // When pressing Tutorials button
+    // SGo back to main menu from tutorial or quiz
     func showMainMenu() {
         
         buttonNo1.setImage(tutorialsImage, forState: .Normal)
@@ -64,59 +64,7 @@ extension MainVC {
         
     }
     
-    func animateMainMenu() {
-        
-        buttonNo1.setImage(tutorialsImage, forState: .Normal)
-        buttonNo2.setImage(faqImage, forState: .Normal)
-        buttonNo3.setImage(quizImage, forState: .Normal)
-        buttonNo5.setImage(logoImage, forState: .Normal)
-        
-        buttonNo1.hidden = false
-        buttonNo2.hidden = false
-        buttonNo3.hidden = false
-        buttonNo4.hidden = true
-        buttonNo5.hidden = false
-        mainMenuButton.hidden = true
-        
-        buttonNo1.enabled = true
-        buttonNo2.enabled = true
-        buttonNo3.enabled = true
-        buttonNo4.enabled = false
-        buttonNo5.enabled = false
-        mainMenuButton.enabled = false
-        
-        quizTile1.enabled = false
-        quizTile2.enabled = false
-        quizTile3.enabled = false
-        quizTile4.enabled = false
-        quizTile5.enabled = false
-        quizTile6.enabled = false
-        quizTile7.enabled = false
-        quizTile8.enabled = false
-        quizTile9.enabled = false
-        quizTile10.enabled = false
-        quizMainMenu.enabled = false
-        scoreTile.enabled = false
-        
-        quizTile1.hidden = true
-        quizTile2.hidden = true
-        quizTile3.hidden = true
-        quizTile4.hidden = true
-        quizTile5.hidden = true
-        quizTile6.hidden = true
-        quizTile7.hidden = true
-        quizTile8.hidden = true
-        quizTile9.hidden = true
-        quizTile10.hidden = true
-        quizMainMenu.hidden = true
-        scoreTile.hidden = true
-        
-        logoButton.hidden = false
-        logoButton.enabled = true
-        codeChallengeLogo.hidden = false
-    }
-    
-    // Show Tutorials
+    // Show the Tutorials menu
     func showTutorials() {
         
         buttonNo5.setImage(moreTutorialsImage, forState: .Normal)
@@ -129,6 +77,7 @@ extension MainVC {
         
         indexOfPage = 0
         
+        // Calculate the number of pages needed and number of tutorials on the last page
         if tutorialStore.count <= 4 {
             numberOfPagesNeeded = 1
             numberOfPagesTotal = 1
@@ -152,6 +101,7 @@ extension MainVC {
             
             let startIndexOfPicForPage = indexOfPage * 4
             
+            // Only display the number of tutorials that is needed on the last page
             if numberOfItemsOnLastPage == 1 {
                 buttonNo1.setImage(tutorialIcons[startIndexOfPicForPage], forState: .Normal)
                 
@@ -216,7 +166,7 @@ extension MainVC {
         }
     }
     
-    // Show Quizzes
+    // Show the Quiz menu
     func showQuizzes() {
         
         buttonNo5.setImage(moreTutorialsImage, forState: .Normal)
@@ -231,6 +181,7 @@ extension MainVC {
         
         indexOfPage = 0
         
+        // Calculate the number of pages needed and number of quizzes on the last page
         if quizStore.count <= 4 {
             numberOfPagesNeeded = 1
             numberOfPagesTotal = 1
@@ -254,6 +205,7 @@ extension MainVC {
             
             let startIndexOfPicForPage = indexOfPage * 4
             
+            // Only display the number of quizzes that is needed on the last page
             if numberOfItemsOnLastPage == 1 {
                 buttonNo1.setImage(quizIcons[startIndexOfPicForPage], forState: .Normal)
                 
@@ -318,6 +270,7 @@ extension MainVC {
         }
     }
     
+    // Show the Quiz tiles/questions of a selected Quiz
     func showQuiz(quizIndex: Int) {
         
         buttonNo1.enabled = false
@@ -381,6 +334,7 @@ extension MainVC {
         animateQuizButtons()
         
     }
+    
     //Animation of Quiz Buttons
     func animateQuizButtons() {
         quizTile1.transform = CGAffineTransformMakeScale(0, 0)
@@ -434,7 +388,8 @@ extension MainVC {
         )
         
     }
-    //animation Appeare randomly
+    
+    
     func randomNumber() -> Double {
         let randomNumber = Double(arc4random_uniform(1))
         return randomNumber

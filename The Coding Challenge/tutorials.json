@@ -122,5 +122,27 @@
       "correctInput": 3,
       "imageToDisplay": "noImageToDisplay",
       "correctAnswerText": "Hello World!\r\r\rGood work! Maybe it doesn't do much yet, but this is how all programmers start learning how to code!\r\r"}]
+     },
+     {"name": "Play a sound",
+     "introText": "For this first tutorial we will make a small program that all programmers knows very well, and that is to say \"Hello World!\"",
+     "iconName": "playASound.png",
+     "endTutorialText": "Congratulations!\r\rYou've just made your first app!\r\rLet's try some more :-)",
+     "challenges":
+     [{"text": "We must first make a class, which we have named HalloWorld. Then we create a string variable HelloWorld and give it a value.\r Then we print out the value to test if it works.",
+      "code": "class HelloWorld {\r   var userText: String = Enter Code \r   print(text)\r}",
+      "input1": "\"Hello World\"",
+      "input2": "Good Day!",
+      "input3": "@How are you@",
+      "correctInput": 1,
+      "imageToDisplay": "noImageToDisplay",
+      "correctAnswerText": ""},
+      {"text": "Nothing showed right? It's because we have not created an outlet for the text to be displyed yet\r\r We do this by creating an @IBOutlet (outlet) whose type is UILabel. \r Afterwards we set the text of this label to be equal to the variable we made earlier (userText).",
+      "code": "@IBOutlet var textLabel: UILabel {\r   textLabel.Enter Code = userText \r}",
+      "input1": "helloWorld",
+      "input2": "written",
+      "input3": "text",
+      "correctInput": 3,
+      "imageToDisplay": "noImageToDisplay",
+      "correctAnswerText": "Hello World!\r\r\rGood work! Maybe it doesn't do much yet, but this is how all programmers start learning how to code!\r\r"}]
      }]
 }

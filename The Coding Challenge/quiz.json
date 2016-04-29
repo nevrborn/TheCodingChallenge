@@ -68,7 +68,7 @@
       "option4": "It returns an error",
       "correctOption": 4,
       "correctAnswerText": " \r\r It is not possible to do addition, multiplication or division with different type of number variables. In our case \"i\" is an Int and \"k\" is a Double.\r\r To be able to do this we can convert the Int to a Double Wer do that like this: \r\r var i = i + Int(k)"},
-      {"question": "Which of the types below are not standard types used in Swift coding?",
+      {"question": "Which of the types below are standard types used in Swift coding?",
       "option1": "String",
       "option2": "NSURL",
       "option3": "UIColor",
@@ -169,6 +169,102 @@
      "forTutorial": "Functions",
      "introText": "For this Quizz we will have a look at Functions like Nested Function, External Function,Parametric Functions,Default Parameters,Local Parameters ,among others and their examples",
      "iconName": "quizFunctions.png",
+     "endQuizText": "Congratulations!\r\r You've just completed the Function Quizz!\r\rLet's try some more :-)",
+     "quizquestions": [{
+                       "question": "Which of the statement is true for Functions declared as Void data types.",
+                       "option1": "will return something",
+                       "option2": "won’t return anything",
+                       "option3": "may or may not return anything",
+                       "option4": "All the above.",
+                       "correctOption": 2,
+                       "correctAnswerText": "Functions declared as Void data types won't return anything."
+                       }, {
+                       "question": "Which of the statement is true for A variadic parameter? ",
+                       "option1": "Accepts nil",
+                       "option2": "More values of a different type.",
+                       "option3": "Accepts zero or more values of a specified type",
+                       "option4": "Non of the above",
+                       "correctOption": 3,
+                       "correctAnswerText": "A variadic parameter accepts zero or more values of a specified type"
+                       }, {
+                       "question": "Func inputstr(name: String) -> String { \r\r return name \r\r }, Given the above function,it has been declared as?",
+                       "option1": "string datatype",
+                       "option2": "Void datatype",
+                       "option3": "Int datatype",
+                       "option4": "All the above",
+                       "correctOption": 1,
+                       "correctAnswerText": "Here the function is declared as string datatype."
+                       }, {
+                       "question": "which of the Code is an example of Default Parameter value of  function?.",
+                       "option1": "func someFunction(parameterWithDefault: Int = 12) \r\r { \r\r }",
+                       "option2": "func someFunction(parameterWithDefault) \r\r { \r\r } ",
+                       "option3": "func someFunction(parameterWithDefault: Int) \r\r { \r\r }",
+                       "option4": "All of the above",
+                       "correctOption": 1,
+                       "correctAnswerText": "A return statement occurs only in the body of a function or method definition  and causes program execution to return to calling function or method."
+                       }, {
+                       "question": "which of the code represent  an example  of Local parameter names that  can be accessed inside the function alone,func sample(number: Int) { \r\r print(number) \r\r }",
+                       "option1": "func sample(number: Int) { \r\r print(number) \r\r }",
+                       "option2": "func sample(number: Int)",
+                       "option3": "func sample(number: Int) { \r\r print() \r\r }",
+                       "option4": "Integer",
+                       "correctOption": 1,
+                       "correctAnswerText": "func sample(number: Int) { \r\r print(number) \r\r } is an example of Local parameter."
+                       }, {
+                       "question": "Pick the option that best fills the banks space provided:The functions defined in side the bodies of  others functions,are known as ?",
+                       "option1": "Parametric Functions ",
+                       "option2": "External Function",
+                       "option3": "Nested Function",
+                       "option4": "Default Function",
+                       "correctOption": 3,
+                       "correctAnswerText": "A nested function provides the facility to call the outer function by invoking the inside function."
+                       }, {
+                       "question": "Which of the following parameter are used only within the body of the function itself?",
+                       "option1": "Local Parameters",
+                       "option2": "External Parameters",
+                       "option3": "Variable parameters",
+                       "option4": "Default Parameters",
+                       "correctOption": 1,
+                       "correctAnswerText": "Local Parameters are used only within the body of the function itself."
+                       }, {
+                       "question": "Choose the option that best fills the blank space  provided:Typed values that the function takes as  input are known as ?",
+                       "option1": "Parameters ",
+                       "option2": "Return Type",
+                       "option3": "Calling Function",
+                       "option4": "Initialiser",
+                       "correctOption": 1,
+                       "correctAnswerText": " Type values that the function takes as input are known as parameters."
+                       }, {
+                       "question": "Which of the function is an example of an external parameter name ?",
+                       "option1": "func someFunction(externalParameterName localParameterName:  Int ) { \r\r }",
+                       "option2": "func someFunction(Int ) { \r\r }",
+                       "option3": "func ParameterName localParameterName:  Int ) { \r\r  }",
+                       "option4": "func externalParameterName localParameterName:  Int ) { \r\r }",
+                       "correctOption": 1,
+                       "correctAnswerText": "Welcome, Willy! is the output of func sayHelloAgain(personName: String) \r\r Sting{  \r\r Return “Welcome, ” + personName + “!” \r\r } \r\r print(sayHelloAgain(“Willy”))."
+                       }, {
+                       "question": "What will be the output of the code given below? \r\r func sayHelloAgain(personName: String) \r\r Sting{  \r\r Return “Welcome, ” + personName + “!” \r\r } \r\r print(sayHelloAgain(“Willy”))",
+                       "option1": "Welcome, +!",
+                       "option2": "Welcome, Willy! ",
+                       "option3": "Welcome, “!”",
+                       "option4": "Willy Welcome,",
+                       "correctOption": 2,
+                       "correctAnswerText": "Welcome, Willy! is the output of func sayHelloAgain(personName: String) \r\r Sting{  \r\r Return “Welcome, ” + personName + “!” \r\r } \r\r print(sayHelloAgain(“Willy”))."
+                       }, {
+                       "question": "Which of the answer is self-Contained chuck of code that perform a specific task?",
+                       "option1": "Structures",
+                       "option2": "Classes",
+                       "option3": "Variables",
+                       "option4": "Functions ",
+                       "correctOption": 4,
+                       "correctAnswerText": " Functions are self-Contained chuck of code that perform a specific task"
+                       }]
+     },
+     {
+     "name": "Outlets",
+     "forTutorial": "Functions",
+     "introText": "For this Quizz we will have a look at Functions like Nested Function, External Function,Parametric Functions,Default Parameters,Local Parameters ,among others and their examples",
+     "iconName": "quizOutlets.png",
      "endQuizText": "Congratulations!\r\r You've just completed the Function Quizz!\r\rLet's try some more :-)",
      "quizquestions": [{
                        "question": "Which of the statement is true for Functions declared as Void data types.",

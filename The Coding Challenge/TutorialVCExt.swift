@@ -9,12 +9,15 @@
 import UIKit
 import AudioToolbox
 
+// **** Functions that are part of the tutorials ***
 extension TutorialVC {
     
+    // Function to perform functions as part of a tutorial. Get this function from the hson file
     func performAction(code: String) {
         performSelector(NSSelectorFromString(code))
     }
     
+    // Part of the DISPLAY A PICTURE tutorial
     func takeAPhoto() {
         imagePicker.allowsEditing = false
         imagePicker.sourceType = .Camera
@@ -22,6 +25,7 @@ extension TutorialVC {
         presentViewController(imagePicker, animated: true, completion: nil)
     }
     
+    // Part of the DISPLAY A PICTURE tutorial
     func chooseAPhoto() {
         imagePicker.allowsEditing = false
         imagePicker.sourceType = .PhotoLibrary
@@ -29,7 +33,7 @@ extension TutorialVC {
         presentViewController(imagePicker, animated: true, completion: nil)
     }
     
-    // Reading the image from the imagePicker
+    // Part of the DISPLAY A PICTURE tutorial
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         
         // Chooses the original image
@@ -44,7 +48,7 @@ extension TutorialVC {
         let overlayVC = storyboard!.instantiateViewControllerWithIdentifier("TutorialOverlayVC") as! TutorialOverlayVC
         prepareOverlayVC(overlayVC)
         
-        overlayVC.updateOverlay(currentChallenge.correctAnswerText!, currentChallenge: indexOfChallenges, totalChallenges: numberOfChallenges, endText: tutorial.endText!, displayImage: "fromTakenPhoto", imageName: "", image: newImage)
+        overlayVC.updateOverlay(tutorial.name!, correctAnswer: currentChallenge.correctAnswerText!, currentChallenge: indexOfChallenges, totalChallenges: numberOfChallenges, endText: tutorial.endText!, displayImage: "fromTakenPhoto", imageName: "", image: newImage)
         
         dismissViewControllerAnimated(true, completion: nil)
         presentViewController(overlayVC, animated: true, completion: nil)

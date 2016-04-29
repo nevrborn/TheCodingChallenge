@@ -18,6 +18,7 @@ public struct Tutorial {
     public var introText: String?
     public var challengeDict: Array<NSDictionary>?
     public var endText: String?
+    
     // initialisation
     public init?(dictionary: NSDictionary) {
         let name = dictionary["name"] as? String
