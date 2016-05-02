@@ -240,6 +240,10 @@ class MainVC: UIViewController, JSONSourceDelegate, JSONQuizSourceDelegate, UIVi
     // Function to set up array of images from the tutorial and quiz json files
     func setImages() {
         var i = 0
+        
+        while tutorialStore.count == 0 {
+            
+        }
             // Only set up the array if the json file has been loaded, and also only do if once
             if tutorialStore.count != 0 && tutorialIcons.count == 0 {
                 while i < tutorialStore!.count {
