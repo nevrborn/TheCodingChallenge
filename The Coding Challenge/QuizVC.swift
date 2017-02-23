@@ -36,65 +36,65 @@ class QuizVC: UIViewController {
     @IBOutlet var quizNameLabel: UILabel!
     @IBOutlet var quizHeaderView: UIView!
     
-    @IBAction func exitButton(sender: UIButton) {
-        self.performSegueWithIdentifier("unwindToQuiz", sender: self)
+    @IBAction func exitButton(_ sender: UIButton) {
+        self.performSegue(withIdentifier: "unwindToQuiz", sender: self)
     }
     
-    @IBAction func option1ButtonPressed(sender: UIButton) {
+    @IBAction func option1ButtonPressed(_ sender: UIButton) {
         userAnswer = 1
-        option1Button.setBackgroundImage(selectedOptionImage, forState: .Normal)
-        option2Button.setBackgroundImage(optionImage, forState: .Normal)
-        option3Button.setBackgroundImage(optionImage, forState: .Normal)
-        option4Button.setBackgroundImage(optionImage, forState: .Normal)
+        option1Button.setBackgroundImage(selectedOptionImage, for: UIControlState())
+        option2Button.setBackgroundImage(optionImage, for: UIControlState())
+        option3Button.setBackgroundImage(optionImage, for: UIControlState())
+        option4Button.setBackgroundImage(optionImage, for: UIControlState())
     }
     
-    @IBAction func option2ButtonPressed(sender: UIButton) {
+    @IBAction func option2ButtonPressed(_ sender: UIButton) {
         userAnswer = 2
-        option1Button.setBackgroundImage(optionImage, forState: .Normal)
-        option2Button.setBackgroundImage(selectedOptionImage, forState: .Normal)
-        option3Button.setBackgroundImage(optionImage, forState: .Normal)
-        option4Button.setBackgroundImage(optionImage, forState: .Normal)
+        option1Button.setBackgroundImage(optionImage, for: UIControlState())
+        option2Button.setBackgroundImage(selectedOptionImage, for: UIControlState())
+        option3Button.setBackgroundImage(optionImage, for: UIControlState())
+        option4Button.setBackgroundImage(optionImage, for: UIControlState())
     }
     
     
-    @IBAction func option3ButtonPressed(sender: UIButton) {
+    @IBAction func option3ButtonPressed(_ sender: UIButton) {
         userAnswer = 3
-        option1Button.setBackgroundImage(optionImage, forState: .Normal)
-        option2Button.setBackgroundImage(optionImage, forState: .Normal)
-        option3Button.setBackgroundImage(selectedOptionImage, forState: .Normal)
-        option4Button.setBackgroundImage(optionImage, forState: .Normal)
+        option1Button.setBackgroundImage(optionImage, for: UIControlState())
+        option2Button.setBackgroundImage(optionImage, for: UIControlState())
+        option3Button.setBackgroundImage(selectedOptionImage, for: UIControlState())
+        option4Button.setBackgroundImage(optionImage, for: UIControlState())
     }
     
-    @IBAction func option4ButtonPressed(sender: UIButton) {
+    @IBAction func option4ButtonPressed(_ sender: UIButton) {
         userAnswer = 4
-        option1Button.setBackgroundImage(optionImage, forState: .Normal)
-        option2Button.setBackgroundImage(optionImage, forState: .Normal)
-        option3Button.setBackgroundImage(optionImage, forState: .Normal)
-        option4Button.setBackgroundImage(selectedOptionImage, forState: .Normal)
+        option1Button.setBackgroundImage(optionImage, for: UIControlState())
+        option2Button.setBackgroundImage(optionImage, for: UIControlState())
+        option3Button.setBackgroundImage(optionImage, for: UIControlState())
+        option4Button.setBackgroundImage(selectedOptionImage, for: UIControlState())
     }
     //sharing score on social media.
-    @IBAction func share(sender: UIButton) {
+    @IBAction func share(_ sender: UIButton) {
         let vc = UIActivityViewController(activityItems:["\(Int(score)) / 100 points on the \(quizName) quiz with CodeChallenge app.\r\r Interested in coding? Check out @AppAcademyNL"], applicationActivities: nil)
-        self.presentViewController(vc, animated: true, completion: nil)
+        self.present(vc, animated: true, completion: nil)
     }
     
     //RunButton to display answers options.
-    @IBAction func runButton(sender: AnyObject) {
+    @IBAction func runButton(_ sender: AnyObject) {
         
         if userAnswer == currentQuestion.correctOption && correctAnswerNeeded == false {
             score = ceil(pointsToScore)
-            option1Button.hidden = true
-            option2Button.hidden = true
-            option3Button.hidden = true
-            option4Button.hidden = true
-            correctLabel.hidden = false
-            quizHeaderView.hidden = true
+            option1Button.isHidden = true
+            option2Button.isHidden = true
+            option3Button.isHidden = true
+            option4Button.isHidden = true
+            correctLabel.isHidden = false
+            quizHeaderView.isHidden = true
             questionLabel.text = currentQuestion?.correctAnswerText
-            runButton.setTitle("Next question", forState: .Normal)
+            runButton.setTitle("Next question", for: UIControlState())
             correctAnswerNeeded = true
         
         } else if userAnswer == currentQuestion.correctOption && correctAnswerNeeded == true {
-            self.performSegueWithIdentifier("unwindToQuiz", sender: self)
+            self.performSegue(withIdentifier: "unwindToQuiz", sender: self)
             correctAnswerNeeded = false
         }
         else if userAnswer != currentQuestion.correctOption {
@@ -107,48 +107,48 @@ class QuizVC: UIViewController {
             }
             
             if userAnswer == 1 {
-                option1Button.setBackgroundImage(wrongOptionImage, forState: .Normal)
-                option2Button.setBackgroundImage(optionImage, forState: .Normal)
-                option3Button.setBackgroundImage(optionImage, forState: .Normal)
-                option4Button.setBackgroundImage(optionImage, forState: .Normal)
+                option1Button.setBackgroundImage(wrongOptionImage, for: UIControlState())
+                option2Button.setBackgroundImage(optionImage, for: UIControlState())
+                option3Button.setBackgroundImage(optionImage, for: UIControlState())
+                option4Button.setBackgroundImage(optionImage, for: UIControlState())
                 
-                option1Button.setTitle("Wrong answer. Try again!", forState: .Normal)
-                option2Button.setTitle(currentQuestion.option2! as String, forState: .Normal)
-                option3Button.setTitle(currentQuestion.option3! as String, forState: .Normal)
-                option4Button.setTitle(currentQuestion.option4! as String, forState: .Normal)
+                option1Button.setTitle("Wrong answer. Try again!", for: UIControlState())
+                option2Button.setTitle(currentQuestion.option2! as String, for: UIControlState())
+                option3Button.setTitle(currentQuestion.option3! as String, for: UIControlState())
+                option4Button.setTitle(currentQuestion.option4! as String, for: UIControlState())
             }
             if userAnswer == 2 {
-                option1Button.setBackgroundImage(optionImage, forState: .Normal)
-                option2Button.setBackgroundImage(wrongOptionImage, forState: .Normal)
-                option3Button.setBackgroundImage(optionImage, forState: .Normal)
-                option4Button.setBackgroundImage(optionImage, forState: .Normal)
+                option1Button.setBackgroundImage(optionImage, for: UIControlState())
+                option2Button.setBackgroundImage(wrongOptionImage, for: UIControlState())
+                option3Button.setBackgroundImage(optionImage, for: UIControlState())
+                option4Button.setBackgroundImage(optionImage, for: UIControlState())
                 
-                option1Button.setTitle(currentQuestion.option1! as String, forState: .Normal)
-                option2Button.setTitle("Wrong answer. Try again!", forState: .Normal)
-                option3Button.setTitle(currentQuestion.option3! as String, forState: .Normal)
-                option4Button.setTitle(currentQuestion.option4! as String, forState: .Normal)
+                option1Button.setTitle(currentQuestion.option1! as String, for: UIControlState())
+                option2Button.setTitle("Wrong answer. Try again!", for: UIControlState())
+                option3Button.setTitle(currentQuestion.option3! as String, for: UIControlState())
+                option4Button.setTitle(currentQuestion.option4! as String, for: UIControlState())
             }
             if userAnswer == 3 {
-                option1Button.setBackgroundImage(optionImage, forState: .Normal)
-                option2Button.setBackgroundImage(optionImage, forState: .Normal)
-                option3Button.setBackgroundImage(wrongOptionImage, forState: .Normal)
-                option4Button.setBackgroundImage(optionImage, forState: .Normal)
+                option1Button.setBackgroundImage(optionImage, for: UIControlState())
+                option2Button.setBackgroundImage(optionImage, for: UIControlState())
+                option3Button.setBackgroundImage(wrongOptionImage, for: UIControlState())
+                option4Button.setBackgroundImage(optionImage, for: UIControlState())
                 
-                option1Button.setTitle(currentQuestion.option1! as String, forState: .Normal)
-                option2Button.setTitle(currentQuestion.option2! as String, forState: .Normal)
-                option3Button.setTitle("Wrong answer. Try again!", forState: .Normal)
-                option4Button.setTitle(currentQuestion.option4! as String, forState: .Normal)
+                option1Button.setTitle(currentQuestion.option1! as String, for: UIControlState())
+                option2Button.setTitle(currentQuestion.option2! as String, for: UIControlState())
+                option3Button.setTitle("Wrong answer. Try again!", for: UIControlState())
+                option4Button.setTitle(currentQuestion.option4! as String, for: UIControlState())
             }
             if userAnswer == 4 {
-                option1Button.setBackgroundImage(optionImage, forState: .Normal)
-                option2Button.setBackgroundImage(optionImage, forState: .Normal)
-                option3Button.setBackgroundImage(optionImage, forState: .Normal)
-                option4Button.setBackgroundImage(wrongOptionImage, forState: .Normal)
+                option1Button.setBackgroundImage(optionImage, for: UIControlState())
+                option2Button.setBackgroundImage(optionImage, for: UIControlState())
+                option3Button.setBackgroundImage(optionImage, for: UIControlState())
+                option4Button.setBackgroundImage(wrongOptionImage, for: UIControlState())
                 
-                option1Button.setTitle(currentQuestion.option1! as String, forState: .Normal)
-                option2Button.setTitle(currentQuestion.option2! as String, forState: .Normal)
-                option3Button.setTitle(currentQuestion.option3! as String, forState: .Normal)
-                option4Button.setTitle("Wrong answer. Try again!", forState: .Normal)
+                option1Button.setTitle(currentQuestion.option1! as String, for: UIControlState())
+                option2Button.setTitle(currentQuestion.option2! as String, for: UIControlState())
+                option3Button.setTitle(currentQuestion.option3! as String, for: UIControlState())
+                option4Button.setTitle("Wrong answer. Try again!", for: UIControlState())
             }
         }
     }
@@ -156,39 +156,39 @@ class QuizVC: UIViewController {
     override func viewDidLoad() {
 
         questionLabel.text = currentQuestion!.question
-        option1Button.setTitle(currentQuestion!.option1! as String, forState: .Normal)
-        option2Button.setTitle(currentQuestion!.option2! as String, forState: .Normal)
-        option3Button.setTitle(currentQuestion!.option3! as String, forState: .Normal)
-        option4Button.setTitle(currentQuestion!.option4! as String, forState: .Normal)
+        option1Button.setTitle(currentQuestion!.option1! as String, for: UIControlState())
+        option2Button.setTitle(currentQuestion!.option2! as String, for: UIControlState())
+        option3Button.setTitle(currentQuestion!.option3! as String, for: UIControlState())
+        option4Button.setTitle(currentQuestion!.option4! as String, for: UIControlState())
         
-        option1Button.hidden = false
-        option2Button.hidden = false
-        option3Button.hidden = false
-        option4Button.hidden = false
+        option1Button.isHidden = false
+        option2Button.isHidden = false
+        option3Button.isHidden = false
+        option4Button.isHidden = false
 
-        correctLabel.hidden = true
-        quizHeaderView.hidden = false
+        correctLabel.isHidden = true
+        quizHeaderView.isHidden = false
         quizNameLabel.text = quizName
         
-        runButton.setTitle("Answer", forState: .Normal)
+        runButton.setTitle("Answer", for: UIControlState())
         
         correctAnswerNeeded = false
 
     }
     //Going back to the MainVC.
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "unwindToQuiz" {
 
-            let mainViewController = segue.destinationViewController as! MainVC
+            let mainViewController = segue.destination as! MainVC
             
             mainViewController.quizScore = mainViewController.quizScore + Int(score)
-            mainViewController.scoreTile.setTitle("\(mainViewController.quizScore) / 100\r points", forState: .Disabled)
+            mainViewController.scoreTile.setTitle("\(mainViewController.quizScore) / 100\r points", for: .disabled)
             
             if mainViewController.numberOfQuestionsFinished == 10 {
-                mainViewController.scoreTile.setBackgroundImage(UIImage(named: "finishedQuizTile.png"), forState: .Normal)
-                mainViewController.scoreTile.setTitle("Press me!!", forState: .Normal)
-                mainViewController.scoreTile.enabled = true
+                mainViewController.scoreTile.setBackgroundImage(UIImage(named: "finishedQuizTile.png"), for: UIControlState())
+                mainViewController.scoreTile.setTitle("Press me!!", for: UIControlState())
+                mainViewController.scoreTile.isEnabled = true
             }
             
             let quizUnwindSegue = segue as! QuizUnwindSegue

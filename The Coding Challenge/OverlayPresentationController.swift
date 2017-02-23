@@ -21,7 +21,7 @@ class OverlayPresentationController: UIPresentationController {
         
         guard
             let containerView = containerView,
-            let presentedView = presentedView()
+            let presentedView = presentedView
             else {
                 return
         }
@@ -32,14 +32,14 @@ class OverlayPresentationController: UIPresentationController {
         containerView.addSubview(presentedView)
         
         // Fade in the dimming view alongside the transition
-        if let transitionCoordinator = self.presentingViewController.transitionCoordinator() {
-            transitionCoordinator.animateAlongsideTransition({(context: UIViewControllerTransitionCoordinatorContext!) -> Void in
+        if let transitionCoordinator = self.presentingViewController.transitionCoordinator {
+            transitionCoordinator.animate(alongsideTransition: {(context: UIViewControllerTransitionCoordinatorContext!) -> Void in
                 self.dimmingView.alpha = 1.0
                 }, completion:nil)
         }
     }
     
-    override func presentationTransitionDidEnd(completed: Bool)  {
+    override func presentationTransitionDidEnd(_ completed: Bool)  {
         // If the presentation didn't complete, remove the dimming view
         if !completed {
             self.dimmingView.removeFromSuperview()
@@ -48,21 +48,21 @@ class OverlayPresentationController: UIPresentationController {
     
     override func dismissalTransitionWillBegin()  {
         // Fade out the dimming view alongside the transition
-        if let transitionCoordinator = self.presentingViewController.transitionCoordinator() {
-            transitionCoordinator.animateAlongsideTransition({(context: UIViewControllerTransitionCoordinatorContext!) -> Void in
+        if let transitionCoordinator = self.presentingViewController.transitionCoordinator {
+            transitionCoordinator.animate(alongsideTransition: {(context: UIViewControllerTransitionCoordinatorContext!) -> Void in
                 self.dimmingView.alpha  = 0.0
                 }, completion:nil)
         }
     }
     
-    override func dismissalTransitionDidEnd(completed: Bool) {
+    override func dismissalTransitionDidEnd(_ completed: Bool) {
         // If the dismissal completed, remove the dimming view
         if completed {
             self.dimmingView.removeFromSuperview()
         }
     }
     
-    override func frameOfPresentedViewInContainerView() -> CGRect {
+    override var frameOfPresentedViewInContainerView : CGRect {
         
         guard
             let containerView = containerView
@@ -71,7 +71,7 @@ class OverlayPresentationController: UIPresentationController {
         }
         
         var frame = containerView.bounds;
-        frame = CGRectInset(frame, 50.0, 50.0)
+        frame = frame.insetBy(dx: 50.0, dy: 50.0)
         
         return frame
     }
@@ -79,8 +79,8 @@ class OverlayPresentationController: UIPresentationController {
     
     // UIContentContainer protocol methods
     
-    override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator transitionCoordinator: UIViewControllerTransitionCoordinator) {
-        super.viewWillTransitionToSize(size, withTransitionCoordinator: transitionCoordinator)
+    override func viewWillTransition(to size: CGSize, with transitionCoordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: transitionCoordinator)
         
         guard
             let containerView = containerView
@@ -88,7 +88,7 @@ class OverlayPresentationController: UIPresentationController {
                 return
         }
         
-        transitionCoordinator.animateAlongsideTransition({(context: UIViewControllerTransitionCoordinatorContext!) -> Void in
+        transitionCoordinator.animate(alongsideTransition: {(context: UIViewControllerTransitionCoordinatorContext!) -> Void in
             self.dimmingView.frame = containerView.bounds
             }, completion:nil)
     }

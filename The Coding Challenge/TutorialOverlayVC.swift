@@ -33,14 +33,14 @@ class TutorialOverlayVC: UIViewController, UIViewControllerTransitioningDelegate
         self.commonInit()
     }
     
-    override init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: NSBundle!)  {
+    override init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: Bundle!)  {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         
         self.commonInit()
     }
     
     func commonInit() {
-        self.modalPresentationStyle = .Custom
+        self.modalPresentationStyle = .custom
         self.transitioningDelegate = self
     }
     
@@ -48,55 +48,55 @@ class TutorialOverlayVC: UIViewController, UIViewControllerTransitioningDelegate
     override func viewDidLoad() {
         if displayImage == "noImageToDisplay" {
             textLabel.text = answerText
-            pictureTextLabel.hidden = true
-            imageView.hidden = true
+            pictureTextLabel.isHidden = true
+            imageView.isHidden = true
         } else if displayImage == "fromOptions" {
-            textLabel.hidden = true
-            pictureTextLabel.hidden = false
+            textLabel.isHidden = true
+            pictureTextLabel.isHidden = false
             pictureTextLabel.text = answerText
             imageView.image = UIImage(named: imageToDisplay)
-            imageView.hidden = false
+            imageView.isHidden = false
         } else if displayImage == "fromTakenPhoto" {
-            textLabel.hidden = true
-            pictureTextLabel.hidden = false
+            textLabel.isHidden = true
+            pictureTextLabel.isHidden = false
             pictureTextLabel.text = answerText
             imageView.image = image
-            imageView.hidden = false
+            imageView.isHidden = false
         }
     }
 
     // Go to next challenge OR go to trophy screen if this was the last challenge
-    @IBAction func nextChallenge(sender: UIButton) {
+    @IBAction func nextChallenge(_ sender: UIButton) {
         
         if currentChallenge != totalChallenges {
             
-            self.dismissViewControllerAnimated(true, completion: nil)
+            self.dismiss(animated: true, completion: nil)
             
         } else if currentChallenge == totalChallenges && finishedChallenge == false {
             
             textLabel.text = endText
-            textLabel.hidden = false
-            imageView.hidden = true
-            pictureTextLabel.hidden = true
+            textLabel.isHidden = false
+            imageView.isHidden = true
+            pictureTextLabel.isHidden = true
             
-            nextButton.setTitle("Finish Tutorial", forState: .Normal)
+            nextButton.setTitle("Finish Tutorial", for: UIControlState())
             finishedChallenge = true
             
         } else if finishedChallenge == true {
-            let overlayVC = storyboard!.instantiateViewControllerWithIdentifier("TrophyOverlayVC") as! TrophyOverlayVC
+            let overlayVC = storyboard!.instantiateViewController(withIdentifier: "TrophyOverlayVC") as! TrophyOverlayVC
             
             prepareOverlayVC(overlayVC)
             
             overlayVC.updateTutorialTrophyOverlay("tutorial", tutorialName: name!)
             
-            presentViewController(overlayVC, animated: true, completion: nil)
+            present(overlayVC, animated: true, completion: nil)
 
             finishedChallenge = false
         }
     }
     
     // Function to update the overlay depending on what needs to be displayed
-    func updateOverlay(name: String, correctAnswer: String, currentChallenge: Int, totalChallenges: Int, endText: String, displayImage: String, imageName: String, image: UIImage?) {
+    func updateOverlay(_ name: String, correctAnswer: String, currentChallenge: Int, totalChallenges: Int, endText: String, displayImage: String, imageName: String, image: UIImage?) {
         
         if displayImage == "noImageToDisplay" {
             self.name = name
@@ -129,22 +129,22 @@ class TutorialOverlayVC: UIViewController, UIViewControllerTransitioningDelegate
         
     }
     
-    private func prepareOverlayVC(overlayVC: UIViewController) {
+    fileprivate func prepareOverlayVC(_ overlayVC: UIViewController) {
         overlayVC.transitioningDelegate = trophyOverlayDelegate
-        overlayVC.modalPresentationStyle = .FullScreen
+        overlayVC.modalPresentationStyle = .fullScreen
     }
     
     // UIViewControllerTransitioningDelegate methods
-    func presentationControllerForPresentedViewController(presented: UIViewController, presentingViewController presenting: UIViewController, sourceViewController source: UIViewController) -> UIPresentationController? {
+    func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
         
         if presented == self {
-            return OverlayPresentationController(presentedViewController: presented, presentingViewController: presenting)
+            return OverlayPresentationController(presentedViewController: presented, presenting: presenting)
         }
         
         return nil
     }
     
-    func animationControllerForPresentedController(presented: UIViewController, presentingController presenting: UIViewController, sourceController source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         
         if presented == self {
             return OverlayAnimationController(isPresenting: true)
@@ -154,7 +154,7 @@ class TutorialOverlayVC: UIViewController, UIViewControllerTransitioningDelegate
         }
     }
     
-    func animationControllerForDismissedController(dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         
         if dismissed == self {
             return OverlayAnimationController(isPresenting: false)

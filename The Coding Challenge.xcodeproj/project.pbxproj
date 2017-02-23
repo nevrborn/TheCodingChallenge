@@ -153,7 +153,8 @@
 				TargetAttributes = {
 					7143D77B1CBE383800C7E11F = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = HZWL927386;
+						DevelopmentTeam = 5299K4Z6EZ;
+						LastSwiftMigration = 0800;
 					};
 				};
 			};
@@ -325,6 +326,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = nl.appacademy.CodeChallenge;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -338,6 +340,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = nl.appacademy.CodeChallenge;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

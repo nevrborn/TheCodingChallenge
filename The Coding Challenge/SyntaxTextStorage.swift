@@ -45,7 +45,7 @@ class SyntaxTextStorage: NSTextStorage {
     var codeOption2 = ""
     var codeOption3 = ""
     
-    func processText(challenge: Challenge) {
+    func processText(_ challenge: Challenge) {
         
         self.challenge = challenge
         setRegexFormats()
@@ -61,26 +61,26 @@ class SyntaxTextStorage: NSTextStorage {
     func setRegexFormats() {
         
         // Create the different attributes
-        let declarationAttribute = [NSForegroundColorAttributeName: UIColor.purpleColor()]
-        let blueAttribute = [NSForegroundColorAttributeName: UIColor.blueColor()]
-        let redAttribute = [NSForegroundColorAttributeName: UIColor.redColor(), NSBackgroundColorAttributeName: UIColor.blackColor()]
+        let declarationAttribute = [NSForegroundColorAttributeName: UIColor.purple]
+        let blueAttribute = [NSForegroundColorAttributeName: UIColor.blue]
+        let redAttribute = [NSForegroundColorAttributeName: UIColor.red, NSBackgroundColorAttributeName: UIColor.gray]
         
         // Construct a dictionary of replacements based on regexes
         regExFormats = [
-            "(var)" : declarationAttribute, // VAR - purple color
-            "(class)" : declarationAttribute, // CLASS - purple color
-            "(func)" : declarationAttribute, // FUNC - purple color
-            "(print)" : blueAttribute, // PRINT - blue color
-            "(Enter Code)" : redAttribute,
-            "(@IBOutlet)" : blueAttribute,
-            "(String)" : blueAttribute,
-            "(UILabel)" : blueAttribute,
-            "(presentViewController)" : blueAttribute,
-            "(imagePicker)" : blueAttribute
+            "(var)" : declarationAttribute as AnyObject, // VAR - purple color
+            "(class)" : declarationAttribute as AnyObject, // CLASS - purple color
+            "(func)" : declarationAttribute as AnyObject, // FUNC - purple color
+            "(print)" : blueAttribute as AnyObject, // PRINT - blue color
+            "(Enter Code)" : redAttribute as AnyObject,
+            "(@IBOutlet)" : blueAttribute as AnyObject,
+            "(String)" : blueAttribute as AnyObject,
+            "(UILabel)" : blueAttribute as AnyObject,
+            "(presentViewController)" : blueAttribute as AnyObject,
+            "(imagePicker)" : blueAttribute as AnyObject
         ]
     }
     
-    func performFormatting(codeText: String) {
+    func performFormatting(_ codeText: String) {
         
         let textString = NSMutableAttributedString(string: challenge.text!, attributes:nil)
         textString.addAttribute(NSFontAttributeName, value: UIFont.init(name: "Menlo", size: 12)!, range: NSMakeRange(0, textString.length))
@@ -103,7 +103,7 @@ class SyntaxTextStorage: NSTextStorage {
     }
     
     
-    func makeOptionCodeString(userCode: String, nameOfKey: String) {
+    func makeOptionCodeString(_ userCode: String, nameOfKey: String) {
         
         let displayedCode = tutorialDictionary[AttributedCode] as! NSMutableAttributedString
         
@@ -115,20 +115,20 @@ class SyntaxTextStorage: NSTextStorage {
         
         let regex = try? NSRegularExpression(pattern: enterCodePattern, options: [])
         let rangeOfCode = NSMakeRange(0, editableAttrString.length)
-        let matches = (regex?.matchesInString(tempCodeText, options: [], range: rangeOfCode))!
+        let matches = (regex?.matches(in: tempCodeText, options: [], range: rangeOfCode))!
         
         //Iterate over regex matches
         for match in matches {
-            editableAttrString.replaceCharactersInRange(match.rangeAtIndex(0), withString: userCode)
+            editableAttrString.replaceCharacters(in: match.rangeAt(0), with: userCode)
         }
         tutorialDictionary[nameOfKey] = editableAttrString
         
     }
 
     
-    func performFormattingOnCode(optionCode: String, nameOfKey: String) {
+    func performFormattingOnCode(_ optionCode: String, nameOfKey: String) {
         
-        let normalAttrs = [NSFontAttributeName : UIFont.preferredFontForTextStyle(UIFontTextStyleBody)]
+        let normalAttrs = [NSFontAttributeName : UIFont.preferredFont(forTextStyle: UIFontTextStyle.body)]
         let tempAttrCode =  tutorialDictionary[optionCode] as! NSMutableAttributedString
         let editableAttrString: NSMutableAttributedString = tempAttrCode.mutableCopy() as! NSMutableAttributedString
         let tempCode = editableAttrString.mutableString as String
@@ -138,12 +138,12 @@ class SyntaxTextStorage: NSTextStorage {
             
             let regex = try! NSRegularExpression(pattern: pattern, options: [])
             let range = NSMakeRange(0, tempCode.characters.count)
-            regex.enumerateMatchesInString(tempCode, options: [], range: range) {
+            regex.enumerateMatches(in: tempCode, options: [], range: range) {
                 
                 match, flags, stop in
                 
                 // apply the style
-                let matchRange = match!.rangeAtIndex(1)
+                let matchRange = match!.rangeAt(1)
                 let attribute = attributes as! [String: AnyObject]
                 tempAttrCode.addAttributes(attribute, range: matchRange)
                 
@@ -157,17 +157,17 @@ class SyntaxTextStorage: NSTextStorage {
         tutorialDictionary[nameOfKey] = tempAttrCode
     }
     
-    override func attributesAtIndex(location: Int, effectiveRange range: NSRangePointer) -> [String : AnyObject] {
+    override func attributes(at location: Int, effectiveRange range: NSRangePointer?) -> [String : Any] {
         let attrString = NSMutableAttributedString(string: codeText, attributes:nil)
         
-        return attrString.attributesAtIndex(location, effectiveRange: range)
+        return attrString.attributes(at: location, effectiveRange: range)
     }
     
-    override func setAttributes(attrs: [String : AnyObject]!, range: NSRange) {
+    override func setAttributes(_ attrs: [String : Any]!, range: NSRange) {
         let attrString = NSMutableAttributedString(string: codeText, attributes:nil)
         beginEditing()
         attrString.setAttributes(attrs, range: range)
-        edited(.EditedAttributes, range: range, changeInLength: 0)
+        edited(.editedAttributes, range: range, changeInLength: 0)
         endEditing()
     }
     

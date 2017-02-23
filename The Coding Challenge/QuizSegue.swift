@@ -14,39 +14,39 @@ class QuizSegue: UIStoryboardSegue {
     var button: UIButton?
     
     override func perform() {
-        let firstVCView = self.sourceViewController.view as UIView!
-        let secondVCView = self.destinationViewController.view as UIView!
+        let firstVCView = self.source.view as UIView!
+        let secondVCView = self.destination.view as UIView!
         
-        let quizViewController = destinationViewController as! QuizVC
+        let quizViewController = destination as! QuizVC
         
         // Get the screen width and height.
-        let screenWidth = UIScreen.mainScreen().bounds.size.width
-        let screenHeight = UIScreen.mainScreen().bounds.size.height
+        let screenWidth = UIScreen.main.bounds.size.width
+        let screenHeight = UIScreen.main.bounds.size.height
         
-        secondVCView.frame = CGRectMake(0.0, screenHeight, screenWidth, screenHeight)
+        secondVCView?.frame = CGRect(x: 0.0, y: screenHeight, width: screenWidth, height: screenHeight)
         
         // Access the app's key window and insert the destination view above the current (source) one.
-        let window = UIApplication.sharedApplication().keyWindow
-        window?.insertSubview(secondVCView, aboveSubview: firstVCView)
+        let window = UIApplication.shared.keyWindow
+        window?.insertSubview(secondVCView!, aboveSubview: firstVCView!)
         
-        quizViewController.quizView.transform = CGAffineTransformScale(quizViewController.quizView.transform, 0.001, 0.001)
-        secondVCView.transform = CGAffineTransformScale(secondVCView.transform, 0.001, 0.001)
+        quizViewController.quizView.transform = quizViewController.quizView.transform.scaledBy(x: 0.001, y: 0.001)
+        secondVCView?.transform = (secondVCView?.transform.scaledBy(x: 0.001, y: 0.001))!
         
-        UIView.animateWithDuration(0.8, animations: { () -> Void in
-            self.button!.transform = CGAffineTransformMakeScale(15,15)
-            quizViewController.quizView.transform = CGAffineTransformIdentity
+        UIView.animate(withDuration: 0.8, animations: { () -> Void in
+            self.button!.transform = CGAffineTransform(scaleX: 15,y: 15)
+            quizViewController.quizView.transform = CGAffineTransform.identity
             
-        }) { (Finished) -> Void in
+        }, completion: { (Finished) -> Void in
             
-            UIView.animateWithDuration(0.1, animations: { () -> Void in
-                secondVCView.transform = CGAffineTransformIdentity
+            UIView.animate(withDuration: 0.1, animations: { () -> Void in
+                secondVCView?.transform = CGAffineTransform.identity
                 
                 }, completion: { (Finished) -> Void in
                     
-                    firstVCView.transform = CGAffineTransformIdentity
-                    self.sourceViewController.presentViewController(self.destinationViewController as UIViewController, animated: false, completion: nil)
+                    firstVCView?.transform = CGAffineTransform.identity
+                    self.source.present(self.destination as UIViewController, animated: false, completion: nil)
             })
-        }
+        }) 
         
         
     }

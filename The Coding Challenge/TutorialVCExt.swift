@@ -13,28 +13,28 @@ import AudioToolbox
 extension TutorialVC {
     
     // Function to perform functions as part of a tutorial. Get this function from the hson file
-    func performAction(code: String) {
-        performSelector(NSSelectorFromString(code))
+    func performAction(_ code: String) {
+        perform(NSSelectorFromString(code))
     }
     
     // Part of the DISPLAY A PICTURE tutorial
     func takeAPhoto() {
         imagePicker.allowsEditing = false
-        imagePicker.sourceType = .Camera
+        imagePicker.sourceType = .camera
         
-        presentViewController(imagePicker, animated: true, completion: nil)
+        present(imagePicker, animated: true, completion: nil)
     }
     
     // Part of the DISPLAY A PICTURE tutorial
     func chooseAPhoto() {
         imagePicker.allowsEditing = false
-        imagePicker.sourceType = .PhotoLibrary
+        imagePicker.sourceType = .photoLibrary
         
-        presentViewController(imagePicker, animated: true, completion: nil)
+        present(imagePicker, animated: true, completion: nil)
     }
     
     // Part of the DISPLAY A PICTURE tutorial
-    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         
         // Chooses the original image
         if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
@@ -45,13 +45,13 @@ extension TutorialVC {
         }
         
         let currentChallenge = tutorial.challenges[indexOfChallenges]
-        let overlayVC = storyboard!.instantiateViewControllerWithIdentifier("TutorialOverlayVC") as! TutorialOverlayVC
+        let overlayVC = storyboard!.instantiateViewController(withIdentifier: "TutorialOverlayVC") as! TutorialOverlayVC
         prepareOverlayVC(overlayVC)
         
         overlayVC.updateOverlay(tutorial.name!, correctAnswer: currentChallenge.correctAnswerText!, currentChallenge: indexOfChallenges, totalChallenges: numberOfChallenges, endText: tutorial.endText!, displayImage: "fromTakenPhoto", imageName: "", image: newImage)
         
-        dismissViewControllerAnimated(true, completion: nil)
-        presentViewController(overlayVC, animated: true, completion: nil)
+        dismiss(animated: true, completion: nil)
+        present(overlayVC, animated: true, completion: nil)
     }
 
 }

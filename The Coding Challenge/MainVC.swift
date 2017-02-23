@@ -63,19 +63,19 @@ class MainVC: UIViewController, JSONSourceDelegate, JSONQuizSourceDelegate, UIVi
         buttonNo2.imageView?.image = faqImage
         buttonNo3.imageView?.image = quizImage
         
-        buttonNo1.hidden = false
-        buttonNo2.hidden = false
-        buttonNo3.hidden = false
-        buttonNo4.hidden = true
-        buttonNo5.hidden = false
-        mainMenuButton.hidden = true
+        buttonNo1.isHidden = false
+        buttonNo2.isHidden = false
+        buttonNo3.isHidden = false
+        buttonNo4.isHidden = true
+        buttonNo5.isHidden = false
+        mainMenuButton.isHidden = true
         
-        buttonNo1.enabled = true
-        buttonNo2.enabled = true
-        buttonNo3.enabled = true
-        buttonNo4.enabled = false
-        buttonNo5.enabled = false
-        mainMenuButton.enabled = false
+        buttonNo1.isEnabled = true
+        buttonNo2.isEnabled = true
+        buttonNo3.isEnabled = true
+        buttonNo4.isEnabled = false
+        buttonNo5.isEnabled = false
+        mainMenuButton.isEnabled = false
         
         firstTimeLoad = true
         
@@ -87,67 +87,67 @@ class MainVC: UIViewController, JSONSourceDelegate, JSONQuizSourceDelegate, UIVi
     // Animation of main menu Buttons
     @IBOutlet weak var buttonNo1: UIButton! {
         didSet {
-            buttonNo1.transform = CGAffineTransformMakeScale(0, 0)
-            UIView.animateWithDuration(1.0, delay: 0.5, usingSpringWithDamping: 0.6,initialSpringVelocity: 3, options: .CurveLinear, animations: {
-                self.buttonNo1.transform = CGAffineTransformIdentity }, completion: nil
+            buttonNo1.transform = CGAffineTransform(scaleX: 0, y: 0)
+            UIView.animate(withDuration: 1.0, delay: 0.5, usingSpringWithDamping: 0.6,initialSpringVelocity: 3, options: .curveLinear, animations: {
+                self.buttonNo1.transform = CGAffineTransform.identity }, completion: nil
             )}
     }
     
     @IBOutlet weak var buttonNo2: UIButton! {
         didSet {
-            buttonNo2.transform = CGAffineTransformMakeScale(0, 0)
-            UIView.animateWithDuration(1.0, delay: 0.5, usingSpringWithDamping: 0.6,initialSpringVelocity: 3, options: .CurveLinear, animations: {
-                self.buttonNo2.transform = CGAffineTransformIdentity }, completion: nil
+            buttonNo2.transform = CGAffineTransform(scaleX: 0, y: 0)
+            UIView.animate(withDuration: 1.0, delay: 0.5, usingSpringWithDamping: 0.6,initialSpringVelocity: 3, options: .curveLinear, animations: {
+                self.buttonNo2.transform = CGAffineTransform.identity }, completion: nil
             )}
     }
     
     @IBOutlet weak var buttonNo3: UIButton! {
         didSet {
-            buttonNo3.transform = CGAffineTransformMakeScale(0, 0)
-            UIView.animateWithDuration(1.0, delay: 0.5, usingSpringWithDamping: 0.6,initialSpringVelocity: 3, options: .CurveLinear, animations: {
-                self.buttonNo3.transform = CGAffineTransformIdentity }, completion: nil
+            buttonNo3.transform = CGAffineTransform(scaleX: 0, y: 0)
+            UIView.animate(withDuration: 1.0, delay: 0.5, usingSpringWithDamping: 0.6,initialSpringVelocity: 3, options: .curveLinear, animations: {
+                self.buttonNo3.transform = CGAffineTransform.identity }, completion: nil
             )}
     }
     
     @IBOutlet weak var buttonNo4: UIButton! {
         didSet {
-            buttonNo4.transform = CGAffineTransformMakeScale(0, 0)
-            UIView.animateWithDuration(2.0, delay: 1, usingSpringWithDamping: 0.3,initialSpringVelocity: 3, options: .CurveLinear, animations: {
-                self.buttonNo4.transform = CGAffineTransformIdentity }, completion: nil
+            buttonNo4.transform = CGAffineTransform(scaleX: 0, y: 0)
+            UIView.animate(withDuration: 2.0, delay: 1, usingSpringWithDamping: 0.3,initialSpringVelocity: 3, options: .curveLinear, animations: {
+                self.buttonNo4.transform = CGAffineTransform.identity }, completion: nil
             )}
     }
     
     @IBOutlet weak var buttonNo5: UIButton! {
         didSet {
-            buttonNo5.transform = CGAffineTransformMakeScale(0, 0)
-            UIView.animateWithDuration(1.5, delay: 1.5, usingSpringWithDamping: 1,initialSpringVelocity: 2, options: .CurveLinear, animations: {
-                self.buttonNo5.transform = CGAffineTransformIdentity }, completion: nil
+            buttonNo5.transform = CGAffineTransform(scaleX: 0, y: 0)
+            UIView.animate(withDuration: 1.5, delay: 1.5, usingSpringWithDamping: 1,initialSpringVelocity: 2, options: .curveLinear, animations: {
+                self.buttonNo5.transform = CGAffineTransform.identity }, completion: nil
             )}
     }
     
     @IBOutlet weak var mainMenuButton: UIButton! {
         didSet {
-            mainMenuButton.transform = CGAffineTransformMakeScale(0, 0)
-            UIView.animateWithDuration(2.0, delay: 1, usingSpringWithDamping: 0.5,initialSpringVelocity: 5, options: .CurveLinear, animations: {
-                self.mainMenuButton.transform = CGAffineTransformIdentity }, completion: nil
+            mainMenuButton.transform = CGAffineTransform(scaleX: 0, y: 0)
+            UIView.animate(withDuration: 2.0, delay: 1, usingSpringWithDamping: 0.5,initialSpringVelocity: 5, options: .curveLinear, animations: {
+                self.mainMenuButton.transform = CGAffineTransform.identity }, completion: nil
             )}
     }
     
     //Button to display The App Academy website.
-    @IBAction func taaLogoButton(sender: UIButton) {
-        let url = NSURL(string: "http://en.theappacademy.nl")!
-        UIApplication.sharedApplication().openURL(url)
+    @IBAction func taaLogoButton(_ sender: UIButton) {
+        let url = URL(string: "http://en.theappacademy.nl")!
+        UIApplication.shared.openURL(url)
     }
     
     // Tutorial Button + button for 1st tutorial and quiz
-    @IBAction func buttonNo1Pressed(sender: UIButton) {
+    @IBAction func buttonNo1Pressed(_ sender: UIButton) {
         if tutorialStore!.count != 0 {
             if buttonNo1.imageView?.image == tutorialsImage {
                 showTutorials()
                 quizOrTutorial = "tutorial"
             } else if quizOrTutorial == "tutorial" {
                 findIndexOfTutorialFromImage(sender)
-                performSegueWithIdentifier("showTutorial", sender: sender)
+                performSegue(withIdentifier: "showTutorial", sender: sender)
             } else if quizOrTutorial == "quiz" {
                 let index = findIndexOfQuizFromImage(sender)
                 numberOfQuestionsFinished = 0
@@ -158,12 +158,12 @@ class MainVC: UIViewController, JSONSourceDelegate, JSONQuizSourceDelegate, UIVi
     }
     
     // APP ACADEMY FAQ BUTTON + button for 2nd tutorial and quiz
-    @IBAction func button2Pressed(sender: UIButton) {
+    @IBAction func button2Pressed(_ sender: UIButton) {
         if buttonNo2.imageView?.image == faqImage {
-            performSegueWithIdentifier("showFAQ", sender: sender)
+            performSegue(withIdentifier: "showFAQ", sender: sender)
         } else if quizOrTutorial == "tutorial" {
             findIndexOfTutorialFromImage(sender)
-            performSegueWithIdentifier("showTutorial", sender: sender)
+            performSegue(withIdentifier: "showTutorial", sender: sender)
         } else if quizOrTutorial == "quiz" {
             let index = findIndexOfQuizFromImage(sender)
             numberOfQuestionsFinished = 0
@@ -173,7 +173,7 @@ class MainVC: UIViewController, JSONSourceDelegate, JSONQuizSourceDelegate, UIVi
     }
     
     // QUIZ BUTTON + button for 3rd tutorial and quiz
-    @IBAction func button3Pressed(sender: UIButton) {
+    @IBAction func button3Pressed(_ sender: UIButton) {
         
         if quizStore!.count != 0 {
             if buttonNo3.imageView?.image == quizImage {
@@ -182,7 +182,7 @@ class MainVC: UIViewController, JSONSourceDelegate, JSONQuizSourceDelegate, UIVi
                 quizScore = 0
             } else if quizOrTutorial == "tutorial" {
                 findIndexOfTutorialFromImage(sender)
-                performSegueWithIdentifier("showTutorial", sender: sender)
+                performSegue(withIdentifier: "showTutorial", sender: sender)
             } else if quizOrTutorial == "quiz" {
                 let index = findIndexOfQuizFromImage(sender)
                 numberOfQuestionsFinished = 0
@@ -193,10 +193,10 @@ class MainVC: UIViewController, JSONSourceDelegate, JSONQuizSourceDelegate, UIVi
     }
     
     // Button for 4th tutorial and quiz
-    @IBAction func button4Pressed(sender: UIButton) {
+    @IBAction func button4Pressed(_ sender: UIButton) {
         if quizOrTutorial == "tutorial" {
             findIndexOfTutorialFromImage(sender)
-            performSegueWithIdentifier("showTutorial", sender: sender)
+            performSegue(withIdentifier: "showTutorial", sender: sender)
         } else if quizOrTutorial == "quiz" {
             let index = findIndexOfQuizFromImage(sender)
             numberOfQuestionsFinished = 0
@@ -205,11 +205,11 @@ class MainVC: UIViewController, JSONSourceDelegate, JSONQuizSourceDelegate, UIVi
         }
     }
     
-    @IBAction func showMoreTutorials(sender: UIButton) {
+    @IBAction func showMoreTutorials(_ sender: UIButton) {
         showTutorials()
     }
     
-    @IBAction func goToMainMenu(sender: UIButton) {
+    @IBAction func goToMainMenu(_ sender: UIButton) {
         if mainMenuButton.imageView?.image == mainMenuImage && quizOrTutorial == "tutorial" {
             quizOrTutorial = ""
             showMainMenu()
@@ -220,20 +220,20 @@ class MainVC: UIViewController, JSONSourceDelegate, JSONQuizSourceDelegate, UIVi
     }
     
     // Button to show trophy after completing a quiz
-    @IBAction func quizScoreButton(sender: UIButton) {
-        let overlayVC = storyboard!.instantiateViewControllerWithIdentifier("TrophyOverlayVC") as! TrophyOverlayVC
+    @IBAction func quizScoreButton(_ sender: UIButton) {
+        let overlayVC = storyboard!.instantiateViewController(withIdentifier: "TrophyOverlayVC") as! TrophyOverlayVC
         overlayVC.updateQuizTrophyOverlay("quiz", quizName: quizStore[indexOfSelectedQuiz].name!, score: quizScore)
         prepareOverlayVC(overlayVC)
-        presentViewController(overlayVC, animated: true, completion: nil)
+        present(overlayVC, animated: true, completion: nil)
     }
     
     // Function to prepare the trophy screen after completing quiz
-    func prepareOverlayVC(overlayVC: UIViewController) {
+    func prepareOverlayVC(_ overlayVC: UIViewController) {
         overlayVC.transitioningDelegate = trophyOverlayDelegate
-        overlayVC.modalPresentationStyle = .FullScreen
+        overlayVC.modalPresentationStyle = .fullScreen
     }
     
-    @IBAction func unwindToMenu(segue: UIStoryboardSegue) {
+    @IBAction func unwindToMenu(_ segue: UIStoryboardSegue) {
         
     }
     
@@ -262,7 +262,7 @@ class MainVC: UIViewController, JSONSourceDelegate, JSONQuizSourceDelegate, UIVi
     }
     
     // Find the index number of tutorial from the selected tutorial button
-    func findIndexOfTutorialFromImage(button: UIButton) -> Int {
+    func findIndexOfTutorialFromImage(_ button: UIButton) -> Int {
         for image in 0..<tutorialIcons.count {
             if UIImage(named: tutorialStore[image].iconName!) == button.imageView?.image {
                 indexOfSelectedTutorial = image
@@ -272,7 +272,7 @@ class MainVC: UIViewController, JSONSourceDelegate, JSONQuizSourceDelegate, UIVi
     }
     
     // Find the index number of quiz from the selected tutorial button
-    func findIndexOfQuizFromImage(button: UIButton) -> Int {
+    func findIndexOfQuizFromImage(_ button: UIButton) -> Int {
         for image in 0..<quizIcons.count {
             if UIImage(named: quizStore[image].iconName!) == button.imageView?.image {
                 indexOfSelectedQuiz = image
@@ -282,19 +282,19 @@ class MainVC: UIViewController, JSONSourceDelegate, JSONQuizSourceDelegate, UIVi
     }
     
     // Send information to the next view controller
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showTutorial" {
             
-            let tutorialViewController = segue.destinationViewController as! TutorialVC
+            let tutorialViewController = segue.destination as! TutorialVC
             tutorialViewController.indexOfTutorial = indexOfSelectedTutorial
             tutorialViewController.tutorialStore = self.tutorialStore
         }
         
         if segue.identifier == "showQuiz" {
             
-            self.view.bringSubviewToFront(sender as! UIButton)
-            sender?.setTitle("", forState: .Normal)
-            let quizViewController = segue.destinationViewController as! QuizVC
+            self.view.bringSubview(toFront: sender as! UIButton)
+            (sender as AnyObject).setTitle("", for: UIControlState())
+            let quizViewController = segue.destination as! QuizVC
             quizViewController.currentQuestion = quizStore[indexOfSelectedQuiz].questions[indexOfQuizQuestion]
             quizViewController.quizName = quizStore[indexOfSelectedQuiz].name!
             quizViewController.button = sender as? UIButton
@@ -306,80 +306,80 @@ class MainVC: UIViewController, JSONSourceDelegate, JSONQuizSourceDelegate, UIVi
     }
     
     // Actions for Quiz Buttons
-    @IBAction func quizTile1(sender: UIButton) {
+    @IBAction func quizTile1(_ sender: UIButton) {
         indexOfQuizQuestion = 0
         numberOfQuestionsFinished += 1
         newBackgroundColor = UIColor(red: 74/255, green: 144/255, blue: 226/255, alpha: 1)
-        performSegueWithIdentifier("showQuiz", sender: sender)
+        performSegue(withIdentifier: "showQuiz", sender: sender)
     }
     
-    @IBAction func quizTile2(sender: UIButton) {
+    @IBAction func quizTile2(_ sender: UIButton) {
         indexOfQuizQuestion = 1
         numberOfQuestionsFinished += 1
         newBackgroundColor = UIColor(red: 74/255, green: 144/255, blue: 200/255, alpha: 1)
-        performSegueWithIdentifier("showQuiz", sender: sender)
+        performSegue(withIdentifier: "showQuiz", sender: sender)
     }
     
-    @IBAction func quizTile3(sender: UIButton) {
+    @IBAction func quizTile3(_ sender: UIButton) {
         indexOfQuizQuestion = 2
         numberOfQuestionsFinished += 1
         newBackgroundColor = UIColor(red: 74/255, green: 144/255, blue: 210/255, alpha: 1)
-        performSegueWithIdentifier("showQuiz", sender: sender)
+        performSegue(withIdentifier: "showQuiz", sender: sender)
     }
     
-    @IBAction func quizTile4(sender: UIButton) {
+    @IBAction func quizTile4(_ sender: UIButton) {
         indexOfQuizQuestion = 3
         numberOfQuestionsFinished += 1
         newBackgroundColor = UIColor(red: 74/255, green: 144/255, blue: 150/255, alpha: 1)
-        performSegueWithIdentifier("showQuiz", sender: sender)
+        performSegue(withIdentifier: "showQuiz", sender: sender)
     }
     
-    @IBAction func quizTile5(sender: UIButton) {
+    @IBAction func quizTile5(_ sender: UIButton) {
         indexOfQuizQuestion = 4
         numberOfQuestionsFinished += 1
         newBackgroundColor = UIColor(red: 74/255, green: 144/255, blue: 150/255, alpha: 1)
-        performSegueWithIdentifier("showQuiz", sender: sender)
+        performSegue(withIdentifier: "showQuiz", sender: sender)
     }
     
-    @IBAction func quizTile6(sender: UIButton) {
+    @IBAction func quizTile6(_ sender: UIButton) {
         indexOfQuizQuestion = 5
         numberOfQuestionsFinished += 1
         newBackgroundColor = UIColor(red: 74/255, green: 144/255, blue: 160/255, alpha: 1)
-        performSegueWithIdentifier("showQuiz", sender: sender)
+        performSegue(withIdentifier: "showQuiz", sender: sender)
     }
     
-    @IBAction func quizTile7(sender: UIButton) {
+    @IBAction func quizTile7(_ sender: UIButton) {
         indexOfQuizQuestion = 6
         numberOfQuestionsFinished += 1
         newBackgroundColor = UIColor(red: 74/255, green: 144/255, blue: 190/255, alpha: 1)
-        performSegueWithIdentifier("showQuiz", sender: sender)
+        performSegue(withIdentifier: "showQuiz", sender: sender)
     }
     
-    @IBAction func quizTile8(sender: UIButton) {
+    @IBAction func quizTile8(_ sender: UIButton) {
         indexOfQuizQuestion = 7
         numberOfQuestionsFinished += 1
         newBackgroundColor = UIColor(red: 74/255, green: 144/255, blue: 140/255, alpha: 1)
-        performSegueWithIdentifier("showQuiz", sender: sender)
+        performSegue(withIdentifier: "showQuiz", sender: sender)
     }
     
-    @IBAction func quizTile9(sender: UIButton) {
+    @IBAction func quizTile9(_ sender: UIButton) {
         indexOfQuizQuestion = 8
         numberOfQuestionsFinished += 1
         newBackgroundColor = UIColor(red: 74/255, green: 144/255, blue: 130/255, alpha: 1)
-        performSegueWithIdentifier("showQuiz", sender: sender)
+        performSegue(withIdentifier: "showQuiz", sender: sender)
     }
     
-    @IBAction func quizTile10(sender: UIButton) {
+    @IBAction func quizTile10(_ sender: UIButton) {
         indexOfQuizQuestion = 9
         numberOfQuestionsFinished += 1
         newBackgroundColor = UIColor(red: 74/255, green: 144/255, blue: 140/255, alpha: 1)
-        performSegueWithIdentifier("showQuiz", sender: sender)
+        performSegue(withIdentifier: "showQuiz", sender: sender)
     }
     
     
     
     // JSONDelegate methods
-    func tutorialLoadingFailed(errorMessage: String) {
+    func tutorialLoadingFailed(_ errorMessage: String) {
         let error = errorMessage
         print(error)
     }
@@ -388,7 +388,7 @@ class MainVC: UIViewController, JSONSourceDelegate, JSONQuizSourceDelegate, UIVi
         setImages()
     }
     
-    func quizLoadingFailed(errorMessage: String) {
+    func quizLoadingFailed(_ errorMessage: String) {
         let error = errorMessage
         print(error)
     }

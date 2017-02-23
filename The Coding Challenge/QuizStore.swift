@@ -10,10 +10,10 @@ import UIKit
 
 public protocol JSONQuizSourceDelegate {
     func quizDataIsLoaded()
-    func quizLoadingFailed(errorMessage: String)
+    func quizLoadingFailed(_ errorMessage: String)
 }
 
-public class QuizStore {
+open class QuizStore {
     
     internal var delegate: JSONQuizSourceDelegate?
     internal var count: Int {
@@ -24,20 +24,20 @@ public class QuizStore {
         return quiz[index]
     }
     
-    private var session = NSURLSession(configuration: NSURLSessionConfiguration.defaultSessionConfiguration())
+    fileprivate var session = URLSession(configuration: URLSessionConfiguration.default)
     
-    private var quiz = [Quiz]()
+    fileprivate var quiz = [Quiz]()
     
     // Fetching Quiz from the server/JSON.
-    public func loadQuizData() {
-        let JSONFileURL = NSBundle.mainBundle().URLForResource("quiz", withExtension: ".json")!
-        let task = session.dataTaskWithURL(JSONFileURL) { (data, response, error) in
+    open func loadQuizData() {
+        let JSONFileURL = Bundle.main.url(forResource: "quiz", withExtension: ".json")!
+        let task = session.dataTask(with: JSONFileURL, completionHandler: { (data, response, error) in
             guard let data = data else {
                 self.failed("Quiz: Data did not come back from the server")
                 return
             }
             
-            guard let json = (try? NSJSONSerialization.JSONObjectWithData(data, options: [])) as? NSDictionary else {
+            guard let json = (try? JSONSerialization.jsonObject(with: data, options: [])) as? NSDictionary else {
                 self.failed("Quiz: Data from the server was not valid JSON")
                 return
             }
@@ -49,15 +49,15 @@ public class QuizStore {
             
             self.quiz = quizInfo.map(Quiz.init).flatMap({ $0 })
             
-            NSOperationQueue.mainQueue().addOperationWithBlock({
+            OperationQueue.main.addOperation({
                 self.delegate?.quizDataIsLoaded()
             })
-        }
+        }) 
         task.resume()
     }
     
-    private func failed(message: String) {
-        NSOperationQueue.mainQueue().addOperationWithBlock({
+    fileprivate func failed(_ message: String) {
+        OperationQueue.main.addOperation({
             self.delegate?.quizLoadingFailed(message)
         })
         return

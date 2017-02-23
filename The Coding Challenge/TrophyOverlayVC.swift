@@ -23,7 +23,7 @@ class TrophyOverlayVC: UIViewController, UIViewControllerTransitioningDelegate {
     var toBeDisplayed: String = ""
     
     // Functons to share results from Tutorials and Quiz on social media
-    @IBAction func share(sender: UIButton) {
+    @IBAction func share(_ sender: UIButton) {
         var textToShare: String = ""
         
         if toBeDisplayed == "quiz" {
@@ -33,16 +33,16 @@ class TrophyOverlayVC: UIViewController, UIViewControllerTransitioningDelegate {
         }
         
         let vc = UIActivityViewController(activityItems:[textToShare], applicationActivities: nil)
-        self.presentViewController(vc, animated: true, completion: nil)
+        self.present(vc, animated: true, completion: nil)
     }
     
     // Empty now, but will contain link to more tutorials/videos online
-    @IBAction func learnMore(sender: UIButton) {
+    @IBAction func learnMore(_ sender: UIButton) {
     }
     
     // Unwind to Main Menu
-    @IBAction func goToMainMenu(sender: UIButton) {
-        self.performSegueWithIdentifier("unwindToMenu", sender: self)
+    @IBAction func goToMainMenu(_ sender: UIButton) {
+        self.performSegue(withIdentifier: "unwindToMenu", sender: self)
     }
     
     // Sets up the trophy screen on loading
@@ -59,29 +59,29 @@ class TrophyOverlayVC: UIViewController, UIViewControllerTransitioningDelegate {
         }
         
         // Brings all lables ++ infront of the screen, on top of the circles
-        self.view.bringSubviewToFront(logo)
-        self.view.bringSubviewToFront(throphy)
-        self.view.bringSubviewToFront(shareButton)
-        self.view.bringSubviewToFront(mainMenuButton)
-        self.view.bringSubviewToFront(congratulationsLabel)
-        self.view.bringSubviewToFront(textLabel)
+        self.view.bringSubview(toFront: logo)
+        self.view.bringSubview(toFront: throphy)
+        self.view.bringSubview(toFront: shareButton)
+        self.view.bringSubview(toFront: mainMenuButton)
+        self.view.bringSubview(toFront: congratulationsLabel)
+        self.view.bringSubview(toFront: textLabel)
     }
     
     // Update the trophy screen with Quiz info
-    func updateQuizTrophyOverlay(toBeDisplayed: String, quizName: String, score: Int) {
+    func updateQuizTrophyOverlay(_ toBeDisplayed: String, quizName: String, score: Int) {
         self.toBeDisplayed = toBeDisplayed
         self.quizName = quizName
         self.score = score
     }
     
     // Update the trophy screen with Tutorial info
-    func updateTutorialTrophyOverlay(toBeDiplayed: String, tutorialName: String) {
+    func updateTutorialTrophyOverlay(_ toBeDiplayed: String, tutorialName: String) {
         self.toBeDisplayed = toBeDiplayed
         self.tutorialName = tutorialName
     }
     
     // Function to draw random colored circles on the screen
-    func drawRandomCircles(radiusDivider: CGFloat) {
+    func drawRandomCircles(_ radiusDivider: CGFloat) {
         
         let circleLayer = CAShapeLayer()
         
@@ -89,7 +89,7 @@ class TrophyOverlayVC: UIViewController, UIViewControllerTransitioningDelegate {
         let randomX = CGFloat(arc4random_uniform(UInt32(self.view.bounds.size.width)))
         let randomY = CGFloat(arc4random_uniform(UInt32(self.view.bounds.size.height)))
         
-        let randomCenter = CGPointMake(randomX, randomY)
+        let randomCenter = CGPoint(x: randomX, y: randomY)
         
         // Make random radius
         let randomRadius = CGFloat(arc4random_uniform(UInt32(self.view.frame.size.height/radiusDivider)))
@@ -101,9 +101,9 @@ class TrophyOverlayVC: UIViewController, UIViewControllerTransitioningDelegate {
         let randomGreen = randomColor.green
         let randomBlue = randomColor.blue
         
-        circleLayer.path = circlePath.CGPath
-        circleLayer.fillColor = UIColor(red: randomRed, green: randomGreen, blue: randomBlue, alpha: 0.5).CGColor
-        circleLayer.strokeColor = UIColor(red: randomRed, green: randomGreen, blue: randomBlue, alpha: 0.5).CGColor
+        circleLayer.path = circlePath.cgPath
+        circleLayer.fillColor = UIColor(red: randomRed, green: randomGreen, blue: randomBlue, alpha: 0.5).cgColor
+        circleLayer.strokeColor = UIColor(red: randomRed, green: randomGreen, blue: randomBlue, alpha: 0.5).cgColor
         circleLayer.lineWidth = 0.2
         
         view.layer.addSublayer(circleLayer)

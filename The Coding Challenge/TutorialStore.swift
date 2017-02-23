@@ -10,10 +10,10 @@ import UIKit
 
 public protocol JSONSourceDelegate {
     func tutorialDataIsLoaded()
-    func tutorialLoadingFailed(errorMessage: String)
+    func tutorialLoadingFailed(_ errorMessage: String)
 }
 
-public class TutorialStore {
+open class TutorialStore {
     
     internal var delegate: JSONSourceDelegate?
     internal var count: Int {
@@ -24,20 +24,20 @@ public class TutorialStore {
         return tutorials[index]
     }
     
-    private var session = NSURLSession(configuration: NSURLSessionConfiguration.defaultSessionConfiguration())
+    fileprivate var session = URLSession(configuration: URLSessionConfiguration.default)
     
-    private var tutorials = [Tutorial]()
+    fileprivate var tutorials = [Tutorial]()
     
     // Fetching Tutorials from JSON File.
-    public func loadTutorialsData() {
-        let JSONFileURL = NSBundle.mainBundle().URLForResource("tutorials", withExtension: ".json")!
-        let task = session.dataTaskWithURL(JSONFileURL) { (data, response, error) in
+    open func loadTutorialsData() {
+        let JSONFileURL = Bundle.main.url(forResource: "tutorials", withExtension: ".json")!
+        let task = session.dataTask(with: JSONFileURL, completionHandler: { (data, response, error) in
             guard let data = data else {
                 self.failed("Data did not come back from the server")
                 return
             }
             
-            guard let json = (try? NSJSONSerialization.JSONObjectWithData(data, options: [])) as? NSDictionary else {
+            guard let json = (try? JSONSerialization.jsonObject(with: data, options: [])) as? NSDictionary else {
                 self.failed("Data from the server was not valid JSON")
                 return
             }
@@ -49,15 +49,15 @@ public class TutorialStore {
             
             self.tutorials = tutorialInfo.map(Tutorial.init).flatMap({ $0 })
             
-            NSOperationQueue.mainQueue().addOperationWithBlock({
+            OperationQueue.main.addOperation({
                 self.delegate?.tutorialDataIsLoaded()
             })
-        }
+        }) 
         task.resume()
     }
     
-    private func failed(message: String) {
-        NSOperationQueue.mainQueue().addOperationWithBlock({
+    fileprivate func failed(_ message: String) {
+        OperationQueue.main.addOperation({
             self.delegate?.tutorialLoadingFailed(message)
         })
         return
